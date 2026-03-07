@@ -20,3 +20,23 @@ python3 -m http.server 4173
 ```
 
 Depois acesse `http://localhost:4173`.
+
+
+## Rodar com Streamlit
+Se quiser publicar no Streamlit Cloud, use estes arquivos:
+
+- `streamlit_app.py` (main file path)
+- `requirements.txt`
+
+Localmente:
+
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+No Streamlit Cloud, no campo **Main file path**, preencha com:
+
+```text
+streamlit_app.py
+```
