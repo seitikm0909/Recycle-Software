@@ -13,6 +13,40 @@ body {
   background: var(--bg);
   color: var(--text);
 }
+
+.device-badge {
+  margin-right: .6rem;
+  padding: .25rem .5rem;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 999px;
+  font-size: .78rem;
+  background: rgba(255,255,255,.12);
+}
+.header-actions { display: flex; align-items: center; gap: .5rem; }
+
+body.is-mobile .tabs,
+body.is-tablet .tabs {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.is-mobile button,
+body.is-mobile input,
+body.is-mobile select,
+body.is-mobile textarea,
+body.is-tablet button,
+body.is-tablet input,
+body.is-tablet select,
+body.is-tablet textarea {
+  min-height: 42px;
+  touch-action: manipulation;
+}
+
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -61,13 +95,35 @@ table { width: 100%; border-collapse: collapse; }
 th, td { border-bottom: 1px solid var(--border); padding: .5rem; text-align: left; font-size: .88rem; }
 tr:last-child td { border-bottom: none; }
 .summary-top { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; margin-bottom: .75rem; }
+
+.summary-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.printDaisoBtn { background: #fff7ea; border-color: #e2c48a; }
+.small-muted { color: #52617a; font-size: .82rem; }
+
+
 .metric { background: #f7faf9; border: 1px solid #d2e7da; border-radius: 8px; padding: .7rem; }
 .metric strong { display: block; font-size: 1.2rem; margin-top: .3rem; }
 .checkbox-label { display: flex; align-items: center; gap: .5rem; flex-direction: row; margin-top: 1.5rem; }
 .print-area { display: none; }
 
 @media (max-width: 1024px) {
-  .form-grid.two-cols, .form-grid.three-cols, .summary-top { grid-template-columns: 1fr; }
+  .form-grid.two-cols, .form-grid.three-cols, .summary-top, .summary-grid { grid-template-columns: 1fr; }
+  .app-header { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  #summaryChart { width: 100% !important; }
+}
+
+@media (max-width: 768px) {
+  main { padding: .65rem; }
+  .tabs { padding: .6rem .55rem; gap: .35rem; }
+  .tab { padding: .5rem .7rem; }
+  .card { padding: .75rem; }
+  .button-row { flex-wrap: wrap; }
+  th, td { font-size: .8rem; padding: .4rem; }
 }
 
 @media print {
