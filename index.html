@@ -96,6 +96,28 @@
           </label>
         </div>
         <canvas id="summaryChart" width="900" height="380"></canvas>
+        <div class="summary-grid">
+          <div>
+            <h3 data-i18n="summaryByPeriod">Resumo por período</h3>
+            <label>
+              <span data-i18n="periodType">Período</span>
+              <select id="periodType">
+                <option value="day" data-i18n="daily">Dia</option>
+                <option value="month" data-i18n="monthly">Mês</option>
+                <option value="year" data-i18n="yearly">Ano</option>
+              </select>
+            </label>
+            <div class="table-wrap"><table><thead><tr><th data-i18n="period">Período</th><th data-i18n="total">Total</th></tr></thead><tbody id="periodSummaryBody"></tbody></table></div>
+          </div>
+          <div>
+            <h3 data-i18n="summaryByCategory">Resumo por categoria</h3>
+            <div class="table-wrap"><table><thead><tr><th data-i18n="category">Categoria</th><th data-i18n="total">Total</th></tr></thead><tbody id="categorySummaryBody"></tbody></table></div>
+          </div>
+          <div>
+            <h3 data-i18n="summaryByDescription">Resumo por descrição</h3>
+            <div class="table-wrap"><table><thead><tr><th data-i18n="description">Descrição</th><th data-i18n="total">Total</th></tr></thead><tbody id="descriptionSummaryBody"></tbody></table></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -143,12 +165,12 @@
         <label><span data-i18n="address">Endereço</span><input name="address" /></label>
       </div>
       <div class="form-grid three-cols">
-        <label><span data-i18n="category">Categoria</span><input name="category" /></label>
+        <label><span data-i18n="category">Categoria</span><input name="category" list="categorySuggestions" /></label>
         <label><span data-i18n="serialNumber">Número de série</span><input name="serialNumber" /></label>
         <label><span data-i18n="supplier">Fornecedor</span><input name="supplier" /></label>
       </div>
       <div class="form-grid two-cols">
-        <label><span data-i18n="description">Descrição</span><textarea name="description"></textarea></label>
+        <label><span data-i18n="description">Descrição</span><input name="description" list="descriptionSuggestions" /></label>
         <label><span data-i18n="vehiclePlate">Placa do carro</span><input name="vehiclePlate" /></label>
       </div>
 
@@ -182,10 +204,13 @@
       <div class="button-row">
         <button type="submit" class="primary" data-i18n="save">Salvar</button>
         <button type="button" class="printBtn" data-i18n="printA4">Imprimir A4 (2 vias)</button>
+        <button type="button" class="printDaisoBtn" data-i18n="printDaiso">Imprimir 領収書 DAISO G-92 No.2670</button>
       </div>
     </form>
   </template>
 
+  <datalist id="categorySuggestions"></datalist>
+  <datalist id="descriptionSuggestions"></datalist>
   <script src="app.js"></script>
 </body>
 </html>
