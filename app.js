@@ -113,6 +113,14 @@ function t(key) {
   return patch[key] || dict[key] || ptPatch[key] || LANGUAGES.pt[key] || key;
 }
 
+function getCurrentLanguage() {
+  return state.lang;
+}
+
+function getTranslation(key) {
+  return t(key);
+}
+
 function applyLocalePlaceholders() {
   const ph = PLACEHOLDER_BY_LANG[state.lang] || PLACEHOLDER_BY_LANG.en;
   const search = document.querySelector('[data-locale-placeholder="search"]');
@@ -479,26 +487,48 @@ function refreshSearch() {
 }
 
 
+function normalizeDate(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+  const datePart = raw.includes('T') ? raw.slice(0, 10) : raw;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return datePart;
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(datePart)) {
+    const [dd, mm, yyyy] = datePart.split('/');
+    return `${yyyy}-${mm}-${dd}`;
+  }
+  const parsed = new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return '';
+  return parsed.toISOString().slice(0, 10);
+}
+
 function getRecordDate(row) {
-  return row.entryDate || String(row.createdAt || '').slice(0, 10);
+  return normalizeDate(row.entryDate || String(row.createdAt || '').slice(0, 10));
 }
 
 function inDateRange(dateStr, startDate, endDate) {
-  if (!dateStr) return false;
-  if (startDate && dateStr < startDate) return false;
-  if (endDate && dateStr > endDate) return false;
+  const normalized = normalizeDate(dateStr);
+  const start = normalizeDate(startDate);
+  const end = normalizeDate(endDate);
+  if (!normalized) return false;
+  if (start && normalized < start) return false;
+  if (end && normalized > end) return false;
   return true;
 }
 
-function getRecordsByPeriod(startDate, endDate) {
+function getPeriodFilteredRecords(startDate, endDate) {
+  const hasFilter = Boolean(startDate || endDate);
   return state.transactions
     .filter((row) => {
       const recordDate = getRecordDate(row);
-      if (!startDate && !endDate) return true;
+      if (!hasFilter) return true;
       return inDateRange(recordDate, startDate, endDate);
     })
     .slice()
     .sort((a, b) => new Date(getRecordDate(a) || 0) - new Date(getRecordDate(b) || 0));
+}
+
+function getRecordsByPeriod(startDate, endDate) {
+  return getPeriodFilteredRecords(startDate, endDate);
 }
 
 function groupRecordsByClient(records) {
@@ -659,25 +689,48 @@ function buildFullPeriodPdfHtml(startDate, endDate) {
     </div>`;
 }
 
-function generateFullPeriodKobutsuPdf(startDate, endDate) {
-  const records = getRecordsByPeriod(startDate, endDate);
+function openPrintWindowWithContent(html, title) {
+  const content = String(html || '').trim();
+  if (!content) return false;
+  const win = window.open('', '_blank', 'noopener,noreferrer');
+  if (!win) return false;
+  const fullHtml = `<!doctype html><html><head><meta charset="utf-8"/><title>${title}</title><style>body{font-family:Arial,sans-serif;padding:12px}table{width:100%;border-collapse:collapse;margin-bottom:10px}th,td{border:1px solid #333;padding:4px;font-size:10px;vertical-align:top}h2,h3{margin:.4rem 0}.copy{border:0;padding:0}</style></head><body>${content}</body></html>`;
+  win.document.open();
+  win.document.write(fullHtml);
+  win.document.close();
+  const triggerPrint = () => win.setTimeout(() => win.print(), 250);
+  if (win.document.readyState === 'complete') triggerPrint();
+  else win.addEventListener('load', triggerPrint, { once: true });
+  return true;
+}
+
+function generateGeneralPeriodPdf(startDate, endDate) {
+  const records = getPeriodFilteredRecords(startDate, endDate);
   if (!records.length) {
-    alert(t('noRecords'));
+    alert(getTranslation('noRecords'));
     return;
   }
+
   const reportHTML = buildFullPeriodPdfHtml(startDate, endDate);
-  const win = window.open('', '_blank', 'noopener,noreferrer');
-  if (!win) return;
-  win.document.write(`<!doctype html><html><head><meta charset="utf-8"/><title>${t('fullKobutsuPeriodPdf')}</title><style>body{font-family:Arial,sans-serif;padding:12px}table{width:100%;border-collapse:collapse;margin-bottom:10px}th,td{border:1px solid #333;padding:4px;font-size:10px;vertical-align:top}h2,h3{margin:.4rem 0}.copy{border:0;padding:0}</style></head><body>${reportHTML}</body></html>`);
-  win.document.close();
-  win.focus();
-  setTimeout(() => win.print(), 200);
+  if (!String(reportHTML || '').trim()) {
+    alert(getTranslation('noRecords'));
+    return;
+  }
+
+  const opened = openPrintWindowWithContent(reportHTML, getTranslation('fullKobutsuPeriodPdf'));
+  if (!opened) {
+    alert(getTranslation('noRecords'));
+  }
+}
+
+function generateFullPeriodKobutsuPdf(startDate, endDate) {
+  generateGeneralPeriodPdf(startDate, endDate);
 }
 
 function saveFullPeriodKobutsuPdfFromFilters() {
-  const startDate = (document.getElementById('searchStartDate')?.value || '').trim();
-  const endDate = (document.getElementById('searchEndDate')?.value || '').trim();
-  generateFullPeriodKobutsuPdf(startDate, endDate);
+  const startDate = normalizeDate(document.getElementById('searchStartDate')?.value || '');
+  const endDate = normalizeDate(document.getElementById('searchEndDate')?.value || '');
+  generateGeneralPeriodPdf(startDate, endDate);
 }
 
 
@@ -1015,10 +1068,10 @@ function exportExcelLikeCSV() {
 
 function applyTranslations() {
   applyLocaleDefaults();
-  const dict = { ...(LANGUAGES[state.lang] || LANGUAGES.pt), ...(I18N_PATCH[state.lang] || {}) };
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
-    if (dict[key]) el.textContent = dict[key];
+    const translated = getTranslation(key);
+    if (translated) el.textContent = translated;
   });
   applyLocalePlaceholders();
   const currencyInput = document.getElementById('currency');
