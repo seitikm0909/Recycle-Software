@@ -85,9 +85,9 @@ function applyLocaleDefaults() {
 
 
 const I18N_PATCH = {
-  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス', printClientHistory: 'Imprimir Kobutsu do cliente', deleteClient: 'Excluir cliente', confirmDeleteClient: 'Excluir cliente e todas as transações vinculadas?', memoryManagerTitle: 'Gerenciar memórias de preenchimento', transactionType: 'Tipo de transação', fieldLabel: 'Campo', deleteWord: 'Excluir', noMemories: 'Sem memórias para este campo', customerHistoryReport: 'Histórico Kobutsu por cliente', destination: 'Destino/Observação', printLabel: 'Imprimir', saveFullKobutsuPdf: 'Salvar PDF do histórico completo', startDate: 'Data inicial', endDate: 'Data final', allRecords: 'Todos os registros', reportPeriod: 'Período do relatório', generatedAt: 'Gerado em', fullKobutsuHistoryTitle: 'Histórico Completo Kobutsu', paymentMethod: 'Método de pagamento' },
+  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス', printClientHistory: 'Imprimir Kobutsu do cliente', deleteClient: 'Excluir cliente', confirmDeleteClient: 'Excluir cliente e todas as transações vinculadas?', memoryManagerTitle: 'Gerenciar memórias de preenchimento', transactionType: 'Tipo de transação', fieldLabel: 'Campo', deleteWord: 'Excluir', noMemories: 'Sem memórias para este campo', customerHistoryReport: 'Histórico Kobutsu por cliente', destination: 'Destino/Observação', printLabel: 'Imprimir', saveFullKobutsuPdf: 'Salvar PDF do histórico completo', startDate: 'Data inicial', endDate: 'Data final', allRecords: 'Todos os registros', reportPeriod: 'Período do relatório', generatedAt: 'Gerado em', fullKobutsuHistoryTitle: 'Histórico Completo Kobutsu', paymentMethod: 'Método de pagamento', saveFullPeriodKobutsuPdf: 'Salvar PDF geral do período', fullKobutsuPeriodPdf: 'PDF completo Kobutsu do período', periodReport: 'Relatório do período', allIndividuals: 'Todos os indivíduos', incomingItems: 'Itens de entrada', outgoingItems: 'Itens de saída', stockItems: 'Itens em estoque', totalClients: 'Total de clientes', totalIncomingItems: 'Total de itens de entrada', totalOutgoingItems: 'Total de itens de saída', totalStockItems: 'Total de itens em estoque', totalPurchaseAmount: 'Total financeiro de compras', totalSaleAmount: 'Total financeiro de vendas' },
   es: { noRecords: 'Sin registros', summaryByPeriod: 'Resumen por período', summaryByCategory: 'Resumen por categoría', summaryByDescription: 'Resumen por descripción', periodType: 'Período', daily: 'Día', monthly: 'Mes', yearly: 'Año', period: 'Período', operationalProfit: 'Beneficio Operativo', invoiceRate: '% de インボイス', consumptionTaxRate: '% de 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluido', taxSeparate: 'Calculado por separado', purchaseSaleLine: 'Volumen compra/venta por período', clientIdHint: 'Escriba ID existente para completar cliente', hasInvoice: 'Tiene インボイス', invoiceNumber: 'Número de インボイス', printLabel: 'Imprimir', printClientHistory: 'Imprimir Kobutsu del cliente', deleteClient: 'Eliminar cliente', saveFullKobutsuPdf: 'Guardar PDF completo de Kobutsu', startDate: 'Fecha inicial', endDate: 'Fecha final', allRecords: 'Todos los registros', reportPeriod: 'Periodo del informe', generatedAt: 'Generado en', fullKobutsuHistoryTitle: 'Historial Completo Kobutsu', paymentMethod: 'Método de pago' },
-  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number', printClientHistory: 'Print customer Kobutsu', deleteClient: 'Delete client', confirmDeleteClient: 'Delete client and all linked transactions?', memoryManagerTitle: 'Manage field memories', transactionType: 'Transaction type', fieldLabel: 'Field', deleteWord: 'Delete', noMemories: 'No memories for this field', customerHistoryReport: 'Customer Kobutsu history', destination: 'Destination/Observation', printLabel: 'Print', saveFullKobutsuPdf: 'Save full Kobutsu PDF', startDate: 'Start date', endDate: 'End date', allRecords: 'All records', reportPeriod: 'Report period', generatedAt: 'Generated at', fullKobutsuHistoryTitle: 'Full Kobutsu History', paymentMethod: 'Payment method' },
+  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number', printClientHistory: 'Print customer Kobutsu', deleteClient: 'Delete client', confirmDeleteClient: 'Delete client and all linked transactions?', memoryManagerTitle: 'Manage field memories', transactionType: 'Transaction type', fieldLabel: 'Field', deleteWord: 'Delete', noMemories: 'No memories for this field', customerHistoryReport: 'Customer Kobutsu history', destination: 'Destination/Observation', printLabel: 'Print', saveFullKobutsuPdf: 'Save full Kobutsu PDF', startDate: 'Start date', endDate: 'End date', allRecords: 'All records', reportPeriod: 'Report period', generatedAt: 'Generated at', fullKobutsuHistoryTitle: 'Full Kobutsu History', paymentMethod: 'Payment method', saveFullPeriodKobutsuPdf: 'Save full period PDF', fullKobutsuPeriodPdf: 'Full Kobutsu Period PDF', periodReport: 'Period report', allIndividuals: 'All individuals', incomingItems: 'Incoming items', outgoingItems: 'Outgoing items', stockItems: 'Stock items', totalClients: 'Total clients', totalIncomingItems: 'Total incoming items', totalOutgoingItems: 'Total outgoing items', totalStockItems: 'Total stock items', totalPurchaseAmount: 'Total purchase amount', totalSaleAmount: 'Total sale amount' },
   ja: { noRecords: 'データなし', summaryByPeriod: '期間別サマリー', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', operationalProfit: '営業利益', invoiceRate: 'インボイス %', consumptionTaxRate: '消費税 %', consumptionTaxMode: '消費税', taxIncluded: '税込', taxSeparate: '別計算', purchaseSaleLine: '期間別の仕入/販売推移', clientIdHint: '既存の顧客IDを入力すると自動入力', hasInvoice: 'インボイスあり', invoiceNumber: 'インボイス番号', printLabel: '印刷', printClientHistory: '顧客の古物履歴を印刷', deleteClient: '顧客を削除', saveFullKobutsuPdf: '古物履歴PDFを保存', startDate: '開始日', endDate: '終了日', allRecords: '全記録', reportPeriod: 'レポート期間', generatedAt: '生成日時', fullKobutsuHistoryTitle: '古物履歴（完全版）', paymentMethod: '支払方法' },
   vi: { noRecords: 'Không có dữ liệu', summaryByPeriod: 'Tóm tắt theo kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', operationalProfit: 'Lợi nhuận vận hành', invoiceRate: '% invoice', consumptionTaxRate: '% thuế tiêu dùng', consumptionTaxMode: 'Thuế tiêu dùng', taxIncluded: 'Đã gồm', taxSeparate: 'Tính riêng', purchaseSaleLine: 'Khối lượng mua/bán theo kỳ', clientIdHint: 'Nhập ID khách có sẵn để tự điền', hasInvoice: 'Có インボイス', invoiceNumber: 'Số インボイス', printLabel: 'In', printClientHistory: 'In lịch sử Kobutsu khách hàng', deleteClient: 'Xóa khách hàng', saveFullKobutsuPdf: 'Lưu PDF Kobutsu đầy đủ', startDate: 'Ngày bắt đầu', endDate: 'Ngày kết thúc', allRecords: 'Tất cả bản ghi', reportPeriod: 'Khoảng báo cáo', generatedAt: 'Tạo lúc', fullKobutsuHistoryTitle: 'Lịch sử Kobutsu đầy đủ', paymentMethod: 'Phương thức thanh toán' },
   ur: { noRecords: 'ریکارڈ نہیں', operationalProfit: 'آپریٹنگ منافع', taxIncluded: 'شامل', taxSeparate: 'الگ سے' },
@@ -460,7 +460,7 @@ function refreshSearch() {
     .reverse()
     .forEach((r) => {
       const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${r.clientId}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.entryDate || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.type}</td><td><button class="printRow" data-code="${r.transactionCode}">${t('printLabel')}</button> <button class="editRow">${t('edit')}</button> <button class="printClientHistoryRow">${t('printClientHistory')}</button> <button class="saveClientPdfRow">${t('saveFullKobutsuPdf')}</button> <button class="deleteClientRow">${t('deleteClient')}</button></td>`;
+      tr.innerHTML = `<td>${r.clientId}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.entryDate || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.type}</td><td><button class="printRow" data-code="${r.transactionCode}">${t('printLabel')}</button> <button class="editRow">${t('edit')}</button> <button class="printClientHistoryRow">${t('printClientHistory')}</button> <button class="deleteClientRow">${t('deleteClient')}</button></td>`;
       tr.querySelector('.printRow').addEventListener('click', () => {
         generatePrintFromRecord(r);
         window.print();
@@ -470,9 +470,6 @@ function refreshSearch() {
       });
       tr.querySelector('.printClientHistoryRow').addEventListener('click', () => {
         printClientKobutsuHistory(r.clientId);
-      });
-      tr.querySelector('.saveClientPdfRow').addEventListener('click', () => {
-        saveClientFullHistoryPDF(r.clientId);
       });
       tr.querySelector('.deleteClientRow').addEventListener('click', () => {
         deleteClientById(r.clientId);
@@ -493,9 +490,8 @@ function inDateRange(dateStr, startDate, endDate) {
   return true;
 }
 
-function getClientRecordsByPeriod(clientId, startDate, endDate) {
+function getRecordsByPeriod(startDate, endDate) {
   return state.transactions
-    .filter((row) => row.clientId === clientId)
     .filter((row) => {
       const recordDate = getRecordDate(row);
       if (!startDate && !endDate) return true;
@@ -505,80 +501,183 @@ function getClientRecordsByPeriod(clientId, startDate, endDate) {
     .sort((a, b) => new Date(getRecordDate(a) || 0) - new Date(getRecordDate(b) || 0));
 }
 
-function buildClientFullReportHTML(clientId, records, startDate, endDate) {
-  const client = records[records.length - 1] || {};
-  const periodLabel = (startDate || endDate)
-    ? `${startDate || '...'} ~ ${endDate || '...'}`
-    : t('allRecords');
+function groupRecordsByClient(records) {
+  const map = new Map();
+  records.forEach((row) => {
+    const clientId = row.clientId || '-';
+    if (!map.has(clientId)) {
+      map.set(clientId, { clientId, clientName: row.clientName || '', phone: row.phone || '', address: row.address || '', records: [] });
+    }
+    const group = map.get(clientId);
+    if (!group.clientName && row.clientName) group.clientName = row.clientName;
+    if (!group.phone && row.phone) group.phone = row.phone;
+    if (!group.address && row.address) group.address = row.address;
+    group.records.push(row);
+  });
+  return [...map.values()];
+}
+
+function extractMovementItems(record) {
+  if ((record.items || []).length) {
+    return record.items.map((item) => ({
+      category: record.category || '',
+      description: item.description || record.description || '',
+      quantity: Number(item.quantity || 0),
+      unitPrice: Number(item.unitPrice || 0),
+      subtotal: Number(item.lineTotal || 0),
+      supplier: record.supplier || '',
+      destination: record.observation || '',
+      vehiclePlate: record.vehiclePlate || '',
+      serialNumber: record.serialNumber || '',
+      transactionType: record.type || '',
+      transactionCode: record.transactionCode || '',
+      entryDate: getRecordDate(record) || '',
+      clientId: record.clientId || '',
+      clientName: record.clientName || '',
+      phone: record.phone || '',
+      address: record.address || ''
+    }));
+  }
+  return [{
+    category: record.category || '',
+    description: record.description || '',
+    quantity: Number(record.quantity || 0),
+    unitPrice: Number(record.unitPrice || 0),
+    subtotal: Number(record.total || 0),
+    supplier: record.supplier || '',
+    destination: record.observation || '',
+    vehiclePlate: record.vehiclePlate || '',
+    serialNumber: record.serialNumber || '',
+    transactionType: record.type || '',
+    transactionCode: record.transactionCode || '',
+    entryDate: getRecordDate(record) || '',
+    clientId: record.clientId || '',
+    clientName: record.clientName || '',
+    phone: record.phone || '',
+    address: record.address || ''
+  }];
+}
+
+function getIncomingItems(records) {
+  return records.filter((row) => row.type === 'purchase').flatMap(extractMovementItems);
+}
+
+function getOutgoingItems(records) {
+  return records.filter((row) => row.type === 'sale').flatMap(extractMovementItems);
+}
+
+function itemStockKey(item) {
+  return [item.serialNumber || '', item.vehiclePlate || '', item.description || '', item.category || ''].join('|').toLowerCase();
+}
+
+function getStockItems(records) {
+  // Inferência de estoque: agregamos entradas (purchase) e saídas (sale) por chave composta
+  // serial + placa + descrição + categoria. Quando não há identificador único perfeito,
+  // esta é a melhor aproximação possível com os campos existentes no storage atual.
+  const balances = new Map();
+  const add = (item, delta) => {
+    const key = itemStockKey(item);
+    const prev = balances.get(key) || { ...item, quantity: 0, subtotal: 0 };
+    prev.quantity += delta;
+    prev.subtotal += (Number(item.unitPrice || 0) * delta);
+    balances.set(key, prev);
+  };
+  getIncomingItems(records).forEach((item) => add(item, Number(item.quantity || 0)));
+  getOutgoingItems(records).forEach((item) => add(item, -Number(item.quantity || 0)));
+  return [...balances.values()].filter((item) => item.quantity > 0);
+}
+
+function renderItemsSectionRows(items) {
+  if (!items.length) return `<tr><td colspan="11">${t('noRecords')}</td></tr>`;
+  return items.map((item, idx) => `<tr><td>${idx + 1}</td><td>${item.entryDate || ''}</td><td>${item.clientId || ''}</td><td>${item.clientName || ''}</td><td>${item.transactionCode || ''}</td><td>${item.category || ''}</td><td>${item.description || ''}</td><td>${item.quantity || ''}</td><td>${formatMoney(item.unitPrice || 0)}</td><td>${formatMoney(item.subtotal || 0)}</td><td>${item.supplier || item.destination || ''}</td></tr>`).join('');
+}
+
+function buildFullPeriodPdfHtml(startDate, endDate) {
+  const records = getRecordsByPeriod(startDate, endDate);
+  const clientGroups = groupRecordsByClient(records);
+  const incoming = getIncomingItems(records);
+  const outgoing = getOutgoingItems(records);
+  const stock = getStockItems(records);
+
+  const periodLabel = (startDate || endDate) ? `${startDate || '...'} ~ ${endDate || '...'}` : t('allRecords');
   const generatedAt = new Date().toLocaleString(LOCALE_BY_LANG[state.lang] || 'en-US');
-  const totalAmount = records.reduce((sum, row) => sum + Number(row.total || 0), 0);
+  const totalPurchaseAmount = records.filter((r) => r.type === 'purchase').reduce((s, r) => s + Number(r.total || 0), 0);
+  const totalSaleAmount = records.filter((r) => r.type === 'sale').reduce((s, r) => s + Number(r.total || 0), 0);
+  const totalIncomingItems = incoming.reduce((s, i) => s + Number(i.quantity || 0), 0);
+  const totalOutgoingItems = outgoing.reduce((s, i) => s + Number(i.quantity || 0), 0);
+  const totalStockItems = stock.reduce((s, i) => s + Number(i.quantity || 0), 0);
 
-  const txRows = records.map((row, idx) => {
-    const items = (row.items || []).length
-      ? row.items.map((item) => `${item.description || row.description || ''} | ${item.quantity || ''} ${item.unit || ''} | ${formatMoney(item.unitPrice || 0)} | ${formatMoney(item.lineTotal || 0)}`).join('<br/>')
-      : `${row.description || ''} | ${row.quantity || ''} ${row.unit || ''} | ${formatMoney(row.unitPrice || 0)} | ${formatMoney(row.total || 0)}`;
+  const individualsRows = clientGroups.length
+    ? clientGroups.map((g, idx) => `<tr><td>${idx + 1}</td><td>${g.clientId}</td><td>${g.clientName || ''}</td><td>${g.phone || ''}</td><td>${g.address || ''}</td><td>${g.records.length}</td></tr>`).join('')
+    : `<tr><td colspan="6">${t('noRecords')}</td></tr>`;
 
-    return `<tr>
-      <td>${idx + 1}</td>
-      <td>${getRecordDate(row) || ''}</td>
-      <td>${row.transactionCode || ''}</td>
-      <td>${row.type || ''}</td>
-      <td>${formatMoney(row.total || 0)}</td>
-      <td>${row.paymentMethod || '-'}</td>
-      <td>${row.category || ''}<br/>${row.description || ''}</td>
-      <td>${items}</td>
-      <td>${row.supplier || ''}</td>
-      <td>${row.observation || ''}</td>
-      <td>${row.vehiclePlate || ''}<br/>${row.serialNumber || ''}</td>
-    </tr>`;
-  }).join('');
+  const detailRows = records.length
+    ? records.map((r, idx) => `<tr><td>${idx + 1}</td><td>${getRecordDate(r) || ''}</td><td>${r.clientId || ''}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.address || ''}</td><td>${r.type || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total || 0)}</td><td>${r.category || ''}</td><td>${r.description || ''}</td><td>${r.quantity || ''}</td><td>${formatMoney(r.unitPrice || 0)}</td><td>${r.supplier || ''}</td><td>${r.observation || ''}</td><td>${r.vehiclePlate || ''}</td><td>${r.serialNumber || ''}</td></tr>`).join('')
+    : `<tr><td colspan="17">${t('noRecords')}</td></tr>`;
 
   return `
     <div class="a4-sheet kobutsu-report-sheet">
       <div class="copy">
-        <h2>${t('fullKobutsuHistoryTitle')}</h2>
-        <p><strong>${t('reportPeriod')}:</strong> ${periodLabel} | <strong>${t('generatedAt')}:</strong> ${generatedAt}</p>
-
-        <h3>${t('clientName')}</h3>
-        <p>
-          <strong>${t('clientId')}:</strong> ${clientId}<br/>
-          <strong>${t('clientName')}:</strong> ${client.clientName || ''}<br/>
-          <strong>${t('phone')}:</strong> ${client.phone || ''}<br/>
-          <strong>${t('address')}:</strong> ${client.address || ''}
-        </p>
+        <h2>${t('fullKobutsuPeriodPdf')}</h2>
+        <p><strong>${t('periodReport')}:</strong> ${periodLabel} | <strong>${t('generatedAt')}:</strong> ${generatedAt}</p>
 
         <h3>${t('summaryTitle')}</h3>
-        <p><strong>${t('totalTransactions')}:</strong> ${records.length} | <strong>${t('total')}:</strong> ${formatMoney(totalAmount)}</p>
+        <p><strong>${t('totalClients')}:</strong> ${clientGroups.length} | <strong>${t('totalTransactions')}:</strong> ${records.length}</p>
+        <p><strong>${t('totalIncomingItems')}:</strong> ${totalIncomingItems} | <strong>${t('totalOutgoingItems')}:</strong> ${totalOutgoingItems} | <strong>${t('totalStockItems')}:</strong> ${totalStockItems}</p>
+        <p><strong>${t('totalPurchaseAmount')}:</strong> ${formatMoney(totalPurchaseAmount)} | <strong>${t('totalSaleAmount')}:</strong> ${formatMoney(totalSaleAmount)}</p>
+
+        <h3>${t('allIndividuals')}</h3>
+        <table>
+          <thead><tr><th>#</th><th>${t('clientId')}</th><th>${t('clientName')}</th><th>${t('phone')}</th><th>${t('address')}</th><th>${t('totalTransactions')}</th></tr></thead>
+          <tbody>${individualsRows}</tbody>
+        </table>
+
+        <h3>${t('incomingItems')}</h3>
+        <table>
+          <thead><tr><th>#</th><th>${t('entryDate')}</th><th>${t('clientId')}</th><th>${t('clientName')}</th><th>${t('transactionCode')}</th><th>${t('category')}</th><th>${t('description')}</th><th>${t('quantity')}</th><th>${t('unitPrice')}</th><th>${t('total')}</th><th>${t('supplier')}</th></tr></thead>
+          <tbody>${renderItemsSectionRows(incoming)}</tbody>
+        </table>
+
+        <h3>${t('outgoingItems')}</h3>
+        <table>
+          <thead><tr><th>#</th><th>${t('entryDate')}</th><th>${t('clientId')}</th><th>${t('clientName')}</th><th>${t('transactionCode')}</th><th>${t('category')}</th><th>${t('description')}</th><th>${t('quantity')}</th><th>${t('unitPrice')}</th><th>${t('total')}</th><th>${t('destination')}</th></tr></thead>
+          <tbody>${renderItemsSectionRows(outgoing)}</tbody>
+        </table>
+
+        <h3>${t('stockItems')}</h3>
+        <table>
+          <thead><tr><th>#</th><th>${t('category')}</th><th>${t('description')}</th><th>${t('quantity')}</th><th>${t('unitPrice')}</th><th>${t('total')}</th><th>${t('vehiclePlate')}</th><th>${t('serialNumber')}</th></tr></thead>
+          <tbody>${stock.length ? stock.map((item, idx) => `<tr><td>${idx + 1}</td><td>${item.category || ''}</td><td>${item.description || ''}</td><td>${item.quantity || 0}</td><td>${formatMoney(item.unitPrice || 0)}</td><td>${formatMoney((item.unitPrice || 0) * (item.quantity || 0))}</td><td>${item.vehiclePlate || ''}</td><td>${item.serialNumber || ''}</td></tr>`).join('') : `<tr><td colspan="8">${t('noRecords')}</td></tr>`}</tbody>
+        </table>
 
         <h3>${t('historyReport')}</h3>
         <table>
-          <thead>
-            <tr>
-              <th>#</th><th>${t('entryDate')}</th><th>${t('transactionCode')}</th><th>${t('type')}</th><th>${t('total')}</th><th>${t('paymentMethod')}</th><th>${t('category')}/${t('description')}</th><th>${t('itemsTitle')}</th><th>${t('supplier')}</th><th>${t('destination')}</th><th>${t('vehiclePlate')}/${t('serialNumber')}</th>
-            </tr>
-          </thead>
-          <tbody>${txRows || `<tr><td colspan="11">${t('noRecords')}</td></tr>`}</tbody>
+          <thead><tr><th>#</th><th>${t('entryDate')}</th><th>${t('clientId')}</th><th>${t('clientName')}</th><th>${t('phone')}</th><th>${t('address')}</th><th>${t('type')}</th><th>${t('transactionCode')}</th><th>${t('total')}</th><th>${t('category')}</th><th>${t('description')}</th><th>${t('quantity')}</th><th>${t('unitPrice')}</th><th>${t('supplier')}</th><th>${t('destination')}</th><th>${t('vehiclePlate')}</th><th>${t('serialNumber')}</th></tr></thead>
+          <tbody>${detailRows}</tbody>
         </table>
       </div>
     </div>`;
 }
 
-function saveClientFullHistoryPDF(clientId) {
-  const startDate = (document.getElementById('searchStartDate')?.value || '').trim();
-  const endDate = (document.getElementById('searchEndDate')?.value || '').trim();
-  const records = getClientRecordsByPeriod(clientId, startDate, endDate);
+function generateFullPeriodKobutsuPdf(startDate, endDate) {
+  const records = getRecordsByPeriod(startDate, endDate);
   if (!records.length) {
     alert(t('noRecords'));
     return;
   }
-
-  const reportHTML = buildClientFullReportHTML(clientId, records, startDate, endDate);
+  const reportHTML = buildFullPeriodPdfHtml(startDate, endDate);
   const win = window.open('', '_blank', 'noopener,noreferrer');
   if (!win) return;
-  win.document.write(`<!doctype html><html><head><meta charset="utf-8"/><title>${t('fullKobutsuHistoryTitle')} - ${clientId}.pdf</title><style>body{font-family:Arial,sans-serif;padding:12px}table{width:100%;border-collapse:collapse}th,td{border:1px solid #333;padding:4px;font-size:11px;vertical-align:top}h2,h3{margin:.4rem 0} @media print {.kobutsu-report-sheet{width:100%}}</style></head><body>${reportHTML}</body></html>`);
+  win.document.write(`<!doctype html><html><head><meta charset="utf-8"/><title>${t('fullKobutsuPeriodPdf')}</title><style>body{font-family:Arial,sans-serif;padding:12px}table{width:100%;border-collapse:collapse;margin-bottom:10px}th,td{border:1px solid #333;padding:4px;font-size:10px;vertical-align:top}h2,h3{margin:.4rem 0}.copy{border:0;padding:0}</style></head><body>${reportHTML}</body></html>`);
   win.document.close();
   win.focus();
   setTimeout(() => win.print(), 200);
+}
+
+function saveFullPeriodKobutsuPdfFromFilters() {
+  const startDate = (document.getElementById('searchStartDate')?.value || '').trim();
+  const endDate = (document.getElementById('searchEndDate')?.value || '').trim();
+  generateFullPeriodKobutsuPdf(startDate, endDate);
 }
 
 
@@ -998,6 +1097,7 @@ function init() {
   createForm('sale', document.getElementById('saleFormContainer'));
   document.getElementById('searchInput').addEventListener('input', refreshSearch);
   document.getElementById('searchTypeFilter').addEventListener('change', refreshSearch);
+  document.getElementById('savePeriodPdf')?.addEventListener('click', saveFullPeriodKobutsuPdfFromFilters);
   document.getElementById('chartType').addEventListener('change', refreshSummary);
   document.getElementById('categoryChartType').addEventListener('change', refreshSummary);
   document.getElementById('descriptionChartType').addEventListener('change', refreshSummary);
