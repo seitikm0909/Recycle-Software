@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#16324f" />
+  <title>Recycle Software</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 data-i18n="appTitle">Sistema de Reciclagem</h1>
+    <div class="header-actions">
+      <span id="deviceBadge" class="device-badge" aria-live="polite"></span>
+      <label for="languageSelect" data-i18n="language">Idioma</label>
+      <select id="languageSelect"></select>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="purchase" data-i18n="purchaseTab">Compra</button>
+    <button class="tab" data-tab="sale" data-i18n="saleTab">Venda</button>
+    <button class="tab" data-tab="search" data-i18n="searchTab">Clientes</button>
+    <button class="tab" data-tab="summary" data-i18n="summaryTab">Resumo</button>
+    <button class="tab" data-tab="settings" data-i18n="settingsTab">Configurações</button>
+  </nav>
+
+  <main>
+    <section class="tab-panel active" id="panel-purchase">
+      <h2 data-i18n="purchaseFormTitle">Cadastro de Compra</h2>
+      <div id="purchaseFormContainer"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-sale">
+      <h2 data-i18n="saleFormTitle">Cadastro de Venda</h2>
+      <div id="saleFormContainer"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-search">
+      <h2 data-i18n="searchTitle">Busca de Clientes</h2>
+      <div class="card">
+        <div class="form-grid two-cols">
+          <label>
+            <span data-i18n="searchInput">Buscar por nome, ID ou telefone</span>
+            <input id="searchInput" type="text" data-locale-placeholder="search" placeholder="Maria / A1B2C3D4 / +55..." />
+          </label>
+          <label>
+            <span data-i18n="filterType">Tipo</span>
+            <select id="searchTypeFilter">
+              <option value="all" data-i18n="all">Todos</option>
+              <option value="purchase" data-i18n="purchaseTab">Compra</option>
+              <option value="sale" data-i18n="saleTab">Venda</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-grid two-cols">
+          <label>
+            <span data-i18n="startDate">Data inicial</span>
+            <input id="searchStartDate" type="date" />
+          </label>
+          <label>
+            <span data-i18n="endDate">Data final</span>
+            <input id="searchEndDate" type="date" />
+          </label>
+        </div>
+        <div class="button-row">
+          <button id="savePeriodPdf" data-i18n="saveFullPeriodKobutsuPdf">Salvar PDF geral do período</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="clientId">ID Cliente</th>
+                <th data-i18n="clientName">Nome do Cliente</th>
+                <th data-i18n="phone">Telefone</th>
+                <th data-i18n="entryDate">Data de Entrada</th>
+                <th data-i18n="transactionCode">Código de Transação</th>
+                <th data-i18n="total">Total</th>
+                <th data-i18n="type">Tipo</th>
+                <th data-i18n="actions">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="searchResults"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-summary">
+      <h2 data-i18n="summaryTitle">Resumo e Gráficos</h2>
+      <div class="card summary-card">
+        <div class="form-grid three-cols">
+          <label>
+            <span data-i18n="invoiceRate">% do インボイス</span>
+            <input id="invoiceRate" type="number" step="0.01" placeholder="2" />
+          </label>
+          <label>
+            <span data-i18n="consumptionTaxRate">% do 消費税</span>
+            <input id="consumptionTaxRate" type="number" step="0.01" placeholder="10" />
+          </label>
+          <label>
+            <span data-i18n="consumptionTaxMode">消費税</span>
+            <select id="consumptionTaxMode">
+              <option value="included" data-i18n="taxIncluded">Incluso</option>
+              <option value="separate" data-i18n="taxSeparate">Calculado à parte</option>
+            </select>
+          </label>
+        </div>
+        <div class="button-row">
+          <button id="printHistory" data-i18n="printHistory">Imprimir histórico Kobutsu</button>
+        </div>
+        <div class="summary-top">
+          <div class="metric"><span data-i18n="totalTransactions">Transações</span><strong id="metricTransactions">0</strong></div>
+          <div class="metric"><span data-i18n="purchaseVolume">Volume Compra</span><strong id="metricPurchase">0</strong></div>
+          <div class="metric"><span data-i18n="saleVolume">Volume Venda</span><strong id="metricSale">0</strong></div>
+          <div class="metric"><span data-i18n="operationalProfit">Lucro Operacional</span><strong id="metricProfit">0</strong></div>
+        </div>
+        <div class="chart-controls">
+          <label>
+            <span data-i18n="chartType">Tipo de gráfico</span>
+            <select id="chartType">
+              <option value="bar" data-i18n="bar">Picos (Barras)</option>
+              <option value="pie" data-i18n="pie">Pizza</option>
+            </select>
+          </label>
+        </div>
+        <canvas id="summaryChart" width="900" height="380"></canvas>
+        <div class="summary-grid">
+          <div>
+            <h3 data-i18n="summaryByPeriod">Resumo por período</h3>
+            <label>
+              <span data-i18n="periodType">Período</span>
+              <select id="periodType">
+                <option value="day" data-i18n="daily">Dia</option>
+                <option value="month" data-i18n="monthly">Mês</option>
+                <option value="year" data-i18n="yearly">Ano</option>
+              </select>
+            </label>
+            <canvas id="periodChart" width="420" height="220"></canvas>
+            <div class="table-wrap"><table><thead><tr><th data-i18n="period">Período</th><th data-i18n="total">Total</th></tr></thead><tbody id="periodSummaryBody"></tbody></table></div>
+          </div>
+          <div>
+            <h3 data-i18n="summaryByCategory">Resumo por categoria</h3>
+            <label>
+              <span data-i18n="chartType">Tipo de gráfico</span>
+              <select id="categoryChartType"><option value="bar" data-i18n="bar">Picos (Barras)</option><option value="pie" data-i18n="pie">Pizza</option></select>
+            </label>
+            <canvas id="categoryChart" width="420" height="220"></canvas>
+            <div class="table-wrap"><table><thead><tr><th data-i18n="category">Categoria</th><th data-i18n="total">Total</th></tr></thead><tbody id="categorySummaryBody"></tbody></table></div>
+          </div>
+          <div>
+            <h3 data-i18n="summaryByDescription">Resumo por descrição</h3>
+            <label>
+              <span data-i18n="chartType">Tipo de gráfico</span>
+              <select id="descriptionChartType"><option value="bar" data-i18n="bar">Picos (Barras)</option><option value="pie" data-i18n="pie">Pizza</option></select>
+            </label>
+            <canvas id="descriptionChart" width="420" height="220"></canvas>
+            <div class="table-wrap"><table><thead><tr><th data-i18n="description">Descrição</th><th data-i18n="total">Total</th></tr></thead><tbody id="descriptionSummaryBody"></tbody></table></div>
+          </div>
+        </div>
+        <div class="summary-line-card">
+          <h3 data-i18n="purchaseSaleLine">Volume compra/venda por período</h3>
+          <canvas id="volumeLineChart" width="1200" height="260"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="tab-panel" id="panel-settings">
+      <h2 data-i18n="settingsTitle">Configurações</h2>
+      <div class="card">
+        <div class="form-grid two-cols">
+          <label>
+            <span data-i18n="companyName">Nome da empresa</span>
+            <input id="companyName" type="text" data-locale-placeholder="companyName" placeholder="Recycle Software Ltda" />
+          </label>
+          <label>
+            <span data-i18n="companyAddress">Endereço da empresa</span>
+            <input id="companyAddress" type="text" data-locale-placeholder="companyAddress" placeholder="Rua Exemplo, 123" />
+          </label>
+          <label>
+            <span data-i18n="defaultCategory">Categoria padrão</span>
+            <input id="defaultCategory" type="text" data-locale-placeholder="defaultCategory" placeholder="Metal" />
+          </label>
+          <label>
+            <span data-i18n="currency">Moeda</span>
+            <input id="currency" type="text" data-locale-placeholder="currency" placeholder="BRL" />
+          </label>
+        </div>
+        <div class="button-row">
+          <button id="saveSettings" class="primary" data-i18n="save">Salvar</button>
+          <button id="exportExcel" data-i18n="exportExcel">Download Excel</button>
+        </div>
+        <hr class="section-divider" />
+        <h3 data-i18n="memoryManagerTitle">Gerenciar memórias de preenchimento</h3>
+        <div class="form-grid three-cols">
+          <label>
+            <span data-i18n="transactionType">Tipo de transação</span>
+            <select id="memoryTypeSelect">
+              <option value="purchase" data-i18n="purchaseTab">Compra</option>
+              <option value="sale" data-i18n="saleTab">Venda</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="fieldLabel">Campo</span>
+            <select id="memoryFieldSelect">
+              <option value="category" data-i18n="category">Categoria</option>
+              <option value="supplier" data-i18n="supplier">Fornecedor</option>
+              <option value="description" data-i18n="description">Descrição</option>
+              <option value="vehiclePlate" data-i18n="vehiclePlate">Placa do carro</option>
+              <option value="serialNumber" data-i18n="serialNumber">Número de série</option>
+            </select>
+          </label>
+        </div>
+        <ul id="memoryList" class="memory-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <section class="print-area" id="printArea"></section>
+
+  <template id="transactionFormTemplate">
+    <form class="card transaction-form">
+      <div class="form-grid three-cols">
+        <label><span data-i18n="clientId">ID Cliente</span><input name="clientId" /><small class="small-muted" data-i18n="clientIdHint">Digite ID existente para preencher cliente</small></label>
+        <label><span data-i18n="entryDate">Data de Entrada</span><input name="entryDate" type="date" required /></label>
+        <label><span data-i18n="transactionCode">Código de Transação</span><input name="transactionCode" required /></label>
+      </div>
+      <div class="form-grid three-cols">
+        <label><span data-i18n="clientName">Nome do Cliente</span><input name="clientName" required /></label>
+        <label><span data-i18n="phone">Telefone</span><input name="phone" /></label>
+        <label><span data-i18n="address">Endereço</span><input name="address" /></label>
+      </div>
+      <div class="form-grid three-cols">
+        <label><span data-i18n="category">Categoria</span><input name="category" /></label>
+        <label><span data-i18n="serialNumber">Número de série</span><input name="serialNumber" /></label>
+        <label><span data-i18n="supplier">Fornecedor</span><input name="supplier" /></label>
+      </div>
+      <div class="form-grid two-cols">
+        <label><span data-i18n="description">Descrição</span><input name="description" /></label>
+        <label><span data-i18n="vehiclePlate">Placa do carro</span><input name="vehiclePlate" /></label>
+      </div>
+      <div class="form-grid two-cols">
+        <label class="checkbox-label compact"><input name="hasInvoice" type="checkbox" /><span data-i18n="hasInvoice">Possui インボイス</span></label>
+        <label class="invoice-number-field is-hidden"><span data-i18n="invoiceNumber">Número do インボイス</span><input name="invoiceNumber" /></label>
+      </div>
+
+      <h3 data-i18n="itemsTitle">Itens (preenchimento automático até 15 linhas)</h3>
+      <div class="table-wrap">
+        <table class="items-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th data-i18n="description">Descrição</th>
+              <th data-i18n="quantity">Quantidade</th>
+              <th data-i18n="unit">Unidade</th>
+              <th data-i18n="unitPrice">Preço Unitário</th>
+              <th data-i18n="total">Total</th>
+            </tr>
+          </thead>
+          <tbody class="itemsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="form-grid three-cols">
+        <label><span data-i18n="quantity">Quantidade</span><input name="quantity" type="number" step="0.01" /></label>
+        <label><span data-i18n="unit">Unidade</span><input name="unit" /></label>
+        <label><span data-i18n="unitPrice">Preço Unitário</span><input name="unitPrice" type="number" step="0.01" /></label>
+      </div>
+      <div class="form-grid three-cols">
+        <label class="checkbox-label"><input name="manualTotalEnabled" type="checkbox" /><span data-i18n="manualTotal">Usar total manual</span></label>
+        <label><span data-i18n="total">Total</span><input name="total" type="number" step="0.01" /></label>
+        <label><span data-i18n="observation">Observação</span><input name="observation" /></label>
+      </div>
+      <div class="button-row">
+        <button type="submit" class="primary" data-i18n="save">Salvar</button>
+        <button type="button" class="printBtn" data-i18n="printA4">Imprimir A4 (2 vias)</button>
+      </div>
+    </form>
+  </template>
+
+  <datalist id="purchase-category-suggestions"></datalist>
+  <datalist id="purchase-supplier-suggestions"></datalist>
+  <datalist id="purchase-description-suggestions"></datalist>
+  <datalist id="purchase-vehiclePlate-suggestions"></datalist>
+  <datalist id="purchase-serialNumber-suggestions"></datalist>
+  <datalist id="sale-category-suggestions"></datalist>
+  <datalist id="sale-supplier-suggestions"></datalist>
+  <datalist id="sale-description-suggestions"></datalist>
+  <datalist id="sale-vehiclePlate-suggestions"></datalist>
+  <datalist id="sale-serialNumber-suggestions"></datalist>
+  <script src="app.js"></script>
+</body>
+</html>
