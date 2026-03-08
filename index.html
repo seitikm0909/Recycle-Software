@@ -193,6 +193,15 @@
           <button id="exportExcel" data-i18n="exportExcel">Download Excel</button>
         </div>
         <hr class="section-divider" />
+        <h3 data-i18n="systemInfoTitle">System information</h3>
+        <div class="system-info-grid" id="systemInfoPanel">
+          <div class="system-info-item"><span data-i18n="currentDeviceId">Current device ID</span><strong id="systemDeviceId">-</strong></div>
+          <div class="system-info-item"><span data-i18n="currentDeviceName">Current device name</span><strong id="systemDeviceName">-</strong></div>
+          <div class="system-info-item"><span data-i18n="currentDeviceType">Current device type</span><strong id="systemDeviceType">-</strong></div>
+          <div class="system-info-item"><span data-i18n="lastSyncTime">Last sync time</span><strong id="systemLastSyncTime">-</strong></div>
+          <div class="system-info-item"><span data-i18n="syncStatusSummary">Sync status summary</span><strong id="systemSyncSummary">-</strong></div>
+        </div>
+        <hr class="section-divider" />
         <h3 data-i18n="memoryManagerTitle">Gerenciar memórias de preenchimento</h3>
         <div class="form-grid three-cols">
           <label>
@@ -290,6 +299,14 @@
   <datalist id="sale-description-suggestions"></datalist>
   <datalist id="sale-vehiclePlate-suggestions"></datalist>
   <datalist id="sale-serialNumber-suggestions"></datalist>
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/devices.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/audit.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/inventory.js"></script>
+  <script src="js/transactions.js"></script>
   <script src="js/modals.js"></script>
   <script src="js/print.js"></script>
   <script src="js/clients.js"></script>
