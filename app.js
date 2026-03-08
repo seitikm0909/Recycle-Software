@@ -1,19 +1,51 @@
 const LANGUAGES = {
-  pt: { label: 'Português', appTitle: 'Sistema de Reciclagem', language: 'Idioma', purchaseTab: 'Compra', saleTab: 'Venda', searchTab: 'Clientes', summaryTab: 'Resumo', settingsTab: 'Configurações', purchaseFormTitle: 'Cadastro de Compra', saleFormTitle: 'Cadastro de Venda', searchTitle: 'Busca de Clientes', searchInput: 'Buscar por nome, ID ou telefone', filterType: 'Tipo', all: 'Todos', clientId: 'ID Cliente', clientName: 'Nome do Cliente', phone: 'Telefone', address: 'Endereço', entryDate: 'Data de Entrada', transactionCode: 'Código de Transação', total: 'Total', type: 'Tipo', actions: 'Ações', summaryTitle: 'Resumo e Gráficos', totalTransactions: 'Transações', purchaseVolume: 'Volume Compra', saleVolume: 'Volume Venda', chartType: 'Tipo de gráfico', bar: 'Picos (Barras)', pie: 'Pizza', settingsTitle: 'Configurações', companyName: 'Nome da empresa', companyAddress: 'Endereço da empresa', defaultCategory: 'Categoria padrão', currency: 'Moeda', save: 'Salvar', exportExcel: 'Download Excel', category: 'Categoria', serialNumber: 'Número de série', supplier: 'Fornecedor', description: 'Descrição', vehiclePlate: 'Placa do carro', itemsTitle: 'Itens (preenchimento automático até 15 linhas)', quantity: 'Quantidade', unit: 'Unidade', unitPrice: 'Preço Unitário', manualTotal: 'Usar total manual', observation: 'Observação', printA4: 'Imprimir A4 (2 vias)', printHistory: 'Imprimir histórico Kobutsu', deviceMode: 'Modo', edit: 'Editar', update: 'Atualizar', printDaiso: 'Imprimir 領収書 DAISO G-92 No.2670', summaryByPeriod: 'Resumo por período', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', receipt: 'Recibo', purchaseLabel: 'Compra', saleLabel: 'Venda', noRecords: 'Sem registros', issueDate: 'Emissão', signature: 'Assinatura do Cliente', historyReport: 'Relatório histórico Kobutsu', purchasesLabel: 'Compras', salesLabel: 'Vendas' },
-  es: { label: 'Español', appTitle: 'Sistema de Reciclaje', language: 'Idioma', purchaseTab: 'Compra', saleTab: 'Venta', searchTab: 'Clientes', summaryTab: 'Resumen', settingsTab: 'Configuración', purchaseFormTitle: 'Registro de Compra', saleFormTitle: 'Registro de Venta', searchTitle: 'Búsqueda de Clientes', searchInput: 'Buscar por nombre, ID o teléfono', filterType: 'Tipo', all: 'Todos', clientId: 'ID Cliente', clientName: 'Nombre del Cliente', phone: 'Teléfono', address: 'Dirección', entryDate: 'Fecha de Entrada', transactionCode: 'Código de Transacción', total: 'Total', type: 'Tipo', actions: 'Acciones', summaryTitle: 'Resumen y Gráficos', totalTransactions: 'Transacciones', purchaseVolume: 'Volumen Compra', saleVolume: 'Volumen Venta', chartType: 'Tipo de gráfico', bar: 'Picos (Barras)', pie: 'Pastel', settingsTitle: 'Configuración', companyName: 'Nombre de la empresa', companyAddress: 'Dirección de la empresa', defaultCategory: 'Categoría predeterminada', currency: 'Moneda', save: 'Guardar', exportExcel: 'Descargar Excel', category: 'Categoría', serialNumber: 'Número de serie', supplier: 'Proveedor', description: 'Descripción', vehiclePlate: 'Placa del coche', itemsTitle: 'Ítems (llenado automático hasta 15 líneas)', quantity: 'Cantidad', unit: 'Unidad', unitPrice: 'Precio Unitario', manualTotal: 'Usar total manual', observation: 'Observación', printA4: 'Imprimir A4 (2 copias)', printHistory: 'Imprimir historial Kobutsu', deviceMode: 'Modo', edit: 'Editar', update: 'Atualizar', printDaiso: 'Imprimir 領収書 DAISO G-92 No.2670', summaryByPeriod: 'Resumo por período', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', receipt: 'Recibo', purchaseLabel: 'Compra', saleLabel: 'Venda', noRecords: 'Sem registros', issueDate: 'Emissão', signature: 'Assinatura do Cliente', historyReport: 'Relatório histórico Kobutsu', purchasesLabel: 'Compras', salesLabel: 'Vendas' },
-  en: { label: 'English', appTitle: 'Recycling System', language: 'Language', purchaseTab: 'Purchase', saleTab: 'Sale', searchTab: 'Clients', summaryTab: 'Summary', settingsTab: 'Settings', purchaseFormTitle: 'Purchase Entry', saleFormTitle: 'Sales Entry', searchTitle: 'Client Search', searchInput: 'Search by name, ID or phone', filterType: 'Type', all: 'All', clientId: 'Client ID', clientName: 'Client Name', phone: 'Phone', address: 'Address', entryDate: 'Entry Date', transactionCode: 'Transaction Code', total: 'Total', type: 'Type', actions: 'Actions', summaryTitle: 'Summary and Charts', totalTransactions: 'Transactions', purchaseVolume: 'Purchase Volume', saleVolume: 'Sales Volume', chartType: 'Chart type', bar: 'Peaks (Bar)', pie: 'Pie', settingsTitle: 'Settings', companyName: 'Company name', companyAddress: 'Company address', defaultCategory: 'Default category', currency: 'Currency', save: 'Save', exportExcel: 'Download Excel', category: 'Category', serialNumber: 'Serial Number', supplier: 'Supplier', description: 'Description', vehiclePlate: 'Vehicle Plate', itemsTitle: 'Items (auto-fill up to 15 rows)', quantity: 'Quantity', unit: 'Unit', unitPrice: 'Unit Price', manualTotal: 'Use manual total', observation: 'Observation', printA4: 'Print A4 (2 copies)', printHistory: 'Print Kobutsu history', deviceMode: 'Mode', edit: 'Edit', update: 'Update', printDaiso: 'Print 領収書 DAISO G-92 No.2670', summaryByPeriod: 'Summary by period', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', receipt: 'Receipt', purchaseLabel: 'Purchase', saleLabel: 'Sale', noRecords: 'No records', issueDate: 'Issue date', signature: 'Customer signature', historyReport: 'Kobutsu history report', purchasesLabel: 'Purchases', salesLabel: 'Sales' },
-  ja: { label: '日本語', appTitle: 'リサイクル管理システム', language: '言語', purchaseTab: '購入', saleTab: '販売', searchTab: '顧客', summaryTab: '概要', settingsTab: '設定', purchaseFormTitle: '購入登録', saleFormTitle: '販売登録', searchTitle: '顧客検索', searchInput: '名前、ID、電話で検索', filterType: '種類', all: 'すべて', clientId: '顧客ID', clientName: '顧客名', phone: '電話', address: '住所', entryDate: '入力日', transactionCode: '取引コード', total: '合計', type: '種類', actions: '操作', summaryTitle: '概要とグラフ', totalTransactions: '取引数', purchaseVolume: '購入量', saleVolume: '販売量', chartType: 'グラフ種類', bar: 'ピーク（棒）', pie: '円グラフ', settingsTitle: '設定', companyName: '会社名', companyAddress: '会社住所', defaultCategory: '既定カテゴリ', currency: '通貨', save: '保存', exportExcel: 'Excelダウンロード', category: 'カテゴリ', serialNumber: 'シリアル番号', supplier: '供給業者', description: '説明', vehiclePlate: '車両ナンバー', itemsTitle: '項目（最大15行自動入力）', quantity: '数量', unit: '単位', unitPrice: '単価', manualTotal: '手動合計を使用', observation: '備考', printA4: 'A4印刷（2部）', printHistory: '古物履歴を印刷', deviceMode: 'モード', edit: '編集', update: '更新', printDaiso: '領収書 DAISO G-92 No.2670 を印刷', summaryByPeriod: '期間別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', receipt: '領収書', purchaseLabel: '購入', saleLabel: '販売', noRecords: 'データなし', issueDate: '発行日', signature: 'お客様署名', historyReport: '古物履歴レポート', purchasesLabel: '購入', salesLabel: '販売' },
-  vi: { label: 'Tiếng Việt', appTitle: 'Hệ thống Tái chế', language: 'Ngôn ngữ', purchaseTab: 'Mua vào', saleTab: 'Bán ra', searchTab: 'Khách hàng', summaryTab: 'Tổng quan', settingsTab: 'Cài đặt', purchaseFormTitle: 'Nhập Mua', saleFormTitle: 'Nhập Bán', searchTitle: 'Tìm Khách hàng', searchInput: 'Tìm theo tên, ID hoặc điện thoại', filterType: 'Loại', all: 'Tất cả', clientId: 'ID Khách', clientName: 'Tên Khách', phone: 'Điện thoại', address: 'Địa chỉ', entryDate: 'Ngày nhập', transactionCode: 'Mã giao dịch', total: 'Tổng', type: 'Loại', actions: 'Hành động', summaryTitle: 'Tổng quan và Biểu đồ', totalTransactions: 'Giao dịch', purchaseVolume: 'Khối lượng mua', saleVolume: 'Khối lượng bán', chartType: 'Kiểu biểu đồ', bar: 'Đỉnh (Cột)', pie: 'Tròn', settingsTitle: 'Cài đặt', companyName: 'Tên công ty', companyAddress: 'Địa chỉ công ty', defaultCategory: 'Danh mục mặc định', currency: 'Tiền tệ', save: 'Lưu', exportExcel: 'Tải Excel', category: 'Danh mục', serialNumber: 'Số serial', supplier: 'Nhà cung cấp', description: 'Mô tả', vehiclePlate: 'Biển số xe', itemsTitle: 'Mục hàng (tự động đến 15 dòng)', quantity: 'Số lượng', unit: 'Đơn vị', unitPrice: 'Đơn giá', manualTotal: 'Dùng tổng thủ công', observation: 'Ghi chú', printA4: 'In A4 (2 bản)', printHistory: 'In lịch sử Kobutsu', deviceMode: 'Chế độ', edit: 'Sửa', update: 'Cập nhật', printDaiso: 'In 領収書 DAISO G-92 No.2670', summaryByPeriod: 'Tóm tắt theo kỳ', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', receipt: 'Biên nhận', purchaseLabel: 'Mua', saleLabel: 'Bán', noRecords: 'Không có dữ liệu', issueDate: 'Ngày phát hành', signature: 'Chữ ký khách hàng' },
-  ur: { label: 'پاکستان (اردو)', appTitle: 'ری سائیکلنگ سسٹم', language: 'زبان', purchaseTab: 'خرید', saleTab: 'فروخت', searchTab: 'گاہک', summaryTab: 'خلاصہ', settingsTab: 'ترتیبات', purchaseFormTitle: 'خرید اندراج', saleFormTitle: 'فروخت اندراج', searchTitle: 'گاہک تلاش', searchInput: 'نام، ID یا فون سے تلاش کریں', filterType: 'قسم', all: 'سب', clientId: 'گاہک ID', clientName: 'گاہک کا نام', phone: 'فون', address: 'پتہ', entryDate: 'داخلہ تاریخ', transactionCode: 'ٹرانزیکشن کوڈ', total: 'کل', type: 'قسم', actions: 'اقدامات', summaryTitle: 'خلاصہ اور چارٹس', totalTransactions: 'ٹرانزیکشنز', purchaseVolume: 'خرید حجم', saleVolume: 'فروخت حجم', chartType: 'چارٹ قسم', bar: 'بار', pie: 'پائی', settingsTitle: 'ترتیبات', companyName: 'کمپنی نام', companyAddress: 'کمپنی پتہ', defaultCategory: 'ڈیفالٹ کیٹیگری', currency: 'کرنسی', save: 'محفوظ کریں', exportExcel: 'Excel ڈاؤن لوڈ', category: 'کیٹیگری', serialNumber: 'سیریل نمبر', supplier: 'سپلائر', description: 'تفصیل', vehiclePlate: 'گاڑی نمبر پلیٹ', itemsTitle: 'آئٹمز (15 لائن تک خودکار)', quantity: 'مقدار', unit: 'یونٹ', unitPrice: 'فی یونٹ قیمت', manualTotal: 'دستی کل استعمال کریں', observation: 'نوٹ', printA4: 'A4 پرنٹ (2 کاپیاں)', printHistory: 'Kobutsu ہسٹری پرنٹ کریں', deviceMode: 'موڈ', edit: 'ترمیم', update: 'اپ ڈیٹ', printDaiso: '領収書 DAISO G-92 No.2670 پرنٹ', summaryByPeriod: 'مدت کے لحاظ سے خلاصہ', periodType: 'مدت', daily: 'دن', monthly: 'مہینہ', yearly: 'سال', period: 'مدت', summaryByCategory: 'زمرہ خلاصہ', summaryByDescription: 'تفصیل خلاصہ', receipt: 'رسید', purchaseLabel: 'خرید', saleLabel: 'فروخت', noRecords: 'ریکارڈ نہیں', issueDate: 'اجرا تاریخ', signature: 'کسٹمر دستخط' },
-  zh: { label: '中文', appTitle: '回收管理系统', language: '语言', purchaseTab: '采购', saleTab: '销售', searchTab: '客户', summaryTab: '汇总', settingsTab: '设置', purchaseFormTitle: '采购录入', saleFormTitle: '销售录入', searchTitle: '客户查询', searchInput: '按姓名、ID或电话搜索', filterType: '类型', all: '全部', clientId: '客户ID', clientName: '客户名称', phone: '电话', address: '地址', entryDate: '录入日期', transactionCode: '交易代码', total: '总计', type: '类型', actions: '操作', summaryTitle: '汇总与图表', totalTransactions: '交易数', purchaseVolume: '采购量', saleVolume: '销售量', chartType: '图表类型', bar: '柱状', pie: '饼图', settingsTitle: '设置', companyName: '公司名称', companyAddress: '公司地址', defaultCategory: '默认分类', currency: '货币', save: '保存', exportExcel: '下载Excel', category: '分类', serialNumber: '序列号', supplier: '供应商', description: '描述', vehiclePlate: '车牌', itemsTitle: '项目（自动填充最多15行）', quantity: '数量', unit: '单位', unitPrice: '单价', manualTotal: '使用手动总计', observation: '备注', printA4: 'A4打印（两份）', printHistory: '打印Kobutsu历史', deviceMode: '模式', edit: '编辑', update: '更新', printDaiso: '打印 領収書 DAISO G-92 No.2670', summaryByPeriod: '按周期汇总', periodType: '周期', daily: '日', monthly: '月', yearly: '年', period: '周期', summaryByCategory: '按分类汇总', summaryByDescription: '按描述汇总', receipt: '收据', purchaseLabel: '采购', saleLabel: '销售', noRecords: '无记录', issueDate: '签发日期', signature: '客户签名' },
-  si: { label: 'සිංහල (Sri Lanka)', appTitle: 'ප්‍රතිචක්‍රීකරණ පද්ධතිය', language: 'භාෂාව', purchaseTab: 'මිලදී ගැනීම', saleTab: 'විකිණීම', searchTab: 'ගනුදෙනුකරුවන්', summaryTab: 'සාරාංශය', settingsTab: 'සැකසුම්', purchaseFormTitle: 'මිලදී ගැනීම ඇතුළත් කිරීම', saleFormTitle: 'විකිණීම ඇතුළත් කිරීම', searchTitle: 'ගනුදෙනුකරු සෙවීම', searchInput: 'නම, ID, දුරකථන අනුව සෙවීම', filterType: 'වර්ගය', all: 'සියල්ල', clientId: 'ගනුදෙනුකරු ID', clientName: 'ගනුදෙනුකරු නම', phone: 'දුරකථන', address: 'ලිපිනය', entryDate: 'ඇතුල්වූ දිනය', transactionCode: 'ගනුදෙනු කේතය', total: 'එකතුව', type: 'වර්ගය', actions: 'ක්‍රියා', summaryTitle: 'සාරාංශ හා චාට්', totalTransactions: 'ගනුදෙනු', purchaseVolume: 'මිලදී ගැනීම පරිමාව', saleVolume: 'විකිණීම පරිමාව', chartType: 'චාට් වර්ගය', bar: 'බාර්', pie: 'පයි', settingsTitle: 'සැකසුම්', companyName: 'සමාගම් නම', companyAddress: 'සමාගම් ලිපිනය', defaultCategory: 'පෙරනිමි කාණ්ඩය', currency: 'මුදල් ඒකකය', save: 'සුරකින්න', exportExcel: 'Excel බාගන්න', category: 'කාණ්ඩය', serialNumber: 'සීරියල් අංකය', supplier: 'සැපයුම්කරු', description: 'විස්තරය', vehiclePlate: 'වාහන අංකය', itemsTitle: 'අයිතම (පේළි 15 දක්වා ස්වයංක්‍රීය)', quantity: 'ප්‍රමාණය', unit: 'ඒකකය', unitPrice: 'ඒකක මිල', manualTotal: 'අතින් එකතුව භාවිතා කරන්න', observation: 'සටහන', printA4: 'A4 මුද්‍රණය (පිටපත් 2)', printHistory: 'Kobutsu ඉතිහාසය මුද්‍රණය', deviceMode: 'මාදිලිය', edit: 'සංස්කරණය', update: 'යාවත්කාලීන', printDaiso: '領収書 DAISO G-92 No.2670 මුද්‍රණය', summaryByPeriod: 'කාල සාරාංශය', periodType: 'කාලය', daily: 'දින', monthly: 'මාස', yearly: 'වසර', period: 'කාලය', summaryByCategory: 'කාණ්ඩ සාරාංශය', summaryByDescription: 'විස්තර සාරාංශය', receipt: 'රිසිට්පත', purchaseLabel: 'මිලදී ගැනීම', saleLabel: 'විකිණීම', noRecords: 'දත්ත නොමැත', issueDate: 'නිකුත් දිනය', signature: 'ගනුදෙනුකරු අත්සන' }
+  pt: { label: 'Português', appTitle: 'Sistema de Reciclagem', language: 'Idioma', purchaseTab: 'Compra', saleTab: 'Venda', searchTab: 'Clientes', summaryTab: 'Resumo', settingsTab: 'Configurações', purchaseFormTitle: 'Cadastro de Compra', saleFormTitle: 'Cadastro de Venda', searchTitle: 'Busca de Clientes', searchInput: 'Buscar por nome, ID ou telefone', filterType: 'Tipo', all: 'Todos', clientId: 'ID Cliente', clientName: 'Nome do Cliente', phone: 'Telefone', address: 'Endereço', entryDate: 'Data de Entrada', transactionCode: 'Código de Transação', total: 'Total', type: 'Tipo', actions: 'Ações', summaryTitle: 'Resumo e Gráficos', totalTransactions: 'Transações', purchaseVolume: 'Volume Compra', saleVolume: 'Volume Venda', chartType: 'Tipo de gráfico', bar: 'Picos (Barras)', pie: 'Pizza', settingsTitle: 'Configurações', companyName: 'Nome da empresa', companyAddress: 'Endereço da empresa', defaultCategory: 'Categoria padrão', currency: 'Moeda', save: 'Salvar', exportExcel: 'Download Excel', category: 'Categoria', serialNumber: 'Número de série', supplier: 'Fornecedor', description: 'Descrição', vehiclePlate: 'Placa do carro', itemsTitle: 'Itens (preenchimento automático até 15 linhas)', quantity: 'Quantidade', unit: 'Unidade', unitPrice: 'Preço Unitário', manualTotal: 'Usar total manual', observation: 'Observação', printA4: 'Imprimir A4 (2 vias)', printHistory: 'Imprimir histórico Kobutsu', deviceMode: 'Modo', edit: 'Editar', update: 'Atualizar', summaryByPeriod: 'Resumo por período', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', receipt: 'Recibo', purchaseLabel: 'Compra', saleLabel: 'Venda', noRecords: 'Sem registros', issueDate: 'Emissão', signature: 'Assinatura do Cliente', historyReport: 'Relatório histórico Kobutsu', purchasesLabel: 'Compras', salesLabel: 'Vendas' },
+  es: { label: 'Español', appTitle: 'Sistema de Reciclaje', language: 'Idioma', purchaseTab: 'Compra', saleTab: 'Venta', searchTab: 'Clientes', summaryTab: 'Resumen', settingsTab: 'Configuración', purchaseFormTitle: 'Registro de Compra', saleFormTitle: 'Registro de Venta', searchTitle: 'Búsqueda de Clientes', searchInput: 'Buscar por nombre, ID o teléfono', filterType: 'Tipo', all: 'Todos', clientId: 'ID Cliente', clientName: 'Nombre del Cliente', phone: 'Teléfono', address: 'Dirección', entryDate: 'Fecha de Entrada', transactionCode: 'Código de Transacción', total: 'Total', type: 'Tipo', actions: 'Acciones', summaryTitle: 'Resumen y Gráficos', totalTransactions: 'Transacciones', purchaseVolume: 'Volumen Compra', saleVolume: 'Volumen Venta', chartType: 'Tipo de gráfico', bar: 'Picos (Barras)', pie: 'Pastel', settingsTitle: 'Configuración', companyName: 'Nombre de la empresa', companyAddress: 'Dirección de la empresa', defaultCategory: 'Categoría predeterminada', currency: 'Moneda', save: 'Guardar', exportExcel: 'Descargar Excel', category: 'Categoría', serialNumber: 'Número de serie', supplier: 'Proveedor', description: 'Descripción', vehiclePlate: 'Placa del coche', itemsTitle: 'Ítems (llenado automático hasta 15 líneas)', quantity: 'Cantidad', unit: 'Unidad', unitPrice: 'Precio Unitario', manualTotal: 'Usar total manual', observation: 'Observación', printA4: 'Imprimir A4 (2 copias)', printHistory: 'Imprimir historial Kobutsu', deviceMode: 'Modo', edit: 'Editar', update: 'Atualizar', summaryByPeriod: 'Resumo por período', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', receipt: 'Recibo', purchaseLabel: 'Compra', saleLabel: 'Venda', noRecords: 'Sem registros', issueDate: 'Emissão', signature: 'Assinatura do Cliente', historyReport: 'Relatório histórico Kobutsu', purchasesLabel: 'Compras', salesLabel: 'Vendas' },
+  en: { label: 'English', appTitle: 'Recycling System', language: 'Language', purchaseTab: 'Purchase', saleTab: 'Sale', searchTab: 'Clients', summaryTab: 'Summary', settingsTab: 'Settings', purchaseFormTitle: 'Purchase Entry', saleFormTitle: 'Sales Entry', searchTitle: 'Client Search', searchInput: 'Search by name, ID or phone', filterType: 'Type', all: 'All', clientId: 'Client ID', clientName: 'Client Name', phone: 'Phone', address: 'Address', entryDate: 'Entry Date', transactionCode: 'Transaction Code', total: 'Total', type: 'Type', actions: 'Actions', summaryTitle: 'Summary and Charts', totalTransactions: 'Transactions', purchaseVolume: 'Purchase Volume', saleVolume: 'Sales Volume', chartType: 'Chart type', bar: 'Peaks (Bar)', pie: 'Pie', settingsTitle: 'Settings', companyName: 'Company name', companyAddress: 'Company address', defaultCategory: 'Default category', currency: 'Currency', save: 'Save', exportExcel: 'Download Excel', category: 'Category', serialNumber: 'Serial Number', supplier: 'Supplier', description: 'Description', vehiclePlate: 'Vehicle Plate', itemsTitle: 'Items (auto-fill up to 15 rows)', quantity: 'Quantity', unit: 'Unit', unitPrice: 'Unit Price', manualTotal: 'Use manual total', observation: 'Observation', printA4: 'Print A4 (2 copies)', printHistory: 'Print Kobutsu history', deviceMode: 'Mode', edit: 'Edit', update: 'Update', summaryByPeriod: 'Summary by period', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', receipt: 'Receipt', purchaseLabel: 'Purchase', saleLabel: 'Sale', noRecords: 'No records', issueDate: 'Issue date', signature: 'Customer signature', historyReport: 'Kobutsu history report', purchasesLabel: 'Purchases', salesLabel: 'Sales' },
+  ja: { label: '日本語', appTitle: 'リサイクル管理システム', language: '言語', purchaseTab: '購入', saleTab: '販売', searchTab: '顧客', summaryTab: '概要', settingsTab: '設定', purchaseFormTitle: '購入登録', saleFormTitle: '販売登録', searchTitle: '顧客検索', searchInput: '名前、ID、電話で検索', filterType: '種類', all: 'すべて', clientId: '顧客ID', clientName: '顧客名', phone: '電話', address: '住所', entryDate: '入力日', transactionCode: '取引コード', total: '合計', type: '種類', actions: '操作', summaryTitle: '概要とグラフ', totalTransactions: '取引数', purchaseVolume: '購入量', saleVolume: '販売量', chartType: 'グラフ種類', bar: 'ピーク（棒）', pie: '円グラフ', settingsTitle: '設定', companyName: '会社名', companyAddress: '会社住所', defaultCategory: '既定カテゴリ', currency: '通貨', save: '保存', exportExcel: 'Excelダウンロード', category: 'カテゴリ', serialNumber: 'シリアル番号', supplier: '供給業者', description: '説明', vehiclePlate: '車両ナンバー', itemsTitle: '項目（最大15行自動入力）', quantity: '数量', unit: '単位', unitPrice: '単価', manualTotal: '手動合計を使用', observation: '備考', printA4: 'A4印刷（2部）', printHistory: '古物履歴を印刷', deviceMode: 'モード', edit: '編集', update: '更新', summaryByPeriod: '期間別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', receipt: '領収書', purchaseLabel: '購入', saleLabel: '販売', noRecords: 'データなし', issueDate: '発行日', signature: 'お客様署名', historyReport: '古物履歴レポート', purchasesLabel: '購入', salesLabel: '販売' },
+  vi: { label: 'Tiếng Việt', appTitle: 'Hệ thống Tái chế', language: 'Ngôn ngữ', purchaseTab: 'Mua vào', saleTab: 'Bán ra', searchTab: 'Khách hàng', summaryTab: 'Tổng quan', settingsTab: 'Cài đặt', purchaseFormTitle: 'Nhập Mua', saleFormTitle: 'Nhập Bán', searchTitle: 'Tìm Khách hàng', searchInput: 'Tìm theo tên, ID hoặc điện thoại', filterType: 'Loại', all: 'Tất cả', clientId: 'ID Khách', clientName: 'Tên Khách', phone: 'Điện thoại', address: 'Địa chỉ', entryDate: 'Ngày nhập', transactionCode: 'Mã giao dịch', total: 'Tổng', type: 'Loại', actions: 'Hành động', summaryTitle: 'Tổng quan và Biểu đồ', totalTransactions: 'Giao dịch', purchaseVolume: 'Khối lượng mua', saleVolume: 'Khối lượng bán', chartType: 'Kiểu biểu đồ', bar: 'Đỉnh (Cột)', pie: 'Tròn', settingsTitle: 'Cài đặt', companyName: 'Tên công ty', companyAddress: 'Địa chỉ công ty', defaultCategory: 'Danh mục mặc định', currency: 'Tiền tệ', save: 'Lưu', exportExcel: 'Tải Excel', category: 'Danh mục', serialNumber: 'Số serial', supplier: 'Nhà cung cấp', description: 'Mô tả', vehiclePlate: 'Biển số xe', itemsTitle: 'Mục hàng (tự động đến 15 dòng)', quantity: 'Số lượng', unit: 'Đơn vị', unitPrice: 'Đơn giá', manualTotal: 'Dùng tổng thủ công', observation: 'Ghi chú', printA4: 'In A4 (2 bản)', printHistory: 'In lịch sử Kobutsu', deviceMode: 'Chế độ', edit: 'Sửa', update: 'Cập nhật', summaryByPeriod: 'Tóm tắt theo kỳ', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', receipt: 'Biên nhận', purchaseLabel: 'Mua', saleLabel: 'Bán', noRecords: 'Không có dữ liệu', issueDate: 'Ngày phát hành', signature: 'Chữ ký khách hàng' },
+  ur: { label: 'پاکستان (اردو)', appTitle: 'ری سائیکلنگ سسٹم', language: 'زبان', purchaseTab: 'خرید', saleTab: 'فروخت', searchTab: 'گاہک', summaryTab: 'خلاصہ', settingsTab: 'ترتیبات', purchaseFormTitle: 'خرید اندراج', saleFormTitle: 'فروخت اندراج', searchTitle: 'گاہک تلاش', searchInput: 'نام، ID یا فون سے تلاش کریں', filterType: 'قسم', all: 'سب', clientId: 'گاہک ID', clientName: 'گاہک کا نام', phone: 'فون', address: 'پتہ', entryDate: 'داخلہ تاریخ', transactionCode: 'ٹرانزیکشن کوڈ', total: 'کل', type: 'قسم', actions: 'اقدامات', summaryTitle: 'خلاصہ اور چارٹس', totalTransactions: 'ٹرانزیکشنز', purchaseVolume: 'خرید حجم', saleVolume: 'فروخت حجم', chartType: 'چارٹ قسم', bar: 'بار', pie: 'پائی', settingsTitle: 'ترتیبات', companyName: 'کمپنی نام', companyAddress: 'کمپنی پتہ', defaultCategory: 'ڈیفالٹ کیٹیگری', currency: 'کرنسی', save: 'محفوظ کریں', exportExcel: 'Excel ڈاؤن لوڈ', category: 'کیٹیگری', serialNumber: 'سیریل نمبر', supplier: 'سپلائر', description: 'تفصیل', vehiclePlate: 'گاڑی نمبر پلیٹ', itemsTitle: 'آئٹمز (15 لائن تک خودکار)', quantity: 'مقدار', unit: 'یونٹ', unitPrice: 'فی یونٹ قیمت', manualTotal: 'دستی کل استعمال کریں', observation: 'نوٹ', printA4: 'A4 پرنٹ (2 کاپیاں)', printHistory: 'Kobutsu ہسٹری پرنٹ کریں', deviceMode: 'موڈ', edit: 'ترمیم', update: 'اپ ڈیٹ', summaryByPeriod: 'مدت کے لحاظ سے خلاصہ', periodType: 'مدت', daily: 'دن', monthly: 'مہینہ', yearly: 'سال', period: 'مدت', summaryByCategory: 'زمرہ خلاصہ', summaryByDescription: 'تفصیل خلاصہ', receipt: 'رسید', purchaseLabel: 'خرید', saleLabel: 'فروخت', noRecords: 'ریکارڈ نہیں', issueDate: 'اجرا تاریخ', signature: 'کسٹمر دستخط' },
+  zh: { label: '中文', appTitle: '回收管理系统', language: '语言', purchaseTab: '采购', saleTab: '销售', searchTab: '客户', summaryTab: '汇总', settingsTab: '设置', purchaseFormTitle: '采购录入', saleFormTitle: '销售录入', searchTitle: '客户查询', searchInput: '按姓名、ID或电话搜索', filterType: '类型', all: '全部', clientId: '客户ID', clientName: '客户名称', phone: '电话', address: '地址', entryDate: '录入日期', transactionCode: '交易代码', total: '总计', type: '类型', actions: '操作', summaryTitle: '汇总与图表', totalTransactions: '交易数', purchaseVolume: '采购量', saleVolume: '销售量', chartType: '图表类型', bar: '柱状', pie: '饼图', settingsTitle: '设置', companyName: '公司名称', companyAddress: '公司地址', defaultCategory: '默认分类', currency: '货币', save: '保存', exportExcel: '下载Excel', category: '分类', serialNumber: '序列号', supplier: '供应商', description: '描述', vehiclePlate: '车牌', itemsTitle: '项目（自动填充最多15行）', quantity: '数量', unit: '单位', unitPrice: '单价', manualTotal: '使用手动总计', observation: '备注', printA4: 'A4打印（两份）', printHistory: '打印Kobutsu历史', deviceMode: '模式', edit: '编辑', update: '更新', summaryByPeriod: '按周期汇总', periodType: '周期', daily: '日', monthly: '月', yearly: '年', period: '周期', summaryByCategory: '按分类汇总', summaryByDescription: '按描述汇总', receipt: '收据', purchaseLabel: '采购', saleLabel: '销售', noRecords: '无记录', issueDate: '签发日期', signature: '客户签名' },
+  si: { label: 'සිංහල (Sri Lanka)', appTitle: 'ප්‍රතිචක්‍රීකරණ පද්ධතිය', language: 'භාෂාව', purchaseTab: 'මිලදී ගැනීම', saleTab: 'විකිණීම', searchTab: 'ගනුදෙනුකරුවන්', summaryTab: 'සාරාංශය', settingsTab: 'සැකසුම්', purchaseFormTitle: 'මිලදී ගැනීම ඇතුළත් කිරීම', saleFormTitle: 'විකිණීම ඇතුළත් කිරීම', searchTitle: 'ගනුදෙනුකරු සෙවීම', searchInput: 'නම, ID, දුරකථන අනුව සෙවීම', filterType: 'වර්ගය', all: 'සියල්ල', clientId: 'ගනුදෙනුකරු ID', clientName: 'ගනුදෙනුකරු නම', phone: 'දුරකථන', address: 'ලිපිනය', entryDate: 'ඇතුල්වූ දිනය', transactionCode: 'ගනුදෙනු කේතය', total: 'එකතුව', type: 'වර්ගය', actions: 'ක්‍රියා', summaryTitle: 'සාරාංශ හා චාට්', totalTransactions: 'ගනුදෙනු', purchaseVolume: 'මිලදී ගැනීම පරිමාව', saleVolume: 'විකිණීම පරිමාව', chartType: 'චාට් වර්ගය', bar: 'බාර්', pie: 'පයි', settingsTitle: 'සැකසුම්', companyName: 'සමාගම් නම', companyAddress: 'සමාගම් ලිපිනය', defaultCategory: 'පෙරනිමි කාණ්ඩය', currency: 'මුදල් ඒකකය', save: 'සුරකින්න', exportExcel: 'Excel බාගන්න', category: 'කාණ්ඩය', serialNumber: 'සීරියල් අංකය', supplier: 'සැපයුම්කරු', description: 'විස්තරය', vehiclePlate: 'වාහන අංකය', itemsTitle: 'අයිතම (පේළි 15 දක්වා ස්වයංක්‍රීය)', quantity: 'ප්‍රමාණය', unit: 'ඒකකය', unitPrice: 'ඒකක මිල', manualTotal: 'අතින් එකතුව භාවිතා කරන්න', observation: 'සටහන', printA4: 'A4 මුද්‍රණය (පිටපත් 2)', printHistory: 'Kobutsu ඉතිහාසය මුද්‍රණය', deviceMode: 'මාදිලිය', edit: 'සංස්කරණය', update: 'යාවත්කාලීන', summaryByPeriod: 'කාල සාරාංශය', periodType: 'කාලය', daily: 'දින', monthly: 'මාස', yearly: 'වසර', period: 'කාලය', summaryByCategory: 'කාණ්ඩ සාරාංශය', summaryByDescription: 'විස්තර සාරාංශය', receipt: 'රිසිට්පත', purchaseLabel: 'මිලදී ගැනීම', saleLabel: 'විකිණීම', noRecords: 'දත්ත නොමැත', issueDate: 'නිකුත් දිනය', signature: 'ගනුදෙනුකරු අත්සන' }
 };
 
+const MEMORY_FIELDS = ['category', 'supplier', 'description', 'vehiclePlate', 'serialNumber'];
+
+function createEmptyFieldMemory() {
+  const empty = {};
+  MEMORY_FIELDS.forEach((field) => {
+    empty[field] = [];
+  });
+  return { purchase: { ...empty }, sale: { ...empty } };
+}
+
+function normalizeFieldMemory(rawMemory, legacyMemories) {
+  const base = createEmptyFieldMemory();
+  const source = rawMemory && typeof rawMemory === 'object' ? rawMemory : {};
+
+  ['purchase', 'sale'].forEach((type) => {
+    MEMORY_FIELDS.forEach((field) => {
+      const values = Array.isArray(source?.[type]?.[field]) ? source[type][field] : [];
+      base[type][field] = [...new Set(values.map((v) => String(v || '').trim()).filter(Boolean))];
+    });
+  });
+
+  const legacy = legacyMemories && typeof legacyMemories === 'object' ? legacyMemories : {};
+  const legacyCategories = Array.isArray(legacy.categories) ? legacy.categories : [];
+  const legacyDescriptions = Array.isArray(legacy.descriptions) ? legacy.descriptions : [];
+  ['purchase', 'sale'].forEach((type) => {
+    base[type].category = [...new Set([...base[type].category, ...legacyCategories.map((v) => String(v || '').trim()).filter(Boolean)])];
+    base[type].description = [...new Set([...base[type].description, ...legacyDescriptions.map((v) => String(v || '').trim()).filter(Boolean)])];
+  });
+  return base;
+}
+
+const legacyMemories = JSON.parse(localStorage.getItem('recycle_memories') || '{"categories":[],"descriptions":[]}');
 const state = {
   lang: 'pt',
   transactions: JSON.parse(localStorage.getItem('recycle_transactions') || '[]'),
   settings: JSON.parse(localStorage.getItem('recycle_settings') || '{}'),
-  memories: JSON.parse(localStorage.getItem('recycle_memories') || '{"categories":[],"descriptions":[]}'),
+  fieldMemory: normalizeFieldMemory(JSON.parse(localStorage.getItem('recycle_field_memory') || '{}'), legacyMemories),
   forms: {}
 };
 
@@ -53,9 +85,9 @@ function applyLocaleDefaults() {
 
 
 const I18N_PATCH = {
-  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス' },
+  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス', printClientHistory: 'Imprimir Kobutsu do cliente', deleteClient: 'Excluir cliente', confirmDeleteClient: 'Excluir cliente e todas as transações vinculadas?', memoryManagerTitle: 'Gerenciar memórias de preenchimento', transactionType: 'Tipo de transação', fieldLabel: 'Campo', deleteWord: 'Excluir', noMemories: 'Sem memórias para este campo', customerHistoryReport: 'Histórico Kobutsu por cliente', destination: 'Destino/Observação' },
   es: { noRecords: 'Sin registros', summaryByPeriod: 'Resumen por período', summaryByCategory: 'Resumen por categoría', summaryByDescription: 'Resumen por descripción', periodType: 'Período', daily: 'Día', monthly: 'Mes', yearly: 'Año', period: 'Período', operationalProfit: 'Beneficio Operativo', invoiceRate: '% de インボイス', consumptionTaxRate: '% de 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluido', taxSeparate: 'Calculado por separado', purchaseSaleLine: 'Volumen compra/venta por período', clientIdHint: 'Escriba ID existente para completar cliente', hasInvoice: 'Tiene インボイス', invoiceNumber: 'Número de インボイス' },
-  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number' },
+  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number', printClientHistory: 'Print customer Kobutsu', deleteClient: 'Delete client', confirmDeleteClient: 'Delete client and all linked transactions?', memoryManagerTitle: 'Manage field memories', transactionType: 'Transaction type', fieldLabel: 'Field', deleteWord: 'Delete', noMemories: 'No memories for this field', customerHistoryReport: 'Customer Kobutsu history', destination: 'Destination/Observation' },
   ja: { noRecords: 'データなし', summaryByPeriod: '期間別サマリー', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', operationalProfit: '営業利益', invoiceRate: 'インボイス %', consumptionTaxRate: '消費税 %', consumptionTaxMode: '消費税', taxIncluded: '税込', taxSeparate: '別計算', purchaseSaleLine: '期間別の仕入/販売推移', clientIdHint: '既存の顧客IDを入力すると自動入力', hasInvoice: 'インボイスあり', invoiceNumber: 'インボイス番号' },
   vi: { noRecords: 'Không có dữ liệu', summaryByPeriod: 'Tóm tắt theo kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', operationalProfit: 'Lợi nhuận vận hành', invoiceRate: '% invoice', consumptionTaxRate: '% thuế tiêu dùng', consumptionTaxMode: 'Thuế tiêu dùng', taxIncluded: 'Đã gồm', taxSeparate: 'Tính riêng', purchaseSaleLine: 'Khối lượng mua/bán theo kỳ', clientIdHint: 'Nhập ID khách có sẵn để tự điền', hasInvoice: 'Có インボイス', invoiceNumber: 'Số インボイス' },
   ur: { noRecords: 'ریکارڈ نہیں', operationalProfit: 'آپریٹنگ منافع', taxIncluded: 'شامل', taxSeparate: 'الگ سے' },
@@ -97,28 +129,138 @@ function applyLocalePlaceholders() {
   });
 }
 
-function refreshMemorySuggestions() {
-  const cat = document.getElementById('categorySuggestions');
-  const desc = document.getElementById('descriptionSuggestions');
-  if (!cat || !desc) return;
-  cat.innerHTML = state.memories.categories.map((v) => `<option value="${v}"></option>`).join('');
-  desc.innerHTML = state.memories.descriptions.map((v) => `<option value="${v}"></option>`).join('');
+function memoryListId(type, field) {
+  return `${type}-${field}-suggestions`;
 }
 
-function rememberWords(record) {
-  const addUnique = (arr, value) => {
-    const v = String(value || '').trim();
-    if (!v) return;
-    if (!arr.includes(v)) arr.push(v);
-  };
-  addUnique(state.memories.categories, record.category);
-  addUnique(state.memories.descriptions, record.description);
-  (record.items || []).forEach((item) => addUnique(state.memories.descriptions, item.description));
-  localStorage.setItem('recycle_memories', JSON.stringify(state.memories));
-  refreshMemorySuggestions();
+function saveFieldMemory() {
+  localStorage.setItem('recycle_field_memory', JSON.stringify(state.fieldMemory));
+}
+
+function listFieldSuggestions(type, field) {
+  return state.fieldMemory?.[type]?.[field] || [];
+}
+
+function saveFieldSuggestion(type, field, value) {
+  const v = String(value || '').trim();
+  if (!v || !state.fieldMemory?.[type]?.[field]) return;
+  if (!state.fieldMemory[type][field].includes(v)) {
+    state.fieldMemory[type][field].push(v);
+    saveFieldMemory();
+    refreshFieldMemorySuggestions();
+    renderMemoryManager();
+  }
+}
+
+function removeFieldSuggestion(type, field, value) {
+  const v = String(value || '').trim();
+  if (!v || !state.fieldMemory?.[type]?.[field]) return;
+  state.fieldMemory[type][field] = state.fieldMemory[type][field].filter((item) => item !== v);
+  saveFieldMemory();
+  refreshFieldMemorySuggestions();
+  renderMemoryManager();
+}
+
+function refreshFieldMemorySuggestions() {
+  ['purchase', 'sale'].forEach((type) => {
+    MEMORY_FIELDS.forEach((field) => {
+      const datalist = document.getElementById(memoryListId(type, field));
+      if (!datalist) return;
+      datalist.innerHTML = listFieldSuggestions(type, field)
+        .map((v) => `<option value="${String(v).replaceAll('"', '&quot;')}"></option>`)
+        .join('');
+    });
+  });
+}
+
+function rememberFieldValues(type, record) {
+  MEMORY_FIELDS.forEach((field) => {
+    saveFieldSuggestion(type, field, record[field]);
+  });
+  (record.items || []).forEach((item) => {
+    saveFieldSuggestion(type, 'description', item.description);
+  });
+}
+
+function bindMemoryInputs(form, type) {
+  MEMORY_FIELDS.forEach((field) => {
+    const input = form.querySelector(`[name="${field}"]`);
+    if (!input) return;
+    input.setAttribute('list', memoryListId(type, field));
+    input.addEventListener('change', () => saveFieldSuggestion(type, field, input.value));
+    input.addEventListener('blur', () => saveFieldSuggestion(type, field, input.value));
+  });
+
+  for (let i = 1; i <= 15; i += 1) {
+    const itemDesc = form[`itemDesc${i}`];
+    if (!itemDesc) continue;
+    itemDesc.setAttribute('list', memoryListId(type, 'description'));
+    itemDesc.addEventListener('change', () => saveFieldSuggestion(type, 'description', itemDesc.value));
+    itemDesc.addEventListener('blur', () => saveFieldSuggestion(type, 'description', itemDesc.value));
+  }
+}
+
+function renderMemoryManager() {
+  const typeSelect = document.getElementById('memoryTypeSelect');
+  const fieldSelect = document.getElementById('memoryFieldSelect');
+  const list = document.getElementById('memoryList');
+  if (!typeSelect || !fieldSelect || !list) return;
+
+  const values = listFieldSuggestions(typeSelect.value, fieldSelect.value);
+  if (!values.length) {
+    list.innerHTML = `<li class="memory-empty">${t('noMemories')}</li>`;
+    return;
+  }
+
+  list.innerHTML = values
+    .map((value) => `<li class="memory-list-item"><span>${value}</span><button type="button" class="memory-remove-btn" data-memory-value="${value.replaceAll('"', '&quot;')}">${t('deleteWord')}</button></li>`)
+    .join('');
+
+  list.querySelectorAll('.memory-remove-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      removeFieldSuggestion(typeSelect.value, fieldSelect.value, btn.dataset.memoryValue || '');
+    });
+  });
+}
+
+function printClientKobutsuHistory(clientId) {
+  const records = state.transactions
+    .filter((row) => row.clientId === clientId)
+    .slice()
+    .sort((a, b) => new Date(a.entryDate || a.createdAt || 0) - new Date(b.entryDate || b.createdAt || 0));
+
+  if (!records.length) {
+    alert(t('noRecords'));
+    return;
+  }
+
+  const client = records[records.length - 1];
+  const rows = records.map((row, idx) => {
+    const itemRows = (row.items || []).length
+      ? row.items.map((item, itemIdx) => `<tr><td>${idx + 1}.${itemIdx + 1}</td><td>${row.entryDate || ''}</td><td>${row.transactionCode || ''}</td><td>${row.type}</td><td>${item.description || row.description || ''}</td><td>${item.quantity || ''}</td><td>${item.unit || row.unit || ''}</td><td>${row.supplier || ''}</td><td>${row.observation || ''}</td></tr>`).join('')
+      : `<tr><td>${idx + 1}</td><td>${row.entryDate || ''}</td><td>${row.transactionCode || ''}</td><td>${row.type}</td><td>${row.description || ''}</td><td>${row.quantity || ''}</td><td>${row.unit || ''}</td><td>${row.supplier || ''}</td><td>${row.observation || ''}</td></tr>`;
+    return itemRows;
+  }).join('');
+
+  document.getElementById('printArea').innerHTML = `
+    <div class="a4-sheet">
+      <div class="copy">
+        <h3>${t('customerHistoryReport')}</h3>
+        <p><strong>${t('clientId')}:</strong> ${clientId} | <strong>${t('clientName')}:</strong> ${client.clientName || ''} | <strong>${t('phone')}:</strong> ${client.phone || ''}</p>
+        <p><strong>${t('issueDate')}:</strong> ${new Date().toLocaleString(LOCALE_BY_LANG[state.lang] || 'en-US')} | <strong>${t('totalTransactions')}:</strong> ${records.length}</p>
+        <table>
+          <thead>
+            <tr><th>#</th><th>${t('entryDate')}</th><th>${t('transactionCode')}</th><th>${t('type')}</th><th>${t('description')}</th><th>${t('quantity')}</th><th>${t('unit')}</th><th>${t('supplier')}</th><th>${t('destination')}</th></tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  window.print();
 }
 
 function newTransactionCode(type) {
+
   return `${type === 'purchase' ? 'PUR' : 'SAL'}-${Date.now().toString().slice(-6)}`;
 }
 
@@ -186,7 +328,7 @@ function randomId() {
 function createItemsRows(tbody) {
   for (let i = 1; i <= 15; i += 1) {
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${i}</td><td><input name="itemDesc${i}" list="descriptionSuggestions"/></td><td><input name="itemQty${i}" type="number" step="0.01"/></td><td><input name="itemUnit${i}"/></td><td><input name="itemPrice${i}" type="number" step="0.01"/></td><td><input name="itemTotal${i}" type="number" step="0.01" readonly/></td>`;
+    row.innerHTML = `<td>${i}</td><td><input name="itemDesc${i}"/></td><td><input name="itemQty${i}" type="number" step="0.01"/></td><td><input name="itemUnit${i}"/></td><td><input name="itemPrice${i}" type="number" step="0.01"/></td><td><input name="itemTotal${i}" type="number" step="0.01" readonly/></td>`;
     tbody.appendChild(row);
   }
 }
@@ -196,6 +338,7 @@ function createForm(type, container) {
   const form = template.content.firstElementChild.cloneNode(true);
   const tbody = form.querySelector('.itemsBody');
   createItemsRows(tbody);
+  bindMemoryInputs(form, type);
   form.dataset.type = type;
   const clientIdInput = form.querySelector('input[name="clientId"]');
   const entryDateInput = form.querySelector('input[name="entryDate"]');
@@ -285,7 +428,7 @@ function createForm(type, container) {
       state.transactions.push(record);
     }
 
-    rememberWords(record);
+    rememberFieldValues(type, record);
     localStorage.setItem('recycle_transactions', JSON.stringify(state.transactions));
     refreshSearch();
     refreshSummary();
@@ -297,17 +440,6 @@ function createForm(type, container) {
     generatePrintDocument(form, type);
     window.print();
   });
-
-  const daisoBtn = form.querySelector('.printDaisoBtn');
-  if (type !== 'sale') {
-    daisoBtn.style.display = 'none';
-  } else {
-    daisoBtn.addEventListener('click', () => {
-      generateDaisoReceipt(form);
-      window.print();
-    });
-  }
-
   state.forms[type] = form;
   container.appendChild(form);
 }
@@ -328,7 +460,7 @@ function refreshSearch() {
     .reverse()
     .forEach((r) => {
       const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${r.clientId}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.entryDate || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.type}</td><td><button class="printRow" data-code="${r.transactionCode}">Print</button> <button class="editRow">${t('edit')}</button></td>`;
+      tr.innerHTML = `<td>${r.clientId}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.entryDate || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.type}</td><td><button class="printRow" data-code="${r.transactionCode}">Print</button> <button class="editRow">${t('edit')}</button> <button class="printClientHistoryRow">${t('printClientHistory')}</button> <button class="deleteClientRow">${t('deleteClient')}</button></td>`;
       tr.querySelector('.printRow').addEventListener('click', () => {
         generatePrintFromRecord(r);
         window.print();
@@ -336,13 +468,39 @@ function refreshSearch() {
       tr.querySelector('.editRow').addEventListener('click', () => {
         loadRecordForEdit(r);
       });
+      tr.querySelector('.printClientHistoryRow').addEventListener('click', () => {
+        printClientKobutsuHistory(r.clientId);
+      });
+      tr.querySelector('.deleteClientRow').addEventListener('click', () => {
+        deleteClientById(r.clientId);
+      });
       tbody.appendChild(tr);
     });
 }
 
 
+function deleteClientById(clientId) {
+  if (!clientId) return;
+  const confirmed = window.confirm(t('confirmDeleteClient'));
+  if (!confirmed) return;
+  const before = state.transactions.length;
+  state.transactions = state.transactions.filter((row) => row.clientId !== clientId);
+  const removed = before - state.transactions.length;
+  localStorage.setItem('recycle_transactions', JSON.stringify(state.transactions));
+  refreshSearch();
+  refreshSummary();
+  if (removed > 0) {
+    Object.entries(state.forms).forEach(([, form]) => {
+      if (form?.clientId?.value === clientId) {
+        resetFormForNewEntry(form, form.dataset.type || 'purchase');
+      }
+    });
+  }
+}
+
 
 function autofillByClientId(form) {
+
   const idInput = form.querySelector('input[name="clientId"]');
   const id = (idInput?.value || '').trim();
   if (!id) return;
@@ -607,24 +765,6 @@ function generatePrintFromRecord(record) {
 }
 
 
-function generateDaisoReceipt(form) {
-  const data = Object.fromEntries(new FormData(form).entries());
-  const html = `
-    <div class="a4-sheet">
-      <div class="copy">
-        <h3>領収書 DAISO G-92 No.2670</h3>
-        <p><strong>${t('issueDate')}:</strong> ${new Date().toLocaleDateString(LOCALE_BY_LANG[state.lang] || 'ja-JP')}</p>
-        <p><strong>${t('clientName')}:</strong> ${data.clientName || ''}</p>
-        <p><strong>${t('transactionCode')}:</strong> ${data.transactionCode || ''}</p>
-        <p><strong>${t('description')}:</strong> ${data.description || ''}</p>
-        <p><strong>${t('hasInvoice')}:</strong> ${form.hasInvoice?.checked ? 'Sim/Yes' : 'Não/No'}${form.hasInvoice?.checked && data.invoiceNumber ? ` | <strong>${t('invoiceNumber')}:</strong> ${data.invoiceNumber}` : ''}</p>
-        <p><strong>${t('total')}:</strong> ${formatMoney(data.total)}</p>
-        <div class="signature">${t('signature')}</div>
-      </div>
-    </div>`;
-  document.getElementById('printArea').innerHTML = html;
-}
-
 function generateHistoryPrint() {
   const total = state.transactions.length;
   const purchases = state.transactions.filter((t) => t.type === 'purchase');
@@ -682,6 +822,7 @@ function applyTranslations() {
   const currencyInput = document.getElementById('currency');
   if (currencyInput && !currencyInput.value) currencyInput.value = getCurrencyCode();
   setupDeviceCompatibility();
+  renderMemoryManager();
 }
 
 function fillLanguageSelector() {
@@ -737,13 +878,16 @@ function setupSettings() {
   document.getElementById('exportExcel').addEventListener('click', exportExcelLikeCSV);
   document.getElementById('printHistory').addEventListener('click', generateHistoryPrint);
   document.getElementById('periodType').addEventListener('change', refreshSummary);
+  document.getElementById('memoryTypeSelect')?.addEventListener('change', renderMemoryManager);
+  document.getElementById('memoryFieldSelect')?.addEventListener('change', renderMemoryManager);
+  renderMemoryManager();
 }
 
 function init() {
   fillLanguageSelector();
   setupDeviceCompatibility();
   applyTranslations();
-  refreshMemorySuggestions();
+  refreshFieldMemorySuggestions();
   setupTabs();
   setupSettings();
   createForm('purchase', document.getElementById('purchaseFormContainer'));

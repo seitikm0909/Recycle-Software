@@ -179,6 +179,28 @@
           <button id="saveSettings" class="primary" data-i18n="save">Salvar</button>
           <button id="exportExcel" data-i18n="exportExcel">Download Excel</button>
         </div>
+        <hr class="section-divider" />
+        <h3 data-i18n="memoryManagerTitle">Gerenciar memórias de preenchimento</h3>
+        <div class="form-grid three-cols">
+          <label>
+            <span data-i18n="transactionType">Tipo de transação</span>
+            <select id="memoryTypeSelect">
+              <option value="purchase" data-i18n="purchaseTab">Compra</option>
+              <option value="sale" data-i18n="saleTab">Venda</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="fieldLabel">Campo</span>
+            <select id="memoryFieldSelect">
+              <option value="category" data-i18n="category">Categoria</option>
+              <option value="supplier" data-i18n="supplier">Fornecedor</option>
+              <option value="description" data-i18n="description">Descrição</option>
+              <option value="vehiclePlate" data-i18n="vehiclePlate">Placa do carro</option>
+              <option value="serialNumber" data-i18n="serialNumber">Número de série</option>
+            </select>
+          </label>
+        </div>
+        <ul id="memoryList" class="memory-list"></ul>
       </div>
     </section>
   </main>
@@ -198,12 +220,12 @@
         <label><span data-i18n="address">Endereço</span><input name="address" /></label>
       </div>
       <div class="form-grid three-cols">
-        <label><span data-i18n="category">Categoria</span><input name="category" list="categorySuggestions" /></label>
+        <label><span data-i18n="category">Categoria</span><input name="category" /></label>
         <label><span data-i18n="serialNumber">Número de série</span><input name="serialNumber" /></label>
         <label><span data-i18n="supplier">Fornecedor</span><input name="supplier" /></label>
       </div>
       <div class="form-grid two-cols">
-        <label><span data-i18n="description">Descrição</span><input name="description" list="descriptionSuggestions" /></label>
+        <label><span data-i18n="description">Descrição</span><input name="description" /></label>
         <label><span data-i18n="vehiclePlate">Placa do carro</span><input name="vehiclePlate" /></label>
       </div>
       <div class="form-grid two-cols">
@@ -241,13 +263,20 @@
       <div class="button-row">
         <button type="submit" class="primary" data-i18n="save">Salvar</button>
         <button type="button" class="printBtn" data-i18n="printA4">Imprimir A4 (2 vias)</button>
-        <button type="button" class="printDaisoBtn" data-i18n="printDaiso">Imprimir 領収書 DAISO G-92 No.2670</button>
       </div>
     </form>
   </template>
 
-  <datalist id="categorySuggestions"></datalist>
-  <datalist id="descriptionSuggestions"></datalist>
+  <datalist id="purchase-category-suggestions"></datalist>
+  <datalist id="purchase-supplier-suggestions"></datalist>
+  <datalist id="purchase-description-suggestions"></datalist>
+  <datalist id="purchase-vehiclePlate-suggestions"></datalist>
+  <datalist id="purchase-serialNumber-suggestions"></datalist>
+  <datalist id="sale-category-suggestions"></datalist>
+  <datalist id="sale-supplier-suggestions"></datalist>
+  <datalist id="sale-description-suggestions"></datalist>
+  <datalist id="sale-vehiclePlate-suggestions"></datalist>
+  <datalist id="sale-serialNumber-suggestions"></datalist>
   <script src="app.js"></script>
 </body>
 </html>
