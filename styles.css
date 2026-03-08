@@ -112,6 +112,16 @@ tr:last-child td { border-bottom: none; }
 .memory-remove-btn { border-color: #d9b8b8; background: #fff3f3; color: #8a2d2d; }
 .memory-empty { color: #52617a; font-size: .9rem; }
 
+.confirm-save-modal { border: none; border-radius: 12px; padding: 0; width: min(92vw, 420px); }
+.confirm-save-card { padding: 1rem; }
+.confirm-save-modal::backdrop { background: rgba(0, 0, 0, .35); }
+
+.mobile-client-row-cell { padding: .55rem !important; }
+.mobile-client-row { margin: .2rem 0; }
+.mobile-client-row.line2 { color: #2b3a4f; }
+.mobile-client-row.line3 { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .35rem; }
+.mobile-client-row.line3 button { padding: .4rem .55rem; font-size: .78rem; }
+
 
 .metric { background: #f7faf9; border: 1px solid #d2e7da; border-radius: 8px; padding: .7rem; }
 .metric strong { display: block; font-size: 1.2rem; margin-top: .3rem; }
