@@ -52,9 +52,49 @@ function applyLocaleDefaults() {
 }
 
 
+const I18N_PATCH = {
+  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente' },
+  es: { noRecords: 'Sin registros', summaryByPeriod: 'Resumen por período', summaryByCategory: 'Resumen por categoría', summaryByDescription: 'Resumen por descripción', periodType: 'Período', daily: 'Día', monthly: 'Mes', yearly: 'Año', period: 'Período', operationalProfit: 'Beneficio Operativo', invoiceRate: '% de インボイス', consumptionTaxRate: '% de 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluido', taxSeparate: 'Calculado por separado', purchaseSaleLine: 'Volumen compra/venta por período', clientIdHint: 'Escriba ID existente para completar cliente' },
+  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data' },
+  ja: { noRecords: 'データなし', summaryByPeriod: '期間別サマリー', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', operationalProfit: '営業利益', invoiceRate: 'インボイス %', consumptionTaxRate: '消費税 %', consumptionTaxMode: '消費税', taxIncluded: '税込', taxSeparate: '別計算', purchaseSaleLine: '期間別の仕入/販売推移', clientIdHint: '既存の顧客IDを入力すると自動入力' },
+  vi: { noRecords: 'Không có dữ liệu', summaryByPeriod: 'Tóm tắt theo kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', operationalProfit: 'Lợi nhuận vận hành', invoiceRate: '% invoice', consumptionTaxRate: '% thuế tiêu dùng', consumptionTaxMode: 'Thuế tiêu dùng', taxIncluded: 'Đã gồm', taxSeparate: 'Tính riêng', purchaseSaleLine: 'Khối lượng mua/bán theo kỳ', clientIdHint: 'Nhập ID khách có sẵn để tự điền' },
+  ur: { noRecords: 'ریکارڈ نہیں', operationalProfit: 'آپریٹنگ منافع', taxIncluded: 'شامل', taxSeparate: 'الگ سے' },
+  zh: { noRecords: '无记录', operationalProfit: '营业利润', taxIncluded: '含税', taxSeparate: '分开计算' },
+  si: { noRecords: 'දත්ත නොමැත', operationalProfit: 'ක්‍රියාකාරී ලාභය', taxIncluded: 'ඇතුළත්', taxSeparate: 'වෙන්ව ගණනය' }
+};
+
+const PLACEHOLDER_BY_LANG = {
+  pt: { search: 'Maria / A1B2C3D4 / +55...', companyName: 'Recycle Software Ltda', companyAddress: 'Rua Exemplo, 123', defaultCategory: 'Metal', currency: 'BRL', clientName: 'Maria Silva', phone: '+55 11 99999-0000', address: 'Rua Exemplo, 123', category: 'Metal', description: 'Sucata de alumínio' },
+  es: { search: 'Maria / A1B2C3D4 / +34...', companyName: 'Recycle Software SL', companyAddress: 'Calle Ejemplo, 123', defaultCategory: 'Metal', currency: 'EUR', clientName: 'María López', phone: '+34 600 123 456', address: 'Calle Ejemplo, 123', category: 'Metal', description: 'Chatarra de aluminio' },
+  en: { search: 'John / A1B2C3D4 / +1...', companyName: 'Recycle Software Inc', companyAddress: '123 Example St', defaultCategory: 'Metal', currency: 'USD', clientName: 'John Smith', phone: '+1 (555) 000-1111', address: '123 Example St', category: 'Metal', description: 'Aluminum scrap' },
+  ja: { search: '山田 / A1B2C3D4 / 090...', companyName: 'リサイクル株式会社', companyAddress: '東京都千代田区...', defaultCategory: '金属', currency: 'JPY', clientName: '山田 太郎', phone: '090-1234-5678', address: '東京都千代田区...', category: '金属', description: 'アルミスクラップ' },
+  vi: { search: 'Nguyen / A1B2C3D4 / +84...', companyName: 'Recycle Software VN', companyAddress: '123 Đường Mẫu', defaultCategory: 'Kim loại', currency: 'VND', clientName: 'Nguyen Van A', phone: '+84 90 123 4567', address: '123 Đường Mẫu', category: 'Kim loại', description: 'Phế liệu nhôm' },
+  ur: { search: 'Ali / A1B2C3D4 / +92...', companyName: 'Recycle Software PK', companyAddress: 'مثال روڈ 123', defaultCategory: 'دھات', currency: 'PKR', clientName: 'Ali Khan', phone: '+92 300 1234567', address: 'مثال روڈ 123', category: 'دھات', description: 'ایلومینیم سکریپ' },
+  zh: { search: '张三 / A1B2C3D4 / +86...', companyName: '回收软件有限公司', companyAddress: '示例路123号', defaultCategory: '金属', currency: 'CNY', clientName: '张三', phone: '+86 13800138000', address: '示例路123号', category: '金属', description: '铝废料' },
+  si: { search: 'සිල්වා / A1B2C3D4 / +94...', companyName: 'Recycle Software LK', companyAddress: 'උදාහරණ වීදිය 123', defaultCategory: 'ලෝහ', currency: 'LKR', clientName: 'සිල්වා', phone: '+94 71 123 4567', address: 'උදාහරණ වීදිය 123', category: 'ලෝහ', description: 'ඇලුමිනියම් කැබලි' }
+};
+
 function t(key) {
   const dict = LANGUAGES[state.lang] || LANGUAGES.pt;
-  return dict[key] || LANGUAGES.pt[key] || key;
+  const patch = I18N_PATCH[state.lang] || {};
+  const ptPatch = I18N_PATCH.pt || {};
+  return patch[key] || dict[key] || ptPatch[key] || LANGUAGES.pt[key] || key;
+}
+
+function applyLocalePlaceholders() {
+  const ph = PLACEHOLDER_BY_LANG[state.lang] || PLACEHOLDER_BY_LANG.en;
+  const search = document.querySelector('[data-locale-placeholder="search"]');
+  if (search) search.placeholder = ph.search;
+  const keys = ['companyName', 'companyAddress', 'defaultCategory', 'currency'];
+  keys.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el && !el.value) el.placeholder = ph[id];
+  });
+  Object.entries({ clientName: 'clientName', phone: 'phone', address: 'address', category: 'category', description: 'description' }).forEach(([name, key]) => {
+    document.querySelectorAll(`[name="${name}"]`).forEach((el) => {
+      if (!el.value) el.placeholder = ph[key] || '';
+    });
+  });
 }
 
 function refreshMemorySuggestions() {
@@ -85,10 +125,10 @@ function newTransactionCode(type) {
 function resetFormForNewEntry(form, type) {
   form.reset();
   form.dataset.editingId = '';
-  form.clientId.value = randomId();
-  form.entryDate.value = new Date().toISOString().slice(0, 10);
-  form.transactionCode.value = newTransactionCode(type);
-  form.total.readOnly = true;
+  form.querySelector('input[name="clientId"]').value = randomId();
+  form.querySelector('input[name="entryDate"]').value = new Date().toISOString().slice(0, 10);
+  form.querySelector('input[name="transactionCode"]').value = newTransactionCode(type);
+  form.querySelector('input[name="total"]').readOnly = true;
   for (let i = 1; i <= 15; i += 1) {
     form[`itemTotal${i}`].value = '';
   }
@@ -156,11 +196,18 @@ function createForm(type, container) {
   const tbody = form.querySelector('.itemsBody');
   createItemsRows(tbody);
   form.dataset.type = type;
-  form.clientId.value = randomId();
-  form.entryDate.value = new Date().toISOString().slice(0, 10);
-  form.transactionCode.value = newTransactionCode(type);
+  const clientIdInput = form.querySelector('input[name="clientId"]');
+  const entryDateInput = form.querySelector('input[name="entryDate"]');
+  const transactionCodeInput = form.querySelector('input[name="transactionCode"]');
+  const totalInput = form.querySelector('input[name="total"]');
+
+  clientIdInput.value = randomId();
+  entryDateInput.value = new Date().toISOString().slice(0, 10);
+  transactionCodeInput.value = newTransactionCode(type);
   form.dataset.editingId = "";
-  form.total.readOnly = true;
+  totalInput.readOnly = true;
+  clientIdInput.addEventListener('change', () => autofillByClientId(form));
+  clientIdInput.addEventListener('blur', () => autofillByClientId(form));
 
   const recalc = () => {
     let sum = 0;
@@ -172,7 +219,7 @@ function createForm(type, container) {
       sum += total;
     }
     if (!form.manualTotalEnabled.checked) {
-      form.total.value = sum.toFixed(2);
+      totalInput.value = sum.toFixed(2);
     }
   };
 
@@ -182,7 +229,7 @@ function createForm(type, container) {
   }
 
   form.manualTotalEnabled.addEventListener('change', () => {
-    form.total.readOnly = !form.manualTotalEnabled.checked;
+    totalInput.readOnly = !form.manualTotalEnabled.checked;
     if (!form.manualTotalEnabled.checked) {
       recalc();
     }
@@ -280,6 +327,19 @@ function refreshSearch() {
 }
 
 
+
+function autofillByClientId(form) {
+  const idInput = form.querySelector('input[name="clientId"]');
+  const id = (idInput?.value || '').trim();
+  if (!id) return;
+  const record = [...state.transactions].reverse().find((r) => r.clientId === id);
+  if (!record) return;
+  ['clientName', 'phone', 'address'].forEach((f) => {
+    const input = form.querySelector(`[name="${f}"]`);
+    if (input) input.value = record[f] || '';
+  });
+}
+
 function loadRecordForEdit(record) {
   const form = state.forms[record.type];
   if (!form) return;
@@ -312,10 +372,18 @@ function refreshSummary() {
   const sale = state.transactions.filter((t) => t.type === 'sale');
   const purchaseTotal = purchase.reduce((sum, item) => sum + Number(item.total || 0), 0);
   const saleTotal = sale.reduce((sum, item) => sum + Number(item.total || 0), 0);
+  const invoiceRate = Number(state.settings.invoiceRate || 0);
+  const taxRate = Number(state.settings.consumptionTaxRate || 0);
+  const taxMode = state.settings.consumptionTaxMode || 'included';
+  const invoiceAmount = saleTotal * invoiceRate / 100;
+  const taxAmount = taxMode === 'included' ? (saleTotal * taxRate / (100 + Math.max(taxRate, 1e-9))) : (saleTotal * taxRate / 100);
+  const operationalProfit = saleTotal - purchaseTotal - invoiceAmount - taxAmount;
 
   document.getElementById('metricTransactions').textContent = state.transactions.length;
   document.getElementById('metricPurchase').textContent = formatMoney(purchaseTotal);
   document.getElementById('metricSale').textContent = formatMoney(saleTotal);
+  const profitEl = document.getElementById('metricProfit');
+  if (profitEl) profitEl.textContent = formatMoney(operationalProfit);
   renderChart(purchaseTotal, saleTotal);
   renderAdditionalSummaries();
 }
@@ -324,6 +392,8 @@ function refreshSummary() {
 function renderAdditionalSummaries() {
   const periodType = document.getElementById('periodType')?.value || 'day';
   const group = new Map();
+  const buyByPeriod = new Map();
+  const saleByPeriod = new Map();
   const byCategory = new Map();
   const byDescription = new Map();
 
@@ -332,13 +402,16 @@ function renderAdditionalSummaries() {
     let periodKey = date;
     if (periodType === 'month') periodKey = (date || '').slice(0, 7);
     if (periodType === 'year') periodKey = (date || '').slice(0, 4);
-    group.set(periodKey, (group.get(periodKey) || 0) + Number(tRow.total || 0));
+    const value = Number(tRow.total || 0);
+    group.set(periodKey, (group.get(periodKey) || 0) + value);
+    if (tRow.type === 'purchase') buyByPeriod.set(periodKey, (buyByPeriod.get(periodKey) || 0) + value);
+    if (tRow.type === 'sale') saleByPeriod.set(periodKey, (saleByPeriod.get(periodKey) || 0) + value);
 
     const cat = tRow.category || '-';
-    byCategory.set(cat, (byCategory.get(cat) || 0) + Number(tRow.total || 0));
+    byCategory.set(cat, (byCategory.get(cat) || 0) + value);
 
     const desc = tRow.description || '-';
-    byDescription.set(desc, (byDescription.get(desc) || 0) + Number(tRow.total || 0));
+    byDescription.set(desc, (byDescription.get(desc) || 0) + value);
   });
 
   const fillBody = (id, entries) => {
@@ -350,10 +423,86 @@ function renderAdditionalSummaries() {
   };
 
   const sortDesc = (m) => [...m.entries()].sort((a, b) => b[1] - a[1]);
-  fillBody('periodSummaryBody', sortDesc(group));
-  fillBody('categorySummaryBody', sortDesc(byCategory).slice(0, 20));
-  fillBody('descriptionSummaryBody', sortDesc(byDescription).slice(0, 20));
+  const periodEntries = [...group.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  const categoryEntries = sortDesc(byCategory).slice(0, 15);
+  const descriptionEntries = sortDesc(byDescription).slice(0, 15);
+
+  fillBody('periodSummaryBody', periodEntries);
+  fillBody('categorySummaryBody', categoryEntries);
+  fillBody('descriptionSummaryBody', descriptionEntries);
+
+  drawSimpleChart(document.getElementById('periodChart'), periodEntries, 'bar');
+  drawSimpleChart(document.getElementById('categoryChart'), categoryEntries, document.getElementById('categoryChartType')?.value || 'bar');
+  drawSimpleChart(document.getElementById('descriptionChart'), descriptionEntries, document.getElementById('descriptionChartType')?.value || 'bar');
+
+  const lineKeys = [...new Set([...buyByPeriod.keys(), ...saleByPeriod.keys()])].sort();
+  const buySeries = lineKeys.map((k) => buyByPeriod.get(k) || 0);
+  const saleSeries = lineKeys.map((k) => saleByPeriod.get(k) || 0);
+  drawLineChart(document.getElementById('volumeLineChart'), lineKeys, buySeries, saleSeries);
 }
+
+function drawSimpleChart(canvas, entries, mode = 'bar') {
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width;
+  const h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+  if (!entries.length) {
+    ctx.fillText(t('noRecords'), 10, 20);
+    return;
+  }
+  const colors = ['#1d7f45', '#2e6bc6', '#f39c12', '#8e44ad', '#16a085', '#c0392b'];
+  if (mode === 'pie') {
+    const total = entries.reduce((s, [, v]) => s + v, 0) || 1;
+    let start = 0;
+    entries.slice(0, 8).forEach(([, value], idx) => {
+      const angle = value / total * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(w * 0.35, h * 0.5);
+      ctx.arc(w * 0.35, h * 0.5, Math.min(w, h) * 0.28, start, start + angle);
+      ctx.closePath();
+      ctx.fillStyle = colors[idx % colors.length];
+      ctx.fill();
+      start += angle;
+    });
+  } else {
+    const max = Math.max(...entries.map(([, v]) => v), 1);
+    const bw = Math.max(18, (w - 60) / entries.length - 8);
+    entries.slice(0, 20).forEach(([, v], idx) => {
+      const x = 30 + idx * (bw + 8);
+      const bh = (v / max) * (h - 60);
+      ctx.fillStyle = colors[idx % colors.length];
+      ctx.fillRect(x, h - 30 - bh, bw, bh);
+    });
+  }
+}
+
+function drawLineChart(canvas, labels, buy, sale) {
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width;
+  const h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+  if (!labels.length) {
+    ctx.fillText(t('noRecords'), 10, 20);
+    return;
+  }
+  const max = Math.max(...buy, ...sale, 1);
+  const drawSeries = (values, color) => {
+    ctx.beginPath();
+    values.forEach((v, i) => {
+      const x = 40 + (i * (w - 80) / Math.max(values.length - 1, 1));
+      const y = h - 30 - (v / max) * (h - 60);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  };
+  drawSeries(buy, '#1d7f45');
+  drawSeries(sale, '#2e6bc6');
+}
+
 
 function renderChart(purchaseTotal, saleTotal) {
   const canvas = document.getElementById('summaryChart');
@@ -500,11 +649,12 @@ function exportExcelLikeCSV() {
 
 function applyTranslations() {
   applyLocaleDefaults();
-  const dict = LANGUAGES[state.lang] || LANGUAGES.pt;
+  const dict = { ...(LANGUAGES[state.lang] || LANGUAGES.pt), ...(I18N_PATCH[state.lang] || {}) };
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
     if (dict[key]) el.textContent = dict[key];
   });
+  applyLocalePlaceholders();
   const currencyInput = document.getElementById('currency');
   if (currencyInput && !currencyInput.value) currencyInput.value = getCurrencyCode();
   setupDeviceCompatibility();
@@ -537,8 +687,11 @@ function setupTabs() {
 
 function setupSettings() {
   applyLocaleDefaults();
-  ['companyName', 'companyAddress', 'defaultCategory', 'currency'].forEach((id) => {
-    document.getElementById(id).value = state.settings[id] || '';
+  ['companyName', 'companyAddress', 'defaultCategory', 'currency', 'invoiceRate', 'consumptionTaxRate', 'consumptionTaxMode'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (id === 'consumptionTaxMode') el.value = state.settings[id] || 'included';
+    else el.value = state.settings[id] || '';
   });
 
   document.getElementById('saveSettings').addEventListener('click', () => {
@@ -546,7 +699,10 @@ function setupSettings() {
       companyName: document.getElementById('companyName').value,
       companyAddress: document.getElementById('companyAddress').value,
       defaultCategory: document.getElementById('defaultCategory').value,
-      currency: document.getElementById('currency').value.toUpperCase()
+      currency: document.getElementById('currency').value.toUpperCase(),
+      invoiceRate: Number(document.getElementById('invoiceRate').value || 0),
+      consumptionTaxRate: Number(document.getElementById('consumptionTaxRate').value || 0),
+      consumptionTaxMode: document.getElementById('consumptionTaxMode').value
     };
     localStorage.setItem('recycle_settings', JSON.stringify(state.settings));
     alert('Configurações salvas!');
@@ -571,6 +727,8 @@ function init() {
   document.getElementById('searchInput').addEventListener('input', refreshSearch);
   document.getElementById('searchTypeFilter').addEventListener('change', refreshSearch);
   document.getElementById('chartType').addEventListener('change', refreshSummary);
+  document.getElementById('categoryChartType').addEventListener('change', refreshSummary);
+  document.getElementById('descriptionChartType').addEventListener('change', refreshSummary);
   window.addEventListener('resize', () => {
     resizeChartCanvas();
     refreshSummary();
