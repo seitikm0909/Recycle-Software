@@ -3,12 +3,16 @@
     return type === 'purchase' ? t('purchased') : t('sold');
   }
 
+  function transactionTypeLabel(type, t) {
+    return type === 'purchase' ? t('purchaseLabel') : t('saleLabel');
+  }
+
   function renderMobileClientRow(record, t) {
     return `
       <td colspan="8" class="mobile-client-row-cell">
         <div class="mobile-client-row line1">
           <strong>${record.clientName || '-'}</strong> · ${record.clientId || '-'} · ${record.phone || '-'}<br/>
-          ${record.entryDate || ''} · ${record.transactionCode || ''} · ${record.type || ''} · ${record.total || ''}
+          ${record.entryDate || ''} · ${record.transactionCode || ''} · ${transactionTypeLabel(record.type, t)} · ${record.total || ''}
         </div>
         <div class="mobile-client-row line2">
           <strong>${t('category')}:</strong> ${record.category || '-'} |
@@ -24,5 +28,5 @@
       </td>`;
   }
 
-  window.RecycleClients = { renderMobileClientRow, transactionStatusLabel };
+  window.RecycleClients = { renderMobileClientRow, transactionStatusLabel, transactionTypeLabel };
 })();

@@ -95,6 +95,42 @@ const I18N_PATCH = {
   si: { noRecords: 'දත්ත නොමැත', operationalProfit: 'ක්‍රියාකාරී ලාභය', taxIncluded: 'ඇතුළත්', taxSeparate: 'වෙන්ව ගණනය' }
 };
 
+Object.assign(I18N_PATCH.ur, {
+  summaryByPeriod: 'مدت کے لحاظ سے خلاصہ', summaryByCategory: 'زمرہ کے لحاظ سے خلاصہ', summaryByDescription: 'تفصیل کے لحاظ سے خلاصہ', periodType: 'مدت کی قسم', daily: 'روزانہ', monthly: 'ماہانہ', yearly: 'سالانہ', period: 'مدت',
+  invoiceRate: 'انوائس %', consumptionTaxRate: 'کھپت ٹیکس %', consumptionTaxMode: 'کھپت ٹیکس', purchaseSaleLine: 'مدت کے لحاظ سے خرید/فروخت', clientIdHint: 'موجودہ گاہک ID درج کریں تاکہ معلومات بھر جائیں', hasInvoice: 'انوائس موجود', invoiceNumber: 'انوائس نمبر',
+  printClientHistory: 'گاہک کی Kobutsu ہسٹری پرنٹ کریں', deleteClient: 'گاہک حذف کریں', confirmDeleteClient: 'گاہک اور متعلقہ تمام ٹرانزیکشن حذف کریں؟', memoryManagerTitle: 'فیلڈ میموری منیجر', transactionType: 'ٹرانزیکشن قسم', fieldLabel: 'فیلڈ', deleteWord: 'حذف کریں', noMemories: 'اس فیلڈ کے لیے کوئی میموری نہیں',
+  customerHistoryReport: 'گاہک Kobutsu ہسٹری', destination: 'منزل/مشاہدہ', printLabel: 'پرنٹ', saveFullKobutsuPdf: 'مکمل Kobutsu PDF محفوظ کریں', startDate: 'شروع تاریخ', endDate: 'اختتامی تاریخ', allRecords: 'تمام ریکارڈ', reportPeriod: 'رپورٹ مدت', generatedAt: 'تیار کیا گیا', fullKobutsuHistoryTitle: 'مکمل Kobutsu ہسٹری', paymentMethod: 'ادائیگی طریقہ',
+  saveFullPeriodKobutsuPdf: 'مدت کی مکمل PDF محفوظ کریں', fullKobutsuPeriodPdf: 'مدت کی مکمل Kobutsu رپورٹ', periodReport: 'مدت رپورٹ', allIndividuals: 'تمام افراد', incomingItems: 'آمدہ آئٹمز', outgoingItems: 'جانے والے آئٹمز', stockItems: 'اسٹاک آئٹمز', totalClients: 'کل گاہک', totalIncomingItems: 'کل آمدہ آئٹمز', totalOutgoingItems: 'کل جانے والے آئٹمز', totalStockItems: 'کل اسٹاک آئٹمز', totalPurchaseAmount: 'کل خرید رقم', totalSaleAmount: 'کل فروخت رقم',
+  print_general_period_report: 'مدت کی عمومی رپورٹ پرنٹ کریں', confirm_save: 'محفوظ کرنے کی تصدیق', do_you_want_to_save: 'کیا آپ محفوظ کرنا چاہتے ہیں؟', yes: 'ہاں', no: 'نہیں', cancel: 'منسوخ', status: 'حالت', purchased: 'خریدا گیا', sold: 'فروخت ہوا', no_records_found: 'کوئی ریکارڈ نہیں ملا',
+  record_saved_successfully: 'ریکارڈ کامیابی سے محفوظ ہو گیا۔', settings_saved_successfully: 'ترتیبات کامیابی سے محفوظ ہو گئیں۔', historyReport: 'Kobutsu تاریخی رپورٹ', purchasesLabel: 'خرید', salesLabel: 'فروخت', operationalProfit: 'آپریٹنگ منافع', taxIncluded: 'شامل', taxSeparate: 'الگ سے', mobileDevice: 'موبائل', tabletDevice: 'ٹیبلیٹ', desktopDevice: 'ڈیسک ٹاپ'
+});
+Object.assign(I18N_PATCH.pt, {
+  no: 'Não', record_saved_successfully: 'Registro salvo com sucesso!', settings_saved_successfully: 'Configurações salvas!',
+  mobileDevice: 'iPhone/Android', tabletDevice: 'Tablet', desktopDevice: 'Desktop'
+});
+Object.assign(I18N_PATCH.en, {
+  no: 'No', record_saved_successfully: 'Record saved successfully!', settings_saved_successfully: 'Settings saved successfully!',
+  mobileDevice: 'iPhone/Android', tabletDevice: 'Tablet', desktopDevice: 'Desktop'
+});
+Object.assign(I18N_PATCH.zh, {
+  summaryByPeriod: '按周期汇总', summaryByCategory: '按分类汇总', summaryByDescription: '按描述汇总', periodType: '周期类型', daily: '日', monthly: '月', yearly: '年', period: '周期',
+  invoiceRate: '发票 %', consumptionTaxRate: '消费税 %', consumptionTaxMode: '消费税', purchaseSaleLine: '按周期采购/销售趋势', clientIdHint: '输入已有客户ID以自动填充信息', hasInvoice: '有发票', invoiceNumber: '发票编号',
+  printClientHistory: '打印客户 Kobutsu 历史', deleteClient: '删除客户', confirmDeleteClient: '删除客户及其关联交易？', memoryManagerTitle: '字段记忆管理', transactionType: '交易类型', fieldLabel: '字段', deleteWord: '删除', noMemories: '此字段没有记忆值',
+  customerHistoryReport: '客户 Kobutsu 历史', destination: '去向/备注', printLabel: '打印', saveFullKobutsuPdf: '保存完整 Kobutsu PDF', startDate: '开始日期', endDate: '结束日期', allRecords: '全部记录', reportPeriod: '报告周期', generatedAt: '生成时间', fullKobutsuHistoryTitle: '完整 Kobutsu 历史', paymentMethod: '付款方式',
+  saveFullPeriodKobutsuPdf: '保存周期完整 PDF', fullKobutsuPeriodPdf: '周期完整 Kobutsu 报告', periodReport: '周期报告', allIndividuals: '所有对象', incomingItems: '入库项目', outgoingItems: '出库项目', stockItems: '库存项目', totalClients: '客户总数', totalIncomingItems: '入库总数', totalOutgoingItems: '出库总数', totalStockItems: '库存总数', totalPurchaseAmount: '采购总金额', totalSaleAmount: '销售总金额',
+  print_general_period_report: '打印周期总报告', confirm_save: '确认保存', do_you_want_to_save: '是否保存？', yes: '是', no: '否', cancel: '取消', status: '状态', purchased: '已采购', sold: '已销售', no_records_found: '未找到记录',
+  record_saved_successfully: '记录保存成功。', settings_saved_successfully: '设置已保存。', historyReport: 'Kobutsu 历史报告', purchasesLabel: '采购', salesLabel: '销售', operationalProfit: '营业利润', taxIncluded: '含税', taxSeparate: '分开计算', mobileDevice: '手机', tabletDevice: '平板', desktopDevice: '桌面'
+});
+Object.assign(I18N_PATCH.si, {
+  summaryByPeriod: 'කාල අනුව සාරාංශය', summaryByCategory: 'කාණ්ඩ අනුව සාරාංශය', summaryByDescription: 'විස්තර අනුව සාරාංශය', periodType: 'කාල වර්ගය', daily: 'දෛනික', monthly: 'මාසික', yearly: 'වාර්ෂික', period: 'කාලය',
+  invoiceRate: 'ඉන්වොයිස් %', consumptionTaxRate: 'පරිභෝජන බද්ද %', consumptionTaxMode: 'පරිභෝජන බද්ද', purchaseSaleLine: 'කාල අනුව මිලදී ගැනීම්/විකිණීම් ප්‍රවණතාව', clientIdHint: 'තොරතුරු ස්වයං පිරවීමට පවතින ගනුදෙනුකරු ID එක දාන්න', hasInvoice: 'ඉන්වොයිස් ඇත', invoiceNumber: 'ඉන්වොයිස් අංකය',
+  printClientHistory: 'ගනුදෙනුකරු Kobutsu ඉතිහාසය මුද්‍රණය කරන්න', deleteClient: 'ගනුදෙනුකරු ඉවත් කරන්න', confirmDeleteClient: 'ගනුදෙනුකරු සහ සම්බන්ධිත සියලු ගනුදෙනු ඉවත් කරන්නද?', memoryManagerTitle: 'ක්ෂේත්‍ර මතක කළමනාකරු', transactionType: 'ගනුදෙනු වර්ගය', fieldLabel: 'ක්ෂේත්‍රය', deleteWord: 'ඉවත් කරන්න', noMemories: 'මෙම ක්ෂේත්‍රයට මතක අගයන් නොමැත',
+  customerHistoryReport: 'ගනුදෙනුකරු Kobutsu ඉතිහාසය', destination: 'ගමනාන්තය/සටහන', printLabel: 'මුද්‍රණය', saveFullKobutsuPdf: 'සම්පූර්ණ Kobutsu PDF සුරකින්න', startDate: 'ආරම්භ දිනය', endDate: 'අවසන් දිනය', allRecords: 'සියලු වාර්තා', reportPeriod: 'වාර්තා කාලය', generatedAt: 'නිර්මාණය කළ වේලාව', fullKobutsuHistoryTitle: 'සම්පූර්ණ Kobutsu ඉතිහාසය', paymentMethod: 'ගෙවීම් ක්‍රමය',
+  saveFullPeriodKobutsuPdf: 'කාල සීමාවේ සම්පූර්ණ PDF සුරකින්න', fullKobutsuPeriodPdf: 'කාල සීමාවේ සම්පූර්ණ Kobutsu වාර්තාව', periodReport: 'කාල වාර්තාව', allIndividuals: 'සියලු පුද්ගලයන්', incomingItems: 'ඇතුල්වන අයිතම', outgoingItems: 'පිටවන අයිතම', stockItems: 'තොග අයිතම', totalClients: 'මුළු ගනුදෙනුකරුවන්', totalIncomingItems: 'මුළු ඇතුල්වන අයිතම', totalOutgoingItems: 'මුළු පිටවන අයිතම', totalStockItems: 'මුළු තොග අයිතම', totalPurchaseAmount: 'මුළු මිලදී ගැනීම් මුදල', totalSaleAmount: 'මුළු විකිණීම් මුදල',
+  print_general_period_report: 'කාල සීමාවේ පොදු වාර්තාව මුද්‍රණය කරන්න', confirm_save: 'සුරැකීම තහවුරු කරන්න', do_you_want_to_save: 'ඔබට සුරැකීමට අවශ්‍යද?', yes: 'ඔව්', no: 'නැහැ', cancel: 'අවලංගු', status: 'තත්ත්වය', purchased: 'මිලදී ගත්', sold: 'විකුණන ලද', no_records_found: 'වාර්තා හමු නොවීය',
+  record_saved_successfully: 'වාර්තාව සාර්ථකව සුරකින ලදී.', settings_saved_successfully: 'සැකසුම් සාර්ථකව සුරකින ලදී.', historyReport: 'Kobutsu ඉතිහාස වාර්තාව', purchasesLabel: 'මිලදී ගැනීම්', salesLabel: 'විකිණීම්', operationalProfit: 'ක්‍රියාකාරී ලාභය', taxIncluded: 'ඇතුළත්', taxSeparate: 'වෙන්ව ගණනය', mobileDevice: 'ජංගම', tabletDevice: 'ටැබ්ලට්', desktopDevice: 'ඩෙස්ක්ටොප්'
+});
+
 const PLACEHOLDER_BY_LANG = {
   pt: { search: 'Maria / A1B2C3D4 / +55...', companyName: 'Recycle Software Ltda', companyAddress: 'Rua Exemplo, 123', defaultCategory: 'Metal', currency: 'BRL', clientName: 'Maria Silva', phone: '+55 11 99999-0000', address: 'Rua Exemplo, 123', category: 'Metal', description: 'Sucata de alumínio' },
   es: { search: 'Maria / A1B2C3D4 / +34...', companyName: 'Recycle Software SL', companyAddress: 'Calle Ejemplo, 123', defaultCategory: 'Metal', currency: 'EUR', clientName: 'María López', phone: '+34 600 123 456', address: 'Calle Ejemplo, 123', category: 'Metal', description: 'Chatarra de aluminio' },
@@ -119,6 +155,10 @@ function getCurrentLanguage() {
 
 function getTranslation(key) {
   return t(key);
+}
+
+function translateTransactionType(type) {
+  return type === 'purchase' ? t('purchaseLabel') : t('saleLabel');
 }
 
 function isNarrowScreen() {
@@ -268,7 +308,7 @@ function printClientKobutsuHistory(clientId) {
     const itemLines = (row.items || []).length
       ? row.items.map((item) => `<div>${item.description || ''} · ${item.quantity || ''} ${item.unit || ''} · ${formatMoney(item.unitPrice || 0)} · ${formatMoney(item.lineTotal || 0)}</div>`).join('')
       : `<div>${row.description || ''} · ${row.quantity || ''} ${row.unit || ''} · ${formatMoney(row.unitPrice || 0)} · ${formatMoney(row.total || 0)}</div>`;
-    return `<tr><td>${idx + 1}</td><td>${row.entryDate || ''}</td><td>${row.transactionCode || ''}</td><td>${row.type}</td><td>${secondLine}${itemLines}</td><td>${row.supplier || ''}</td><td>${row.observation || ''}</td></tr>`;
+    return `<tr><td>${idx + 1}</td><td>${row.entryDate || ''}</td><td>${row.transactionCode || ''}</td><td>${translateTransactionType(row.type)}</td><td>${secondLine}${itemLines}</td><td>${row.supplier || ''}</td><td>${row.observation || ''}</td></tr>`;
   }).join('');
 
   document.getElementById('printArea').innerHTML = `
@@ -320,7 +360,7 @@ function setupDeviceCompatibility() {
 
   const badge = document.getElementById('deviceBadge');
   if (badge) {
-    const labels = { mobile: 'iPhone/Android', tablet: 'Tablet', desktop: 'Desktop' };
+    const labels = { mobile: t('mobileDevice'), tablet: t('tabletDevice'), desktop: t('desktopDevice') };
     const dict = LANGUAGES[state.lang] || LANGUAGES.pt;
     badge.textContent = `${dict.deviceMode || 'Mode'}: ${labels[mode]}`;
   }
@@ -460,7 +500,7 @@ function createForm(type, container) {
     localStorage.setItem('recycle_transactions', JSON.stringify(state.transactions));
     refreshSearch();
     refreshSummary();
-    alert('Registro salvo com sucesso!');
+    alert(t('record_saved_successfully'));
     resetFormForNewEntry(form, type);
   };
 
@@ -505,7 +545,7 @@ function refreshSearch() {
       if (isNarrowScreen() && window.RecycleClients?.renderMobileClientRow) {
         tr.innerHTML = window.RecycleClients.renderMobileClientRow(r, t);
       } else {
-        tr.innerHTML = `<td>${r.clientId}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.entryDate || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.type}</td><td><button class="printRow" data-code="${r.transactionCode}">${t('printLabel')}</button> <button class="editRow">${t('edit')}</button> <button class="printClientHistoryRow">${t('printClientHistory')}</button> <button class="deleteClientRow">${t('deleteClient')}</button></td>`;
+        tr.innerHTML = `<td>${r.clientId}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.entryDate || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${translateTransactionType(r.type)}</td><td><button class="printRow" data-code="${r.transactionCode}">${t('printLabel')}</button> <button class="editRow">${t('edit')}</button> <button class="printClientHistoryRow">${t('printClientHistory')}</button> <button class="deleteClientRow">${t('deleteClient')}</button></td>`;
       }
       tr.querySelector('.printRow').addEventListener('click', () => {
         generatePrintFromRecord(r);
@@ -975,7 +1015,7 @@ function renderChart(purchaseTotal, saleTotal) {
     const max = Math.max(purchaseTotal, saleTotal, 1);
     const values = [purchaseTotal, saleTotal];
     const barWidth = Math.max(60, width * 0.14);
-    ['Compra', 'Venda'].forEach((name, idx) => {
+    [t('purchaseLabel'), t('saleLabel')].forEach((name, idx) => {
       const x = width * (0.2 + idx * 0.35);
       const h = (values[idx] / max) * (height * 0.58);
       ctx.fillStyle = colors[idx];
@@ -1000,8 +1040,8 @@ function renderChart(purchaseTotal, saleTotal) {
       start += angle;
     });
     ctx.fillStyle = '#111';
-    ctx.fillText(`Compra: ${formatMoney(purchaseTotal)}`, width * 0.68, height * 0.42);
-    ctx.fillText(`Venda: ${formatMoney(saleTotal)}`, width * 0.68, height * 0.52);
+    ctx.fillText(`${t('purchaseLabel')}: ${formatMoney(purchaseTotal)}`, width * 0.68, height * 0.42);
+    ctx.fillText(`${t('saleLabel')}: ${formatMoney(saleTotal)}`, width * 0.68, height * 0.52);
   }
 }
 
@@ -1009,9 +1049,9 @@ function generatePrintHTML(record) {
   const itemsRows = (record.items || []).map((i, idx) => `<tr><td>${idx + 1}</td><td>${i.description || ''}</td><td>${i.quantity || ''}</td><td>${i.unit || ''}</td><td>${formatMoney(i.unitPrice)}</td><td>${formatMoney(i.lineTotal)}</td></tr>`).join('');
   const typeLabel = record.type === 'purchase' ? t('purchaseLabel') : t('saleLabel');
   const content = `<h3>${t('receipt')} - ${typeLabel}</h3>
-    <p><strong>ID:</strong> ${record.clientId} | <strong>${t('transactionCode')}:</strong> ${record.transactionCode}</p>
+    <p><strong>${t('clientId')}:</strong> ${record.clientId} | <strong>${t('transactionCode')}:</strong> ${record.transactionCode}</p>
     <p><strong>${t('clientName')}:</strong> ${record.clientName || ''} | <strong>${t('phone')}:</strong> ${record.phone || ''}</p>
-    <p><strong>${t('hasInvoice')}:</strong> ${record.hasInvoice ? 'Sim/Yes' : 'Não/No'}${record.hasInvoice && record.invoiceNumber ? ` | <strong>${t('invoiceNumber')}:</strong> ${record.invoiceNumber}` : ''}</p>
+    <p><strong>${t('hasInvoice')}:</strong> ${record.hasInvoice ? t('yes') : t('no')}${record.hasInvoice && record.invoiceNumber ? ` | <strong>${t('invoiceNumber')}:</strong> ${record.invoiceNumber}` : ''}</p>
     <p><strong>${t('entryDate')}:</strong> ${record.entryDate || ''} | <strong>${t('total')}:</strong> ${formatMoney(record.total)}</p>
     <p><strong>${t('category')}:</strong> ${record.category || ''} | <strong>${t('supplier')}:</strong> ${record.supplier || ''}</p>
     <p><strong>${t('description')}:</strong> ${record.description || ''}</p>
@@ -1058,7 +1098,7 @@ function generateHistoryPrint() {
       const itemLines = (r.items || []).length
         ? r.items.map((item) => `${item.description || ''} · ${item.quantity || ''} ${item.unit || ''} · ${formatMoney(item.unitPrice || 0)} · ${formatMoney(item.lineTotal || 0)}`).join('<br/>')
         : '-';
-      return `<tr><td>${idx + 1}</td><td>${r.entryDate || ''}</td><td>${r.type}</td><td>${r.clientId || ''}</td><td>${r.clientName || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.category || ''} / ${r.description || ''} / ${statusLabel}</td><td>${itemLines}</td><td>${r.observation || ''}</td></tr>`;
+      return `<tr><td>${idx + 1}</td><td>${r.entryDate || ''}</td><td>${translateTransactionType(r.type)}</td><td>${r.clientId || ''}</td><td>${r.clientName || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total)}</td><td>${r.category || ''} / ${r.description || ''} / ${statusLabel}</td><td>${itemLines}</td><td>${r.observation || ''}</td></tr>`;
     })
     .join('');
 
@@ -1155,7 +1195,7 @@ function setupSettings() {
       consumptionTaxMode: document.getElementById('consumptionTaxMode').value
     };
     localStorage.setItem('recycle_settings', JSON.stringify(state.settings));
-    alert('Configurações salvas!');
+    alert(t('settings_saved_successfully'));
     refreshSearch();
     refreshSummary();
   });
