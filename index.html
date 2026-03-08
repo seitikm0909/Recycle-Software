@@ -14,32 +14,32 @@
     <h1 data-i18n="appTitle">Sistema de Reciclagem</h1>
     <div class="header-actions">
       <span id="deviceBadge" class="device-badge" aria-live="polite"></span>
-      <label for="languageSelect" data-i18n="language">Idioma</label>
+      <label for="languageSelect" data-i18n="language"></label>
       <select id="languageSelect"></select>
     </div>
   </header>
 
   <nav class="tabs" id="tabs">
-    <button class="tab active" data-tab="purchase" data-i18n="purchaseTab">Compra</button>
-    <button class="tab" data-tab="sale" data-i18n="saleTab">Venda</button>
-    <button class="tab" data-tab="search" data-i18n="clientsTab">Clientes</button>
-    <button class="tab" data-tab="summary" data-i18n="summaryTab">Resumo</button>
-    <button class="tab" data-tab="settings" data-i18n="settingsTab">Configurações</button>
+    <button class="tab active" data-tab="purchase" data-i18n="purchaseTab"></button>
+    <button class="tab" data-tab="sale" data-i18n="saleTab"></button>
+    <button class="tab" data-tab="search" data-i18n="clientsTab"></button>
+    <button class="tab" data-tab="summary" data-i18n="summaryTab"></button>
+    <button class="tab" data-tab="settings" data-i18n="settingsTab"></button>
   </nav>
 
   <main>
     <section class="tab-panel active" id="panel-purchase">
-      <h2 data-i18n="purchaseFormTitle">Cadastro de Compra</h2>
+      <h2 data-i18n="purchaseFormTitle"></h2>
       <div id="purchaseFormContainer"></div>
     </section>
 
     <section class="tab-panel" id="panel-sale">
-      <h2 data-i18n="saleFormTitle">Cadastro de Venda</h2>
+      <h2 data-i18n="saleFormTitle"></h2>
       <div id="saleFormContainer"></div>
     </section>
 
     <section class="tab-panel" id="panel-search">
-      <h2 data-i18n="clientSearch">Busca de Clientes</h2>
+      <h2 data-i18n="clientSearch"></h2>
       <div class="card">
         <div class="form-grid two-cols">
           <label>
@@ -50,23 +50,23 @@
             <span data-i18n="filterType">Tipo</span>
             <select id="searchTypeFilter">
               <option value="all" data-i18n="all">Todos</option>
-              <option value="purchase" data-i18n="purchaseTab">Compra</option>
-              <option value="sale" data-i18n="saleTab">Venda</option>
+              <option value="purchase" data-i18n="purchaseTab"></option>
+              <option value="sale" data-i18n="saleTab"></option>
             </select>
           </label>
         </div>
         <div class="form-grid two-cols">
           <label>
-            <span data-i18n="startDate">Data inicial</span>
+            <span data-i18n="startDate"></span>
             <input id="searchStartDate" type="date" />
           </label>
           <label>
-            <span data-i18n="endDate">Data final</span>
+            <span data-i18n="endDate"></span>
             <input id="searchEndDate" type="date" />
           </label>
         </div>
         <div class="button-row">
-          <button id="printPeriodReportBtn" data-i18n="printGeneralPeriodReport">Imprimir relatório geral do período</button>
+          <button id="printPeriodReportBtn" data-i18n="printGeneralPeriodReport"></button>
         </div>
         <div class="table-wrap">
           <table>
@@ -89,7 +89,7 @@
     </section>
 
     <section class="tab-panel" id="panel-summary">
-      <h2 data-i18n="summaryAndCharts">Resumo e Gráficos</h2>
+      <h2 data-i18n="summaryAndCharts"></h2>
       <div class="card summary-card">
         <div class="form-grid three-cols">
           <label>
@@ -109,12 +109,12 @@
           </label>
         </div>
         <div class="button-row">
-          <button id="printHistory" data-i18n="printKobutsuHistory">Imprimir histórico Kobutsu</button>
+          <button id="printHistory" data-i18n="printKobutsuHistory"></button>
         </div>
         <div class="summary-top">
           <div class="metric"><span data-i18n="totalTransactions">Transações</span><strong id="metricTransactions">0</strong></div>
-          <div class="metric"><span data-i18n="purchaseVolume">Volume Compra</span><strong id="metricPurchase">0</strong></div>
-          <div class="metric"><span data-i18n="saleVolume">Volume Venda</span><strong id="metricSale">0</strong></div>
+          <div class="metric"><span data-i18n="purchaseVolume"></span><strong id="metricPurchase">0</strong></div>
+          <div class="metric"><span data-i18n="saleVolume"></span><strong id="metricSale">0</strong></div>
           <div class="metric"><span data-i18n="operationalProfit">Lucro Operacional</span><strong id="metricProfit">0</strong></div>
         </div>
         <div class="chart-controls">
@@ -129,7 +129,7 @@
         <canvas id="summaryChart" width="900" height="380"></canvas>
         <div class="summary-grid">
           <div>
-            <h3 data-i18n="periodSummary">Resumo por período</h3>
+            <h3 data-i18n="periodSummary"></h3>
             <label>
               <span data-i18n="periodType">Período</span>
               <select id="periodType">
@@ -142,7 +142,7 @@
             <div class="table-wrap"><table><thead><tr><th data-i18n="period">Período</th><th data-i18n="total">Total</th></tr></thead><tbody id="periodSummaryBody"></tbody></table></div>
           </div>
           <div>
-            <h3 data-i18n="categorySummary">Resumo por categoria</h3>
+            <h3 data-i18n="categorySummary"></h3>
             <label>
               <span data-i18n="chartType">Tipo de gráfico</span>
               <select id="categoryChartType"><option value="bar" data-i18n="bar">Picos (Barras)</option><option value="pie" data-i18n="pie">Pizza</option></select>
@@ -151,7 +151,7 @@
             <div class="table-wrap"><table><thead><tr><th data-i18n="category">Categoria</th><th data-i18n="total">Total</th></tr></thead><tbody id="categorySummaryBody"></tbody></table></div>
           </div>
           <div>
-            <h3 data-i18n="descriptionSummary">Resumo por descrição</h3>
+            <h3 data-i18n="descriptionSummary"></h3>
             <label>
               <span data-i18n="chartType">Tipo de gráfico</span>
               <select id="descriptionChartType"><option value="bar" data-i18n="bar">Picos (Barras)</option><option value="pie" data-i18n="pie">Pizza</option></select>
@@ -168,7 +168,7 @@
     </section>
 
     <section class="tab-panel" id="panel-settings">
-      <h2 data-i18n="settingsTitle">Configurações</h2>
+      <h2 data-i18n="settingsTitle"></h2>
       <div class="card">
         <div class="form-grid two-cols">
           <label>
@@ -198,8 +198,8 @@
           <label>
             <span data-i18n="transactionType">Tipo de transação</span>
             <select id="memoryTypeSelect">
-              <option value="purchase" data-i18n="purchaseTab">Compra</option>
-              <option value="sale" data-i18n="saleTab">Venda</option>
+              <option value="purchase" data-i18n="purchaseTab"></option>
+              <option value="sale" data-i18n="saleTab"></option>
             </select>
           </label>
           <label>

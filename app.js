@@ -140,6 +140,27 @@ Object.assign(I18N_PATCH.en, {
   summaryAndCharts: 'Summary and Charts', periodSummary: 'Summary by period', categorySummary: 'Summary by category', descriptionSummary: 'Summary by description',
   confirmSaveTitle: 'Confirm save', confirmSaveMessage: 'Do you want to save?', reportTitle: 'Full Kobutsu period report', reportPeriod: 'Period report'
 });
+Object.assign(I18N_PATCH.es, {
+  clientsTab: 'Clientes', clientSearch: 'Búsqueda de Clientes', printGeneralPeriodReport: 'Imprimir informe general del período', printKobutsuHistory: 'Imprimir historial Kobutsu',
+  summaryAndCharts: 'Resumen y Gráficos', periodSummary: 'Resumen por período', categorySummary: 'Resumen por categoría', descriptionSummary: 'Resumen por descripción',
+  confirmSaveTitle: 'Confirmar guardado', confirmSaveMessage: '¿Desea guardar?', yes: 'Sí', cancel: 'Cancelar',
+  reportTitle: 'Informe completo Kobutsu del período', reportPeriod: 'Período del informe', generatedAt: 'Generado en',
+  allIndividuals: 'Todos los individuos', incomingItems: 'Ítems de entrada', outgoingItems: 'Ítems de salida', stockItems: 'Ítems en stock'
+});
+Object.assign(I18N_PATCH.ja, {
+  clientsTab: '顧客', clientSearch: '顧客検索', printGeneralPeriodReport: '期間全体レポートを印刷', printKobutsuHistory: '古物履歴を印刷',
+  summaryAndCharts: 'サマリーとグラフ', periodSummary: '期間別サマリー', categorySummary: 'カテゴリ別サマリー', descriptionSummary: '説明別サマリー',
+  confirmSaveTitle: '保存確認', confirmSaveMessage: '保存しますか？', yes: 'はい', cancel: 'キャンセル',
+  reportTitle: '期間古物総合レポート', reportPeriod: 'レポート期間', generatedAt: '作成日時',
+  allIndividuals: '全ての個人', incomingItems: '入庫品目', outgoingItems: '出庫品目', stockItems: '在庫品目'
+});
+Object.assign(I18N_PATCH.vi, {
+  clientsTab: 'Khách hàng', clientSearch: 'Tìm kiếm khách hàng', printGeneralPeriodReport: 'In báo cáo tổng quát theo kỳ', printKobutsuHistory: 'In lịch sử Kobutsu',
+  summaryAndCharts: 'Tổng hợp và Biểu đồ', periodSummary: 'Tổng hợp theo kỳ', categorySummary: 'Tổng hợp theo danh mục', descriptionSummary: 'Tổng hợp theo mô tả',
+  confirmSaveTitle: 'Xác nhận lưu', confirmSaveMessage: 'Bạn có muốn lưu không?', yes: 'Có', cancel: 'Hủy',
+  reportTitle: 'Báo cáo Kobutsu đầy đủ theo kỳ', reportPeriod: 'Kỳ báo cáo', generatedAt: 'Thời điểm tạo',
+  allIndividuals: 'Tất cả cá nhân', incomingItems: 'Mục nhập kho', outgoingItems: 'Mục xuất kho', stockItems: 'Mục tồn kho'
+});
 Object.assign(I18N_PATCH.ur, {
   clientsTab: 'گاہک', clientSearch: 'گاہک تلاش', printGeneralPeriodReport: 'مدت کی عمومی رپورٹ پرنٹ کریں', printKobutsuHistory: 'Kobutsu ہسٹری پرنٹ کریں',
   summaryAndCharts: 'خلاصہ اور چارٹس', periodSummary: 'مدت کے لحاظ سے خلاصہ', categorySummary: 'زمرہ کے لحاظ سے خلاصہ', descriptionSummary: 'تفصیل کے لحاظ سے خلاصہ',
@@ -746,7 +767,7 @@ function buildFullPeriodPdfHtml(startDate, endDate) {
     : `<tr><td colspan="6">${t('noRecords')}</td></tr>`;
 
   const detailRows = records.length
-    ? records.map((r, idx) => `<tr><td>${idx + 1}</td><td>${getRecordDate(r) || ''}</td><td>${r.clientId || ''}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.address || ''}</td><td>${r.type || ''}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total || 0)}</td><td>${r.category || ''}</td><td>${r.description || ''}</td><td>${r.quantity || ''}</td><td>${formatMoney(r.unitPrice || 0)}</td><td>${r.supplier || ''}</td><td>${r.observation || ''}</td><td>${r.vehiclePlate || ''}</td><td>${r.serialNumber || ''}</td></tr>`).join('')
+    ? records.map((r, idx) => `<tr><td>${idx + 1}</td><td>${getRecordDate(r) || ''}</td><td>${r.clientId || ''}</td><td>${r.clientName || ''}</td><td>${r.phone || ''}</td><td>${r.address || ''}</td><td>${translateTransactionType(r.type)}</td><td>${r.transactionCode || ''}</td><td>${formatMoney(r.total || 0)}</td><td>${r.category || ''}</td><td>${r.description || ''}</td><td>${r.quantity || ''}</td><td>${formatMoney(r.unitPrice || 0)}</td><td>${r.supplier || ''}</td><td>${r.observation || ''}</td><td>${r.vehiclePlate || ''}</td><td>${r.serialNumber || ''}</td></tr>`).join('')
     : `<tr><td colspan="17">${t('noRecords')}</td></tr>`;
 
   return `
