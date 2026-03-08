@@ -53,11 +53,11 @@ function applyLocaleDefaults() {
 
 
 const I18N_PATCH = {
-  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente' },
-  es: { noRecords: 'Sin registros', summaryByPeriod: 'Resumen por período', summaryByCategory: 'Resumen por categoría', summaryByDescription: 'Resumen por descripción', periodType: 'Período', daily: 'Día', monthly: 'Mes', yearly: 'Año', period: 'Período', operationalProfit: 'Beneficio Operativo', invoiceRate: '% de インボイス', consumptionTaxRate: '% de 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluido', taxSeparate: 'Calculado por separado', purchaseSaleLine: 'Volumen compra/venta por período', clientIdHint: 'Escriba ID existente para completar cliente' },
-  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data' },
-  ja: { noRecords: 'データなし', summaryByPeriod: '期間別サマリー', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', operationalProfit: '営業利益', invoiceRate: 'インボイス %', consumptionTaxRate: '消費税 %', consumptionTaxMode: '消費税', taxIncluded: '税込', taxSeparate: '別計算', purchaseSaleLine: '期間別の仕入/販売推移', clientIdHint: '既存の顧客IDを入力すると自動入力' },
-  vi: { noRecords: 'Không có dữ liệu', summaryByPeriod: 'Tóm tắt theo kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', operationalProfit: 'Lợi nhuận vận hành', invoiceRate: '% invoice', consumptionTaxRate: '% thuế tiêu dùng', consumptionTaxMode: 'Thuế tiêu dùng', taxIncluded: 'Đã gồm', taxSeparate: 'Tính riêng', purchaseSaleLine: 'Khối lượng mua/bán theo kỳ', clientIdHint: 'Nhập ID khách có sẵn để tự điền' },
+  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス' },
+  es: { noRecords: 'Sin registros', summaryByPeriod: 'Resumen por período', summaryByCategory: 'Resumen por categoría', summaryByDescription: 'Resumen por descripción', periodType: 'Período', daily: 'Día', monthly: 'Mes', yearly: 'Año', period: 'Período', operationalProfit: 'Beneficio Operativo', invoiceRate: '% de インボイス', consumptionTaxRate: '% de 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluido', taxSeparate: 'Calculado por separado', purchaseSaleLine: 'Volumen compra/venta por período', clientIdHint: 'Escriba ID existente para completar cliente', hasInvoice: 'Tiene インボイス', invoiceNumber: 'Número de インボイス' },
+  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number' },
+  ja: { noRecords: 'データなし', summaryByPeriod: '期間別サマリー', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', operationalProfit: '営業利益', invoiceRate: 'インボイス %', consumptionTaxRate: '消費税 %', consumptionTaxMode: '消費税', taxIncluded: '税込', taxSeparate: '別計算', purchaseSaleLine: '期間別の仕入/販売推移', clientIdHint: '既存の顧客IDを入力すると自動入力', hasInvoice: 'インボイスあり', invoiceNumber: 'インボイス番号' },
+  vi: { noRecords: 'Không có dữ liệu', summaryByPeriod: 'Tóm tắt theo kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', operationalProfit: 'Lợi nhuận vận hành', invoiceRate: '% invoice', consumptionTaxRate: '% thuế tiêu dùng', consumptionTaxMode: 'Thuế tiêu dùng', taxIncluded: 'Đã gồm', taxSeparate: 'Tính riêng', purchaseSaleLine: 'Khối lượng mua/bán theo kỳ', clientIdHint: 'Nhập ID khách có sẵn để tự điền', hasInvoice: 'Có インボイス', invoiceNumber: 'Số インボイス' },
   ur: { noRecords: 'ریکارڈ نہیں', operationalProfit: 'آپریٹنگ منافع', taxIncluded: 'شامل', taxSeparate: 'الگ سے' },
   zh: { noRecords: '无记录', operationalProfit: '营业利润', taxIncluded: '含税', taxSeparate: '分开计算' },
   si: { noRecords: 'දත්ත නොමැත', operationalProfit: 'ක්‍රියාකාරී ලාභය', taxIncluded: 'ඇතුළත්', taxSeparate: 'වෙන්ව ගණනය' }
@@ -129,6 +129,7 @@ function resetFormForNewEntry(form, type) {
   form.querySelector('input[name="entryDate"]').value = new Date().toISOString().slice(0, 10);
   form.querySelector('input[name="transactionCode"]').value = newTransactionCode(type);
   form.querySelector('input[name="total"]').readOnly = true;
+  form.hasInvoice?.dispatchEvent(new Event('change'));
   for (let i = 1; i <= 15; i += 1) {
     form[`itemTotal${i}`].value = '';
   }
@@ -200,6 +201,14 @@ function createForm(type, container) {
   const entryDateInput = form.querySelector('input[name="entryDate"]');
   const transactionCodeInput = form.querySelector('input[name="transactionCode"]');
   const totalInput = form.querySelector('input[name="total"]');
+  const hasInvoiceInput = form.querySelector('input[name="hasInvoice"]');
+  const invoiceNumberLabel = form.querySelector('.invoice-number-field');
+
+  const syncInvoiceField = () => {
+    const enabled = !!hasInvoiceInput?.checked;
+    invoiceNumberLabel?.classList.toggle('is-hidden', !enabled);
+    if (!enabled && form.invoiceNumber) form.invoiceNumber.value = '';
+  };
 
   clientIdInput.value = randomId();
   entryDateInput.value = new Date().toISOString().slice(0, 10);
@@ -235,6 +244,9 @@ function createForm(type, container) {
     }
   });
 
+  hasInvoiceInput?.addEventListener('change', syncInvoiceField);
+  syncInvoiceField();
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const items = [];
@@ -256,6 +268,8 @@ function createForm(type, container) {
       total: Number(data.total || 0),
       unitPrice: Number(data.unitPrice || 0),
       quantity: Number(data.quantity || 0),
+      hasInvoice: !!form.hasInvoice?.checked,
+      invoiceNumber: form.hasInvoice?.checked ? (data.invoiceNumber || '').trim() : '',
       items,
       updatedAt: new Date().toISOString()
     };
@@ -338,6 +352,9 @@ function autofillByClientId(form) {
     const input = form.querySelector(`[name="${f}"]`);
     if (input) input.value = record[f] || '';
   });
+  if (form.hasInvoice) form.hasInvoice.checked = !!record.hasInvoice;
+  if (form.invoiceNumber) form.invoiceNumber.value = record.invoiceNumber || '';
+  form.hasInvoice?.dispatchEvent(new Event('change'));
 }
 
 function loadRecordForEdit(record) {
@@ -351,9 +368,14 @@ function loadRecordForEdit(record) {
   form.dataset.editingId = record._id || '';
   Object.keys(record).forEach((k) => {
     if (form[k] && typeof record[k] !== 'object') {
-      form[k].value = record[k] ?? '';
+      if (form[k].type === 'checkbox') {
+        form[k].checked = Boolean(record[k]);
+      } else {
+        form[k].value = record[k] ?? '';
+      }
     }
   });
+  form.hasInvoice?.dispatchEvent(new Event('change'));
 
   for (let i = 1; i <= 15; i += 1) {
     const item = (record.items || [])[i - 1] || {};
@@ -553,6 +575,7 @@ function generatePrintHTML(record) {
   const content = `<h3>${t('receipt')} - ${typeLabel}</h3>
     <p><strong>ID:</strong> ${record.clientId} | <strong>${t('transactionCode')}:</strong> ${record.transactionCode}</p>
     <p><strong>${t('clientName')}:</strong> ${record.clientName || ''} | <strong>${t('phone')}:</strong> ${record.phone || ''}</p>
+    <p><strong>${t('hasInvoice')}:</strong> ${record.hasInvoice ? 'Sim/Yes' : 'Não/No'}${record.hasInvoice && record.invoiceNumber ? ` | <strong>${t('invoiceNumber')}:</strong> ${record.invoiceNumber}` : ''}</p>
     <p><strong>${t('entryDate')}:</strong> ${record.entryDate || ''} | <strong>${t('total')}:</strong> ${formatMoney(record.total)}</p>
     <p><strong>${t('category')}:</strong> ${record.category || ''} | <strong>${t('supplier')}:</strong> ${record.supplier || ''}</p>
     <p><strong>${t('description')}:</strong> ${record.description || ''}</p>
@@ -594,6 +617,7 @@ function generateDaisoReceipt(form) {
         <p><strong>${t('clientName')}:</strong> ${data.clientName || ''}</p>
         <p><strong>${t('transactionCode')}:</strong> ${data.transactionCode || ''}</p>
         <p><strong>${t('description')}:</strong> ${data.description || ''}</p>
+        <p><strong>${t('hasInvoice')}:</strong> ${form.hasInvoice?.checked ? 'Sim/Yes' : 'Não/No'}${form.hasInvoice?.checked && data.invoiceNumber ? ` | <strong>${t('invoiceNumber')}:</strong> ${data.invoiceNumber}` : ''}</p>
         <p><strong>${t('total')}:</strong> ${formatMoney(data.total)}</p>
         <div class="signature">${t('signature')}</div>
       </div>
@@ -633,7 +657,7 @@ function generateHistoryPrint() {
 }
 
 function exportExcelLikeCSV() {
-  const header = ['type', 'clientId', 'clientName', 'phone', 'entryDate', 'transactionCode', 'category', 'serialNumber', 'supplier', 'description', 'quantity', 'unit', 'unitPrice', 'total', 'observation'];
+  const header = ['type', 'clientId', 'clientName', 'phone', 'entryDate', 'transactionCode', 'category', 'serialNumber', 'supplier', 'description', 'quantity', 'unit', 'unitPrice', 'total', 'hasInvoice', 'invoiceNumber', 'observation'];
   const lines = [header.join(',')];
   state.transactions.forEach((t) => {
     const row = header.map((k) => `"${String(t[k] ?? '').replaceAll('"', '""')}"`).join(',');
