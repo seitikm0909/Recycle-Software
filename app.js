@@ -133,12 +133,43 @@ Object.assign(I18N_PATCH.si, {
 Object.assign(I18N_PATCH.pt, {
   clientsTab: 'Clientes', clientSearch: 'Busca de Clientes', printGeneralPeriodReport: 'Imprimir relatório geral do período', printKobutsuHistory: 'Imprimir histórico Kobutsu',
   summaryAndCharts: 'Resumo e Gráficos', periodSummary: 'Resumo por período', categorySummary: 'Resumo por categoria', descriptionSummary: 'Resumo por descrição',
-  confirmSaveTitle: 'Confirmar salvamento', confirmSaveMessage: 'Deseja salvar?', reportTitle: 'Relatório completo Kobutsu do período', reportPeriod: 'Relatório do período'
+  confirmSaveTitle: 'Confirmar salvamento', confirmSaveMessage: 'Deseja salvar?',
+  saveSuccessTitle: 'Registro salvo', saveSuccessMessage: 'Registro salvo com sucesso!', ok: 'OK',
+  reportTitle: 'Relatório completo Kobutsu do período', reportPeriod: 'Relatório do período', destination: 'Destino/Observação'
 });
 Object.assign(I18N_PATCH.en, {
   clientsTab: 'Clients', clientSearch: 'Client Search', printGeneralPeriodReport: 'Print general period report', printKobutsuHistory: 'Print Kobutsu history',
   summaryAndCharts: 'Summary and Charts', periodSummary: 'Summary by period', categorySummary: 'Summary by category', descriptionSummary: 'Summary by description',
-  confirmSaveTitle: 'Confirm save', confirmSaveMessage: 'Do you want to save?', reportTitle: 'Full Kobutsu period report', reportPeriod: 'Period report'
+  confirmSaveTitle: 'Confirm save', confirmSaveMessage: 'Do you want to save?',
+  saveSuccessTitle: 'Saved', saveSuccessMessage: 'Record saved successfully!', ok: 'OK',
+  reportTitle: 'Full Kobutsu period report', reportPeriod: 'Period report', destination: 'Destination/Observation'
+});
+Object.assign(I18N_PATCH.es, {
+  clientsTab: 'Clientes', clientSearch: 'Búsqueda de Clientes', printGeneralPeriodReport: 'Imprimir informe general del período', printKobutsuHistory: 'Imprimir historial Kobutsu',
+  summaryAndCharts: 'Resumen y Gráficos', periodSummary: 'Resumen por período', categorySummary: 'Resumen por categoría', descriptionSummary: 'Resumen por descripción',
+  confirmSaveTitle: 'Confirmar guardado', confirmSaveMessage: '¿Desea guardar?', yes: 'Sí', cancel: 'Cancelar',
+  saveSuccessTitle: 'Guardado', saveSuccessMessage: '¡Registro guardado con éxito!', ok: 'OK',
+  reportTitle: 'Informe completo Kobutsu del período', reportPeriod: 'Período del informe', generatedAt: 'Generado en',
+  allIndividuals: 'Todos los individuos', incomingItems: 'Ítems de entrada', outgoingItems: 'Ítems de salida', stockItems: 'Ítems en stock',
+  totalClients: 'Total de clientes', totalIncomingItems: 'Total de ítems de entrada', totalOutgoingItems: 'Total de ítems de salida', totalStockItems: 'Total de ítems en stock', totalPurchaseAmount: 'Total financiero de compras', totalSaleAmount: 'Total financiero de ventas', destination: 'Destino/Observación'
+});
+Object.assign(I18N_PATCH.ja, {
+  clientsTab: '顧客', clientSearch: '顧客検索', printGeneralPeriodReport: '期間全体レポートを印刷', printKobutsuHistory: '古物履歴を印刷',
+  summaryAndCharts: 'サマリーとグラフ', periodSummary: '期間別サマリー', categorySummary: 'カテゴリ別サマリー', descriptionSummary: '説明別サマリー',
+  confirmSaveTitle: '保存確認', confirmSaveMessage: '保存しますか？', yes: 'はい', cancel: 'キャンセル',
+  saveSuccessTitle: '保存完了', saveSuccessMessage: '正常に保存されました', ok: 'OK',
+  reportTitle: '期間古物総合レポート', reportPeriod: 'レポート期間', generatedAt: '作成日時',
+  allIndividuals: '全ての個人', incomingItems: '入庫品目', outgoingItems: '出庫品目', stockItems: '在庫品目',
+  totalClients: '顧客総数', totalIncomingItems: '入庫合計数量', totalOutgoingItems: '出庫合計数量', totalStockItems: '在庫合計数量', totalPurchaseAmount: '仕入金額合計', totalSaleAmount: '販売金額合計', destination: '宛先/備考'
+});
+Object.assign(I18N_PATCH.vi, {
+  clientsTab: 'Khách hàng', clientSearch: 'Tìm kiếm khách hàng', printGeneralPeriodReport: 'In báo cáo tổng quát theo kỳ', printKobutsuHistory: 'In lịch sử Kobutsu',
+  summaryAndCharts: 'Tổng hợp và Biểu đồ', periodSummary: 'Tổng hợp theo kỳ', categorySummary: 'Tổng hợp theo danh mục', descriptionSummary: 'Tổng hợp theo mô tả',
+  confirmSaveTitle: 'Xác nhận lưu', confirmSaveMessage: 'Bạn có muốn lưu không?', yes: 'Có', cancel: 'Hủy',
+  saveSuccessTitle: 'Đã lưu', saveSuccessMessage: 'Dữ liệu đã được lưu thành công!', ok: 'OK',
+  reportTitle: 'Báo cáo Kobutsu đầy đủ theo kỳ', reportPeriod: 'Kỳ báo cáo', generatedAt: 'Thời điểm tạo',
+  allIndividuals: 'Tất cả cá nhân', incomingItems: 'Mục nhập kho', outgoingItems: 'Mục xuất kho', stockItems: 'Mục tồn kho',
+  totalClients: 'Tổng số khách hàng', totalIncomingItems: 'Tổng số lượng nhập', totalOutgoingItems: 'Tổng số lượng xuất', totalStockItems: 'Tổng số lượng tồn', totalPurchaseAmount: 'Tổng giá trị mua', totalSaleAmount: 'Tổng giá trị bán', destination: 'Điểm đến/Ghi chú'
 });
 Object.assign(I18N_PATCH.es, {
   clientsTab: 'Clientes', clientSearch: 'Búsqueda de Clientes', printGeneralPeriodReport: 'Imprimir informe general del período', printKobutsuHistory: 'Imprimir historial Kobutsu',
@@ -164,17 +195,23 @@ Object.assign(I18N_PATCH.vi, {
 Object.assign(I18N_PATCH.ur, {
   clientsTab: 'گاہک', clientSearch: 'گاہک تلاش', printGeneralPeriodReport: 'مدت کی عمومی رپورٹ پرنٹ کریں', printKobutsuHistory: 'Kobutsu ہسٹری پرنٹ کریں',
   summaryAndCharts: 'خلاصہ اور چارٹس', periodSummary: 'مدت کے لحاظ سے خلاصہ', categorySummary: 'زمرہ کے لحاظ سے خلاصہ', descriptionSummary: 'تفصیل کے لحاظ سے خلاصہ',
-  confirmSaveTitle: 'محفوظ کرنے کی تصدیق', confirmSaveMessage: 'کیا آپ محفوظ کرنا چاہتے ہیں؟', reportTitle: 'مدت کی مکمل Kobutsu رپورٹ', reportPeriod: 'رپورٹ مدت'
+  confirmSaveTitle: 'محفوظ کرنے کی تصدیق', confirmSaveMessage: 'کیا آپ محفوظ کرنا چاہتے ہیں؟',
+  saveSuccessTitle: 'محفوظ ہوگیا', saveSuccessMessage: 'ریکارڈ کامیابی سے محفوظ ہو گیا!', ok: 'OK',
+  reportTitle: 'مدت کی مکمل Kobutsu رپورٹ', reportPeriod: 'رپورٹ مدت', destination: 'منزل/مشاہدہ'
 });
 Object.assign(I18N_PATCH.zh, {
   clientsTab: '客户', clientSearch: '客户查询', printGeneralPeriodReport: '打印周期总报告', printKobutsuHistory: '打印Kobutsu历史',
   summaryAndCharts: '汇总与图表', periodSummary: '按周期汇总', categorySummary: '按分类汇总', descriptionSummary: '按描述汇总',
-  confirmSaveTitle: '确认保存', confirmSaveMessage: '是否保存？', reportTitle: '周期完整 Kobutsu 报告', reportPeriod: '报告周期'
+  confirmSaveTitle: '确认保存', confirmSaveMessage: '是否保存？',
+  saveSuccessTitle: '保存完成', saveSuccessMessage: '记录已成功保存！', ok: 'OK',
+  reportTitle: '周期完整 Kobutsu 报告', reportPeriod: '报告周期', destination: '去向/备注'
 });
 Object.assign(I18N_PATCH.si, {
   clientsTab: 'ගනුදෙනුකරුවන්', clientSearch: 'ගනුදෙනුකරු සෙවීම', printGeneralPeriodReport: 'කාල සීමාවේ පොදු වාර්තාව මුද්‍රණය කරන්න', printKobutsuHistory: 'Kobutsu ඉතිහාසය මුද්‍රණය',
   summaryAndCharts: 'සාරාංශ හා චාට්', periodSummary: 'කාල අනුව සාරාංශය', categorySummary: 'කාණ්ඩ අනුව සාරාංශය', descriptionSummary: 'විස්තර අනුව සාරාංශය',
-  confirmSaveTitle: 'සුරැකීම තහවුරු කරන්න', confirmSaveMessage: 'ඔබට සුරැකීමට අවශ්‍යද?', reportTitle: 'කාල සීමාවේ සම්පූර්ණ Kobutsu වාර්තාව', reportPeriod: 'වාර්තා කාලය'
+  confirmSaveTitle: 'සුරැකීම තහවුරු කරන්න', confirmSaveMessage: 'ඔබට සුරැකීමට අවශ්‍යද?',
+  saveSuccessTitle: 'සුරකිණි', saveSuccessMessage: 'දත්ත සාර්ථකව සුරකින ලදී!', ok: 'OK',
+  reportTitle: 'කාල සීමාවේ සම්පූර්ණ Kobutsu වාර්තාව', reportPeriod: 'වාර්තා කාලය', destination: 'ගමනාන්තය/සටහන'
 });
 
 
@@ -547,7 +584,15 @@ function createForm(type, container) {
     localStorage.setItem('recycle_transactions', JSON.stringify(state.transactions));
     refreshSearch();
     refreshSummary();
-    alert(t('record_saved_successfully'));
+    if (window.RecycleModals?.showInfoModal) {
+      window.RecycleModals.showInfoModal({
+        getTranslation,
+        titleKey: 'saveSuccessTitle',
+        messageKey: 'saveSuccessMessage',
+        okKey: 'ok',
+        focusBackTo: form.querySelector('button[type="submit"]')
+      });
+    }
     resetFormForNewEntry(form, type);
   };
 
@@ -777,9 +822,15 @@ function buildFullPeriodPdfHtml(startDate, endDate) {
         <p><strong>${t('reportPeriod')}:</strong> ${periodLabel} | <strong>${t('generatedAt')}:</strong> ${generatedAt}</p>
 
         <h3>${t('summaryTitle')}</h3>
-        <p><strong>${t('totalClients')}:</strong> ${clientGroups.length} | <strong>${t('totalTransactions')}:</strong> ${records.length}</p>
-        <p><strong>${t('totalIncomingItems')}:</strong> ${totalIncomingItems} | <strong>${t('totalOutgoingItems')}:</strong> ${totalOutgoingItems} | <strong>${t('totalStockItems')}:</strong> ${totalStockItems}</p>
-        <p><strong>${t('totalPurchaseAmount')}:</strong> ${formatMoney(totalPurchaseAmount)} | <strong>${t('totalSaleAmount')}:</strong> ${formatMoney(totalSaleAmount)}</p>
+        <div class="report-summary-grid">
+          <div class="report-summary-row"><span>${t('totalClients')}</span><strong>${clientGroups.length}</strong></div>
+          <div class="report-summary-row"><span>${t('totalTransactions')}</span><strong>${records.length}</strong></div>
+          <div class="report-summary-row"><span>${t('totalIncomingItems')}</span><strong>${totalIncomingItems}</strong></div>
+          <div class="report-summary-row"><span>${t('totalOutgoingItems')}</span><strong>${totalOutgoingItems}</strong></div>
+          <div class="report-summary-row"><span>${t('totalStockItems')}</span><strong>${totalStockItems}</strong></div>
+          <div class="report-summary-row"><span>${t('totalPurchaseAmount')}</span><strong>${formatMoney(totalPurchaseAmount)}</strong></div>
+          <div class="report-summary-row"><span>${t('totalSaleAmount')}</span><strong>${formatMoney(totalSaleAmount)}</strong></div>
+        </div>
 
         <h3>${t('allIndividuals')}</h3>
         <table>
