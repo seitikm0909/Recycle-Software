@@ -130,6 +130,32 @@ Object.assign(I18N_PATCH.si, {
   print_general_period_report: 'කාල සීමාවේ පොදු වාර්තාව මුද්‍රණය කරන්න', confirm_save: 'සුරැකීම තහවුරු කරන්න', do_you_want_to_save: 'ඔබට සුරැකීමට අවශ්‍යද?', yes: 'ඔව්', no: 'නැහැ', cancel: 'අවලංගු', status: 'තත්ත්වය', purchased: 'මිලදී ගත්', sold: 'විකුණන ලද', no_records_found: 'වාර්තා හමු නොවීය',
   record_saved_successfully: 'වාර්තාව සාර්ථකව සුරකින ලදී.', settings_saved_successfully: 'සැකසුම් සාර්ථකව සුරකින ලදී.', historyReport: 'Kobutsu ඉතිහාස වාර්තාව', purchasesLabel: 'මිලදී ගැනීම්', salesLabel: 'විකිණීම්', operationalProfit: 'ක්‍රියාකාරී ලාභය', taxIncluded: 'ඇතුළත්', taxSeparate: 'වෙන්ව ගණනය', mobileDevice: 'ජංගම', tabletDevice: 'ටැබ්ලට්', desktopDevice: 'ඩෙස්ක්ටොප්'
 });
+Object.assign(I18N_PATCH.pt, {
+  clientsTab: 'Clientes', clientSearch: 'Busca de Clientes', printGeneralPeriodReport: 'Imprimir relatório geral do período', printKobutsuHistory: 'Imprimir histórico Kobutsu',
+  summaryAndCharts: 'Resumo e Gráficos', periodSummary: 'Resumo por período', categorySummary: 'Resumo por categoria', descriptionSummary: 'Resumo por descrição',
+  confirmSaveTitle: 'Confirmar salvamento', confirmSaveMessage: 'Deseja salvar?', reportTitle: 'Relatório completo Kobutsu do período', reportPeriod: 'Relatório do período'
+});
+Object.assign(I18N_PATCH.en, {
+  clientsTab: 'Clients', clientSearch: 'Client Search', printGeneralPeriodReport: 'Print general period report', printKobutsuHistory: 'Print Kobutsu history',
+  summaryAndCharts: 'Summary and Charts', periodSummary: 'Summary by period', categorySummary: 'Summary by category', descriptionSummary: 'Summary by description',
+  confirmSaveTitle: 'Confirm save', confirmSaveMessage: 'Do you want to save?', reportTitle: 'Full Kobutsu period report', reportPeriod: 'Period report'
+});
+Object.assign(I18N_PATCH.ur, {
+  clientsTab: 'گاہک', clientSearch: 'گاہک تلاش', printGeneralPeriodReport: 'مدت کی عمومی رپورٹ پرنٹ کریں', printKobutsuHistory: 'Kobutsu ہسٹری پرنٹ کریں',
+  summaryAndCharts: 'خلاصہ اور چارٹس', periodSummary: 'مدت کے لحاظ سے خلاصہ', categorySummary: 'زمرہ کے لحاظ سے خلاصہ', descriptionSummary: 'تفصیل کے لحاظ سے خلاصہ',
+  confirmSaveTitle: 'محفوظ کرنے کی تصدیق', confirmSaveMessage: 'کیا آپ محفوظ کرنا چاہتے ہیں؟', reportTitle: 'مدت کی مکمل Kobutsu رپورٹ', reportPeriod: 'رپورٹ مدت'
+});
+Object.assign(I18N_PATCH.zh, {
+  clientsTab: '客户', clientSearch: '客户查询', printGeneralPeriodReport: '打印周期总报告', printKobutsuHistory: '打印Kobutsu历史',
+  summaryAndCharts: '汇总与图表', periodSummary: '按周期汇总', categorySummary: '按分类汇总', descriptionSummary: '按描述汇总',
+  confirmSaveTitle: '确认保存', confirmSaveMessage: '是否保存？', reportTitle: '周期完整 Kobutsu 报告', reportPeriod: '报告周期'
+});
+Object.assign(I18N_PATCH.si, {
+  clientsTab: 'ගනුදෙනුකරුවන්', clientSearch: 'ගනුදෙනුකරු සෙවීම', printGeneralPeriodReport: 'කාල සීමාවේ පොදු වාර්තාව මුද්‍රණය කරන්න', printKobutsuHistory: 'Kobutsu ඉතිහාසය මුද්‍රණය',
+  summaryAndCharts: 'සාරාංශ හා චාට්', periodSummary: 'කාල අනුව සාරාංශය', categorySummary: 'කාණ්ඩ අනුව සාරාංශය', descriptionSummary: 'විස්තර අනුව සාරාංශය',
+  confirmSaveTitle: 'සුරැකීම තහවුරු කරන්න', confirmSaveMessage: 'ඔබට සුරැකීමට අවශ්‍යද?', reportTitle: 'කාල සීමාවේ සම්පූර්ණ Kobutsu වාර්තාව', reportPeriod: 'වාර්තා කාලය'
+});
+
 
 const PLACEHOLDER_BY_LANG = {
   pt: { search: 'Maria / A1B2C3D4 / +55...', companyName: 'Recycle Software Ltda', companyAddress: 'Rua Exemplo, 123', defaultCategory: 'Metal', currency: 'BRL', clientName: 'Maria Silva', phone: '+55 11 99999-0000', address: 'Rua Exemplo, 123', category: 'Metal', description: 'Sucata de alumínio' },
@@ -726,8 +752,8 @@ function buildFullPeriodPdfHtml(startDate, endDate) {
   return `
     <div class="a4-sheet kobutsu-report-sheet">
       <div class="copy">
-        <h2>${t('fullKobutsuPeriodPdf')}</h2>
-        <p><strong>${t('periodReport')}:</strong> ${periodLabel} | <strong>${t('generatedAt')}:</strong> ${generatedAt}</p>
+        <h2>${t('reportTitle')}</h2>
+        <p><strong>${t('reportPeriod')}:</strong> ${periodLabel} | <strong>${t('generatedAt')}:</strong> ${generatedAt}</p>
 
         <h3>${t('summaryTitle')}</h3>
         <p><strong>${t('totalClients')}:</strong> ${clientGroups.length} | <strong>${t('totalTransactions')}:</strong> ${records.length}</p>

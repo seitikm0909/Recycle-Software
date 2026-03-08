@@ -22,7 +22,7 @@
   <nav class="tabs" id="tabs">
     <button class="tab active" data-tab="purchase" data-i18n="purchaseTab">Compra</button>
     <button class="tab" data-tab="sale" data-i18n="saleTab">Venda</button>
-    <button class="tab" data-tab="search" data-i18n="searchTab">Clientes</button>
+    <button class="tab" data-tab="search" data-i18n="clientsTab">Clientes</button>
     <button class="tab" data-tab="summary" data-i18n="summaryTab">Resumo</button>
     <button class="tab" data-tab="settings" data-i18n="settingsTab">Configurações</button>
   </nav>
@@ -39,7 +39,7 @@
     </section>
 
     <section class="tab-panel" id="panel-search">
-      <h2 data-i18n="searchTitle">Busca de Clientes</h2>
+      <h2 data-i18n="clientSearch">Busca de Clientes</h2>
       <div class="card">
         <div class="form-grid two-cols">
           <label>
@@ -66,7 +66,7 @@
           </label>
         </div>
         <div class="button-row">
-          <button id="printPeriodReportBtn" data-i18n="print_general_period_report">Imprimir relatório geral do período</button>
+          <button id="printPeriodReportBtn" data-i18n="printGeneralPeriodReport">Imprimir relatório geral do período</button>
         </div>
         <div class="table-wrap">
           <table>
@@ -89,7 +89,7 @@
     </section>
 
     <section class="tab-panel" id="panel-summary">
-      <h2 data-i18n="summaryTitle">Resumo e Gráficos</h2>
+      <h2 data-i18n="summaryAndCharts">Resumo e Gráficos</h2>
       <div class="card summary-card">
         <div class="form-grid three-cols">
           <label>
@@ -109,7 +109,7 @@
           </label>
         </div>
         <div class="button-row">
-          <button id="printHistory" data-i18n="printHistory">Imprimir histórico Kobutsu</button>
+          <button id="printHistory" data-i18n="printKobutsuHistory">Imprimir histórico Kobutsu</button>
         </div>
         <div class="summary-top">
           <div class="metric"><span data-i18n="totalTransactions">Transações</span><strong id="metricTransactions">0</strong></div>
@@ -129,7 +129,7 @@
         <canvas id="summaryChart" width="900" height="380"></canvas>
         <div class="summary-grid">
           <div>
-            <h3 data-i18n="summaryByPeriod">Resumo por período</h3>
+            <h3 data-i18n="periodSummary">Resumo por período</h3>
             <label>
               <span data-i18n="periodType">Período</span>
               <select id="periodType">
@@ -142,7 +142,7 @@
             <div class="table-wrap"><table><thead><tr><th data-i18n="period">Período</th><th data-i18n="total">Total</th></tr></thead><tbody id="periodSummaryBody"></tbody></table></div>
           </div>
           <div>
-            <h3 data-i18n="summaryByCategory">Resumo por categoria</h3>
+            <h3 data-i18n="categorySummary">Resumo por categoria</h3>
             <label>
               <span data-i18n="chartType">Tipo de gráfico</span>
               <select id="categoryChartType"><option value="bar" data-i18n="bar">Picos (Barras)</option><option value="pie" data-i18n="pie">Pizza</option></select>
@@ -151,7 +151,7 @@
             <div class="table-wrap"><table><thead><tr><th data-i18n="category">Categoria</th><th data-i18n="total">Total</th></tr></thead><tbody id="categorySummaryBody"></tbody></table></div>
           </div>
           <div>
-            <h3 data-i18n="summaryByDescription">Resumo por descrição</h3>
+            <h3 data-i18n="descriptionSummary">Resumo por descrição</h3>
             <label>
               <span data-i18n="chartType">Tipo de gráfico</span>
               <select id="descriptionChartType"><option value="bar" data-i18n="bar">Picos (Barras)</option><option value="pie" data-i18n="pie">Pizza</option></select>

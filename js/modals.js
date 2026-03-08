@@ -18,8 +18,8 @@
     document.body.appendChild(modal);
 
     const t = getTranslation || ((k) => k);
-    modal.querySelector('[data-role="title"]').textContent = t('confirm_save');
-    modal.querySelector('[data-role="message"]').textContent = t('do_you_want_to_save');
+    modal.querySelector('[data-role="title"]').textContent = t('confirmSaveTitle');
+    modal.querySelector('[data-role="message"]').textContent = t('confirmSaveMessage');
     modal.querySelector('[data-role="yes"]').textContent = t('yes');
     modal.querySelector('[data-role="cancel"]').textContent = t('cancel');
     return modal;
@@ -30,8 +30,8 @@
     const t = getTranslation || ((k) => k);
     const yesBtn = modal.querySelector('[data-role="yes"]');
     const cancelBtn = modal.querySelector('[data-role="cancel"]');
-    modal.querySelector('[data-role="title"]').textContent = t('confirm_save');
-    modal.querySelector('[data-role="message"]').textContent = t('do_you_want_to_save');
+    modal.querySelector('[data-role="title"]').textContent = t('confirmSaveTitle');
+    modal.querySelector('[data-role="message"]').textContent = t('confirmSaveMessage');
     yesBtn.textContent = t('yes');
     cancelBtn.textContent = t('cancel');
 
