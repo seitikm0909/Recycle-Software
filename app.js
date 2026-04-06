@@ -46,7 +46,8 @@ const state = {
   transactions: JSON.parse(localStorage.getItem('recycle_transactions') || '[]'),
   settings: JSON.parse(localStorage.getItem('recycle_settings') || '{}'),
   fieldMemory: normalizeFieldMemory(JSON.parse(localStorage.getItem('recycle_field_memory') || '{}'), legacyMemories),
-  forms: {}
+  forms: {},
+  device: null
 };
 
 
@@ -85,9 +86,9 @@ function applyLocaleDefaults() {
 
 
 const I18N_PATCH = {
-  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス', printClientHistory: 'Imprimir Kobutsu do cliente', deleteClient: 'Excluir cliente', confirmDeleteClient: 'Excluir cliente e todas as transações vinculadas?', memoryManagerTitle: 'Gerenciar memórias de preenchimento', transactionType: 'Tipo de transação', fieldLabel: 'Campo', deleteWord: 'Excluir', noMemories: 'Sem memórias para este campo', customerHistoryReport: 'Histórico Kobutsu por cliente', destination: 'Destino/Observação', printLabel: 'Imprimir', saveFullKobutsuPdf: 'Salvar PDF do histórico completo', startDate: 'Data inicial', endDate: 'Data final', allRecords: 'Todos os registros', reportPeriod: 'Relatório do período', generatedAt: 'Gerado em', fullKobutsuHistoryTitle: 'Histórico Completo Kobutsu', paymentMethod: 'Método de pagamento', saveFullPeriodKobutsuPdf: 'Salvar PDF geral do período', fullKobutsuPeriodPdf: 'Relatório completo Kobutsu do período', periodReport: 'Relatório do período', allIndividuals: 'Todos os indivíduos', incomingItems: 'Itens de entrada', outgoingItems: 'Itens de saída', stockItems: 'Itens em estoque', totalClients: 'Total de clientes', totalIncomingItems: 'Total de itens de entrada', totalOutgoingItems: 'Total de itens de saída', totalStockItems: 'Total de itens em estoque', totalPurchaseAmount: 'Total financeiro de compras', totalSaleAmount: 'Total financeiro de vendas', print_general_period_report: 'Imprimir relatório geral do período', confirm_save: 'Confirmar salvamento', do_you_want_to_save: 'Deseja salvar?', yes: 'Sim', cancel: 'Cancelar', status: 'Status', purchased: 'Comprado', sold: 'Vendido', no_records_found: 'Nenhum registro encontrado' },
+  pt: { noRecords: 'Sem registros', summaryByPeriod: 'Resumo por período', summaryByCategory: 'Resumo por categoria', summaryByDescription: 'Resumo por descrição', periodType: 'Período', daily: 'Dia', monthly: 'Mês', yearly: 'Ano', period: 'Período', operationalProfit: 'Lucro Operacional', invoiceRate: '% do インボイス', consumptionTaxRate: '% do 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluso', taxSeparate: 'Calculado à parte', purchaseSaleLine: 'Volume compra/venda por período', clientIdHint: 'Digite ID existente para preencher cliente', hasInvoice: 'Possui インボイス', invoiceNumber: 'Número do インボイス', printClientHistory: 'Imprimir Kobutsu do cliente', deleteClient: 'Excluir cliente', confirmDeleteClient: 'Excluir cliente e todas as transações vinculadas?', memoryManagerTitle: 'Gerenciar memórias de preenchimento', transactionType: 'Tipo de transação', fieldLabel: 'Campo', deleteWord: 'Excluir', noMemories: 'Sem memórias para este campo', customerHistoryReport: 'Histórico Kobutsu por cliente', destination: 'Destino/Observação', printLabel: 'Imprimir', saveFullKobutsuPdf: 'Salvar PDF do histórico completo', startDate: 'Data inicial', endDate: 'Data final', allRecords: 'Todos os registros', reportPeriod: 'Relatório do período', generatedAt: 'Gerado em', fullKobutsuHistoryTitle: 'Histórico Completo Kobutsu', paymentMethod: 'Método de pagamento', saveFullPeriodKobutsuPdf: 'Salvar PDF geral do período', fullKobutsuPeriodPdf: 'Relatório completo Kobutsu do período', periodReport: 'Relatório do período', allIndividuals: 'Todos os indivíduos', incomingItems: 'Itens de entrada', outgoingItems: 'Itens de saída', stockItems: 'Itens em estoque', totalClients: 'Total de clientes', totalIncomingItems: 'Total de itens de entrada', totalOutgoingItems: 'Total de itens de saída', totalStockItems: 'Total de itens em estoque', totalPurchaseAmount: 'Total financeiro de compras', totalSaleAmount: 'Total financeiro de vendas', print_general_period_report: 'Imprimir relatório geral do período', confirm_save: 'Confirmar salvamento', do_you_want_to_save: 'Deseja salvar?', yes: 'Sim', cancel: 'Cancelar', status: 'Status', purchased: 'Comprado', sold: 'Vendido', no_records_found: 'Nenhum registro encontrado', systemInfoTitle: 'Informações do sistema', currentDeviceId: 'ID do dispositivo atual', currentDeviceName: 'Nome do dispositivo atual', currentDeviceType: 'Tipo do dispositivo atual', lastSyncTime: 'Última sincronização', syncStatusSummary: 'Resumo do status de sincronização' },
   es: { noRecords: 'Sin registros', summaryByPeriod: 'Resumen por período', summaryByCategory: 'Resumen por categoría', summaryByDescription: 'Resumen por descripción', periodType: 'Período', daily: 'Día', monthly: 'Mes', yearly: 'Año', period: 'Período', operationalProfit: 'Beneficio Operativo', invoiceRate: '% de インボイス', consumptionTaxRate: '% de 消費税', consumptionTaxMode: '消費税', taxIncluded: 'Incluido', taxSeparate: 'Calculado por separado', purchaseSaleLine: 'Volumen compra/venta por período', clientIdHint: 'Escriba ID existente para completar cliente', hasInvoice: 'Tiene インボイス', invoiceNumber: 'Número de インボイス', printLabel: 'Imprimir', printClientHistory: 'Imprimir Kobutsu del cliente', deleteClient: 'Eliminar cliente', saveFullKobutsuPdf: 'Guardar PDF completo de Kobutsu', startDate: 'Fecha inicial', endDate: 'Fecha final', allRecords: 'Todos los registros', reportPeriod: 'Periodo del informe', generatedAt: 'Generado en', fullKobutsuHistoryTitle: 'Historial Completo Kobutsu', paymentMethod: 'Método de pago' },
-  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number', printClientHistory: 'Print customer Kobutsu', deleteClient: 'Delete client', confirmDeleteClient: 'Delete client and all linked transactions?', memoryManagerTitle: 'Manage field memories', transactionType: 'Transaction type', fieldLabel: 'Field', deleteWord: 'Delete', noMemories: 'No memories for this field', customerHistoryReport: 'Customer Kobutsu history', destination: 'Destination/Observation', printLabel: 'Print', saveFullKobutsuPdf: 'Save full Kobutsu PDF', startDate: 'Start date', endDate: 'End date', allRecords: 'All records', reportPeriod: 'Period report', generatedAt: 'Generated at', fullKobutsuHistoryTitle: 'Full Kobutsu History', paymentMethod: 'Payment method', saveFullPeriodKobutsuPdf: 'Save full period PDF', fullKobutsuPeriodPdf: 'Full Kobutsu period report', periodReport: 'Period report', allIndividuals: 'All individuals', incomingItems: 'Incoming items', outgoingItems: 'Outgoing items', stockItems: 'Stock items', totalClients: 'Total clients', totalIncomingItems: 'Total incoming items', totalOutgoingItems: 'Total outgoing items', totalStockItems: 'Total stock items', totalPurchaseAmount: 'Total purchase amount', totalSaleAmount: 'Total sale amount', print_general_period_report: 'Print general period report', confirm_save: 'Confirm save', do_you_want_to_save: 'Do you want to save?', yes: 'Yes', cancel: 'Cancel', status: 'Status', purchased: 'Purchased', sold: 'Sold', no_records_found: 'No records found' },
+  en: { noRecords: 'No records', summaryByPeriod: 'Summary by period', summaryByCategory: 'Summary by category', summaryByDescription: 'Summary by description', periodType: 'Period', daily: 'Day', monthly: 'Month', yearly: 'Year', period: 'Period', operationalProfit: 'Operating Profit', invoiceRate: 'Invoice %', consumptionTaxRate: 'Consumption tax %', consumptionTaxMode: 'Consumption tax', taxIncluded: 'Included', taxSeparate: 'Calculated separately', purchaseSaleLine: 'Purchase/Sales volume by period', clientIdHint: 'Type existing client ID to auto-fill customer data', hasInvoice: 'Has インボイス', invoiceNumber: 'インボイス number', printClientHistory: 'Print customer Kobutsu', deleteClient: 'Delete client', confirmDeleteClient: 'Delete client and all linked transactions?', memoryManagerTitle: 'Manage field memories', transactionType: 'Transaction type', fieldLabel: 'Field', deleteWord: 'Delete', noMemories: 'No memories for this field', customerHistoryReport: 'Customer Kobutsu history', destination: 'Destination/Observation', printLabel: 'Print', saveFullKobutsuPdf: 'Save full Kobutsu PDF', startDate: 'Start date', endDate: 'End date', allRecords: 'All records', reportPeriod: 'Period report', generatedAt: 'Generated at', fullKobutsuHistoryTitle: 'Full Kobutsu History', paymentMethod: 'Payment method', saveFullPeriodKobutsuPdf: 'Save full period PDF', fullKobutsuPeriodPdf: 'Full Kobutsu period report', periodReport: 'Period report', allIndividuals: 'All individuals', incomingItems: 'Incoming items', outgoingItems: 'Outgoing items', stockItems: 'Stock items', totalClients: 'Total clients', totalIncomingItems: 'Total incoming items', totalOutgoingItems: 'Total outgoing items', totalStockItems: 'Total stock items', totalPurchaseAmount: 'Total purchase amount', totalSaleAmount: 'Total sale amount', print_general_period_report: 'Print general period report', confirm_save: 'Confirm save', do_you_want_to_save: 'Do you want to save?', yes: 'Yes', cancel: 'Cancel', status: 'Status', purchased: 'Purchased', sold: 'Sold', no_records_found: 'No records found', systemInfoTitle: 'System information', currentDeviceId: 'Current device ID', currentDeviceName: 'Current device name', currentDeviceType: 'Current device type', lastSyncTime: 'Last sync time', syncStatusSummary: 'Sync status summary' },
   ja: { noRecords: 'データなし', summaryByPeriod: '期間別サマリー', summaryByCategory: 'カテゴリ別サマリー', summaryByDescription: '説明別サマリー', periodType: '期間', daily: '日次', monthly: '月次', yearly: '年次', period: '期間', operationalProfit: '営業利益', invoiceRate: 'インボイス %', consumptionTaxRate: '消費税 %', consumptionTaxMode: '消費税', taxIncluded: '税込', taxSeparate: '別計算', purchaseSaleLine: '期間別の仕入/販売推移', clientIdHint: '既存の顧客IDを入力すると自動入力', hasInvoice: 'インボイスあり', invoiceNumber: 'インボイス番号', printLabel: '印刷', printClientHistory: '顧客の古物履歴を印刷', deleteClient: '顧客を削除', saveFullKobutsuPdf: '古物履歴PDFを保存', startDate: '開始日', endDate: '終了日', allRecords: '全記録', reportPeriod: 'レポート期間', generatedAt: '生成日時', fullKobutsuHistoryTitle: '古物履歴（完全版）', paymentMethod: '支払方法' },
   vi: { noRecords: 'Không có dữ liệu', summaryByPeriod: 'Tóm tắt theo kỳ', summaryByCategory: 'Theo danh mục', summaryByDescription: 'Theo mô tả', periodType: 'Kỳ', daily: 'Ngày', monthly: 'Tháng', yearly: 'Năm', period: 'Kỳ', operationalProfit: 'Lợi nhuận vận hành', invoiceRate: '% invoice', consumptionTaxRate: '% thuế tiêu dùng', consumptionTaxMode: 'Thuế tiêu dùng', taxIncluded: 'Đã gồm', taxSeparate: 'Tính riêng', purchaseSaleLine: 'Khối lượng mua/bán theo kỳ', clientIdHint: 'Nhập ID khách có sẵn để tự điền', hasInvoice: 'Có インボイス', invoiceNumber: 'Số インボイス', printLabel: 'In', printClientHistory: 'In lịch sử Kobutsu khách hàng', deleteClient: 'Xóa khách hàng', saveFullKobutsuPdf: 'Lưu PDF Kobutsu đầy đủ', startDate: 'Ngày bắt đầu', endDate: 'Ngày kết thúc', allRecords: 'Tất cả bản ghi', reportPeriod: 'Khoảng báo cáo', generatedAt: 'Tạo lúc', fullKobutsuHistoryTitle: 'Lịch sử Kobutsu đầy đủ', paymentMethod: 'Phương thức thanh toán' },
   ur: { noRecords: 'ریکارڈ نہیں', operationalProfit: 'آپریٹنگ منافع', taxIncluded: 'شامل', taxSeparate: 'الگ سے' },
@@ -215,6 +216,18 @@ Object.assign(I18N_PATCH.si, {
 });
 
 
+
+Object.assign(I18N_PATCH.pt, {
+  mockForwardButton: 'Encaminhar pendentes (mock)',
+  mockForwardDone: 'Encaminhamento local concluído',
+  noPendingToForward: 'Não há pendências para encaminhar'
+});
+Object.assign(I18N_PATCH.en, {
+  mockForwardButton: 'Forward pending (mock)',
+  mockForwardDone: 'Local forwarding completed',
+  noPendingToForward: 'No pending records to forward'
+});
+
 const PLACEHOLDER_BY_LANG = {
   pt: { search: 'Maria / A1B2C3D4 / +55...', companyName: 'Recycle Software Ltda', companyAddress: 'Rua Exemplo, 123', defaultCategory: 'Metal', currency: 'BRL', clientName: 'Maria Silva', phone: '+55 11 99999-0000', address: 'Rua Exemplo, 123', category: 'Metal', description: 'Sucata de alumínio' },
   es: { search: 'Maria / A1B2C3D4 / +34...', companyName: 'Recycle Software SL', companyAddress: 'Calle Ejemplo, 123', defaultCategory: 'Metal', currency: 'EUR', clientName: 'María López', phone: '+34 600 123 456', address: 'Calle Ejemplo, 123', category: 'Metal', description: 'Chatarra de aluminio' },
@@ -310,6 +323,7 @@ function removeFieldSuggestion(type, field, value) {
   saveFieldMemory();
   refreshFieldMemorySuggestions();
   renderMemoryManager();
+  renderSystemInfo();
 }
 
 function refreshFieldMemorySuggestions() {
@@ -432,12 +446,7 @@ function resetFormForNewEntry(form, type) {
 
 
 function setupDeviceCompatibility() {
-  const ua = navigator.userAgent || '';
-  const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-  const mobileUA = /Android|iPhone|iPod|IEMobile|BlackBerry|Opera Mini/i.test(ua);
-  const tabletUA = /iPad|Tablet|PlayBook|Silk/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-  const mode = tabletUA ? 'tablet' : (mobileUA || coarsePointer ? 'mobile' : 'desktop');
+  const mode = state.device?.device_type || window.RecycleUtils?.detectDeviceType?.() || 'desktop';
   document.body.classList.toggle('is-mobile', mode === 'mobile');
   document.body.classList.toggle('is-tablet', mode === 'tablet');
   document.body.classList.toggle('is-desktop', mode === 'desktop');
@@ -446,7 +455,7 @@ function setupDeviceCompatibility() {
   if (badge) {
     const labels = { mobile: t('mobileDevice'), tablet: t('tabletDevice'), desktop: t('desktopDevice') };
     const dict = LANGUAGES[state.lang] || LANGUAGES.pt;
-    badge.textContent = `${dict.deviceMode || 'Mode'}: ${labels[mode]}`;
+    badge.textContent = `${dict.deviceMode || 'Mode'}: ${labels[mode]} (${state.device?.device_name || mode})`;
   }
 
   document.querySelectorAll('input[type="tel"], input[name="phone"]').forEach((el) => {
@@ -557,33 +566,31 @@ function createForm(type, container) {
       }
     }
     const data = Object.fromEntries(new FormData(form).entries());
-    const record = {
+    const payload = {
       ...data,
-      type,
-      total: Number(data.total || 0),
-      unitPrice: Number(data.unitPrice || 0),
-      quantity: Number(data.quantity || 0),
       hasInvoice: !!form.hasInvoice?.checked,
       invoiceNumber: form.hasInvoice?.checked ? (data.invoiceNumber || '').trim() : '',
-      items,
-      updatedAt: new Date().toISOString()
+      items
     };
 
-    if (form.dataset.editingId) {
-      const idx = state.transactions.findIndex((r) => r._id === form.dataset.editingId);
-      if (idx >= 0) {
-        state.transactions[idx] = { ...state.transactions[idx], ...record };
-      }
-    } else {
-      record._id = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
-      record.createdAt = new Date().toISOString();
-      state.transactions.push(record);
+    const result = window.RecycleTransactions?.saveTransaction
+      ? window.RecycleTransactions.saveTransaction({
+        data: payload,
+        type,
+        editingId: form.dataset.editingId,
+        device: state.device
+      })
+      : null;
+
+    if (result) {
+      state.transactions = result.transactions;
     }
 
-    rememberFieldValues(type, record);
+    rememberFieldValues(type, payload);
     localStorage.setItem('recycle_transactions', JSON.stringify(state.transactions));
     refreshSearch();
     refreshSummary();
+    renderSystemInfo();
     if (window.RecycleModals?.showInfoModal) {
       window.RecycleModals.showInfoModal({
         getTranslation,
@@ -1245,6 +1252,7 @@ function applyTranslations() {
   if (currencyInput && !currencyInput.value) currencyInput.value = getCurrencyCode();
   setupDeviceCompatibility();
   renderMemoryManager();
+  renderSystemInfo();
 }
 
 function fillLanguageSelector() {
@@ -1273,6 +1281,29 @@ function setupTabs() {
   });
 }
 
+
+function renderSystemInfo() {
+  const device = state.device || {};
+  const summary = window.RecycleSync?.getSyncSummary ? window.RecycleSync.getSyncSummary() : { pending: 0, synced: 0, error: 0, last_synced_at: null };
+  const setText = (id, value) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value || '-';
+  };
+
+  setText('systemDeviceId', device.device_id || '-');
+  setText('systemDeviceName', device.device_name || '-');
+  setText('systemDeviceType', device.device_type || '-');
+  setText('systemLastSyncTime', summary.last_synced_at || '-');
+  setText('systemSyncSummary', `pending: ${summary.pending || 0} | synced: ${summary.synced || 0} | error: ${summary.error || 0}`);
+
+  const btn = document.getElementById('mockForwardSyncBtn');
+  if (btn) {
+    const pending = Number(summary.pending || 0);
+    btn.disabled = pending <= 0;
+    btn.textContent = `${t('mockForwardButton')} (${pending})`;
+  }
+}
+
 function setupSettings() {
   applyLocaleDefaults();
   ['companyName', 'companyAddress', 'defaultCategory', 'currency', 'invoiceRate', 'consumptionTaxRate', 'consumptionTaxMode'].forEach((id) => {
@@ -1296,17 +1327,35 @@ function setupSettings() {
     alert(t('settings_saved_successfully'));
     refreshSearch();
     refreshSummary();
+    renderSystemInfo();
   });
 
   document.getElementById('exportExcel').addEventListener('click', exportExcelLikeCSV);
+  document.getElementById('mockForwardSyncBtn')?.addEventListener('click', () => {
+    const result = window.RecycleSync?.mockForwardPending ? window.RecycleSync.mockForwardPending() : { changed: 0 };
+    if (result.changed > 0) {
+      state.transactions = window.RecycleStorage.readJson(window.RecycleStorage.KEYS.transactions, state.transactions);
+      alert(`${t('mockForwardDone')}: ${result.changed}`);
+    } else {
+      alert(t('noPendingToForward'));
+    }
+    refreshSearch();
+    refreshSummary();
+    renderSystemInfo();
+  });
   document.getElementById('printHistory').addEventListener('click', generateHistoryPrint);
   document.getElementById('periodType').addEventListener('change', refreshSummary);
   document.getElementById('memoryTypeSelect')?.addEventListener('change', renderMemoryManager);
   document.getElementById('memoryFieldSelect')?.addEventListener('change', renderMemoryManager);
   renderMemoryManager();
+  renderSystemInfo();
 }
 
 function init() {
+  state.device = window.RecycleDevices?.ensureDeviceIdentity ? window.RecycleDevices.ensureDeviceIdentity() : null;
+  if (window.RecycleTransactions?.migrateTransactions) {
+    state.transactions = window.RecycleTransactions.migrateTransactions(state.device);
+  }
   fillLanguageSelector();
   setupDeviceCompatibility();
   applyTranslations();

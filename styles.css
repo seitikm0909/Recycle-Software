@@ -107,6 +107,10 @@ tr:last-child td { border-bottom: none; }
 .small-muted { color: #52617a; font-size: .82rem; }
 
 .section-divider { border: 0; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+.system-info-grid { display: grid; gap: .6rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: .6rem; }
+.system-info-item { border: 1px solid var(--border); border-radius: 8px; padding: .5rem .6rem; background: #f8fafe; display: flex; flex-direction: column; gap: .2rem; }
+.system-info-item strong { font-size: .85rem; color: #1f3a58; word-break: break-all; }
 .memory-list { list-style: none; padding: 0; margin: .4rem 0 0; display: grid; gap: .4rem; }
 .memory-list-item { display: flex; justify-content: space-between; align-items: center; gap: .6rem; border: 1px solid var(--border); border-radius: 8px; padding: .45rem .6rem; background: #f8fafe; }
 .memory-remove-btn { border-color: #d9b8b8; background: #fff3f3; color: #8a2d2d; }
