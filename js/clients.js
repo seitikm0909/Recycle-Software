@@ -28,5 +28,30 @@
       </td>`;
   }
 
-  window.RecycleClients = { renderMobileClientRow, transactionStatusLabel, transactionTypeLabel };
+  function upsertClientProfile(transactionRecord, ctx) {
+    const key = window.RecycleStorage.KEYS.clients;
+    const clients = window.RecycleStorage.readJson(key, []);
+    const idx = clients.findIndex((row) => row.clientId === transactionRecord.clientId);
+    const existing = idx >= 0 ? clients[idx] : null;
+    const metadata = window.RecycleAudit.buildRecordMetadata({ existingRecord: existing, device: ctx.device, user: ctx.user });
+    const payload = {
+      ...(existing || {}),
+      clientId: transactionRecord.clientId,
+      clientName: transactionRecord.clientName,
+      phone: transactionRecord.phone,
+      address: transactionRecord.address,
+      last_transaction_code: transactionRecord.transactionCode,
+      ...metadata
+    };
+    if (idx >= 0) clients[idx] = payload;
+    else clients.push(payload);
+    window.RecycleStorage.writeJson(key, clients);
+  }
+
+  window.RecycleClients = {
+    renderMobileClientRow,
+    transactionStatusLabel,
+    transactionTypeLabel,
+    upsertClientProfile
+  };
 })();
