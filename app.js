@@ -47,8 +47,7 @@ const state = {
   settings: JSON.parse(localStorage.getItem('recycle_settings') || '{}'),
   fieldMemory: normalizeFieldMemory(JSON.parse(localStorage.getItem('recycle_field_memory') || '{}'), legacyMemories),
   forms: {},
-  device: null,
-  user: null
+  device: null
 };
 
 
@@ -216,6 +215,18 @@ Object.assign(I18N_PATCH.si, {
   reportTitle: 'කාල සීමාවේ සම්පූර්ණ Kobutsu වාර්තාව', reportPeriod: 'වාර්තා කාලය', destination: 'ගමනාන්තය/සටහන'
 });
 
+
+
+Object.assign(I18N_PATCH.pt, {
+  mockForwardButton: 'Encaminhar pendentes (mock)',
+  mockForwardDone: 'Encaminhamento local concluído',
+  noPendingToForward: 'Não há pendências para encaminhar'
+});
+Object.assign(I18N_PATCH.en, {
+  mockForwardButton: 'Forward pending (mock)',
+  mockForwardDone: 'Local forwarding completed',
+  noPendingToForward: 'No pending records to forward'
+});
 
 const PLACEHOLDER_BY_LANG = {
   pt: { search: 'Maria / A1B2C3D4 / +55...', companyName: 'Recycle Software Ltda', companyAddress: 'Rua Exemplo, 123', defaultCategory: 'Metal', currency: 'BRL', clientName: 'Maria Silva', phone: '+55 11 99999-0000', address: 'Rua Exemplo, 123', category: 'Metal', description: 'Sucata de alumínio' },
@@ -567,7 +578,7 @@ function createForm(type, container) {
         data: payload,
         type,
         editingId: form.dataset.editingId,
-        ctx: { device: state.device, user: state.user }
+        device: state.device
       })
       : null;
 
@@ -1284,6 +1295,13 @@ function renderSystemInfo() {
   setText('systemDeviceType', device.device_type || '-');
   setText('systemLastSyncTime', summary.last_synced_at || '-');
   setText('systemSyncSummary', `pending: ${summary.pending || 0} | synced: ${summary.synced || 0} | error: ${summary.error || 0}`);
+
+  const btn = document.getElementById('mockForwardSyncBtn');
+  if (btn) {
+    const pending = Number(summary.pending || 0);
+    btn.disabled = pending <= 0;
+    btn.textContent = `${t('mockForwardButton')} (${pending})`;
+  }
 }
 
 function setupSettings() {
@@ -1313,6 +1331,18 @@ function setupSettings() {
   });
 
   document.getElementById('exportExcel').addEventListener('click', exportExcelLikeCSV);
+  document.getElementById('mockForwardSyncBtn')?.addEventListener('click', () => {
+    const result = window.RecycleSync?.mockForwardPending ? window.RecycleSync.mockForwardPending() : { changed: 0 };
+    if (result.changed > 0) {
+      state.transactions = window.RecycleStorage.readJson(window.RecycleStorage.KEYS.transactions, state.transactions);
+      alert(`${t('mockForwardDone')}: ${result.changed}`);
+    } else {
+      alert(t('noPendingToForward'));
+    }
+    refreshSearch();
+    refreshSummary();
+    renderSystemInfo();
+  });
   document.getElementById('printHistory').addEventListener('click', generateHistoryPrint);
   document.getElementById('periodType').addEventListener('change', refreshSummary);
   document.getElementById('memoryTypeSelect')?.addEventListener('change', renderMemoryManager);
@@ -1323,9 +1353,8 @@ function setupSettings() {
 
 function init() {
   state.device = window.RecycleDevices?.ensureDeviceIdentity ? window.RecycleDevices.ensureDeviceIdentity() : null;
-  state.user = window.RecycleUsers?.getCurrentUser ? window.RecycleUsers.getCurrentUser() : { user_id: 'local_owner', user_name: 'Local Owner' };
   if (window.RecycleTransactions?.migrateTransactions) {
-    state.transactions = window.RecycleTransactions.migrateTransactions({ device: state.device, user: state.user });
+    state.transactions = window.RecycleTransactions.migrateTransactions(state.device);
   }
   fillLanguageSelector();
   setupDeviceCompatibility();

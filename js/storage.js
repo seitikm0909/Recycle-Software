@@ -4,14 +4,7 @@
     settings: 'recycle_settings',
     fieldMemory: 'recycle_field_memory',
     deviceIdentity: 'recycle_device_identity',
-    users: 'recycle_users',
-    currentUser: 'recycle_current_user',
-    syncQueue: 'recycle_sync_queue',
-    syncMeta: 'recycle_sync_meta',
-    clients: 'recycle_clients',
-    inventoryMovements: 'recycle_inventory_movements',
-    kobutsuHistory: 'recycle_kobutsu_history',
-    auditLog: 'recycle_audit_log'
+    syncQueue: 'recycle_sync_queue'
   };
 
   function readJson(key, fallback) {

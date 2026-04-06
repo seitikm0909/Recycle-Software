@@ -1,41 +1,41 @@
 (function () {
-  function enqueueOperation({ entity, operation, record }) {
-    const queueKey = window.RecycleStorage.KEYS.syncQueue;
-    const item = {
-      queue_id: window.RecycleUtils.generateId('queue'),
-      entity,
-      operation,
-      record_id: record.record_id,
-      sync_status: 'pending',
-      retry_count: 0,
-      retry_after: null,
-      conflict_version: record.updated_at,
-      enqueued_at: window.RecycleUtils.nowIso(),
-      payload: record
-    };
-    const queue = window.RecycleStorage.readJson(queueKey, []);
-    queue.push(item);
-    window.RecycleStorage.writeJson(queueKey, queue);
-    return item;
+  function mockForwardPending() {
+    const key = window.RecycleStorage.KEYS.transactions;
+    const rows = window.RecycleStorage.readJson(key, []);
+    const now = window.RecycleUtils.nowIso();
+    let changed = 0;
+
+    const updated = rows.map((row) => {
+      const status = window.RecycleTransactions.normalizeSyncStatus(row.sync_status);
+      if (status !== "pending") return row;
+      changed += 1;
+      return { ...row, sync_status: "synced", last_synced_at: now, updated_at: now, updatedAt: now };
+    });
+
+    if (changed) window.RecycleStorage.writeJson(key, updated);
+    return { changed, last_synced_at: changed ? now : null };
   }
 
   function getSyncSummary() {
-    const queue = window.RecycleStorage.readJson(window.RecycleStorage.KEYS.syncQueue, []);
-    const counts = queue.reduce((acc, row) => {
-      const status = row.sync_status || 'pending';
-      acc[status] = (acc[status] || 0) + 1;
+    const rows = window.RecycleStorage.readJson(window.RecycleStorage.KEYS.transactions, []);
+    const summary = rows.reduce((acc, row) => {
+      const status = window.RecycleTransactions.normalizeSyncStatus(row.sync_status);
+      acc[status] += 1;
       return acc;
     }, { pending: 0, synced: 0, error: 0 });
-    const meta = window.RecycleStorage.readJson(window.RecycleStorage.KEYS.syncMeta, {});
+
+    const lastSyncedAt = rows
+      .map((row) => row.last_synced_at)
+      .filter(Boolean)
+      .sort()
+      .slice(-1)[0] || null;
+
     return {
-      ...counts,
-      total: queue.length,
-      last_synced_at: meta.last_synced_at || null
+      ...summary,
+      total: rows.length,
+      last_synced_at: lastSyncedAt
     };
   }
 
-  window.RecycleSync = {
-    enqueueOperation,
-    getSyncSummary
-  };
+  window.RecycleSync = { getSyncSummary, mockForwardPending };
 })();

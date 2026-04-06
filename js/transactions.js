@@ -1,6 +1,28 @@
 (function () {
-  function normalizeTransactionRecord(record, ctx) {
-    const metadata = window.RecycleAudit.buildRecordMetadata({ existingRecord: record, device: ctx.device, user: ctx.user });
+  const VALID_SYNC_STATUS = ['pending', 'synced', 'error'];
+
+  function normalizeSyncStatus(value) {
+    return VALID_SYNC_STATUS.includes(value) ? value : 'pending';
+  }
+
+  function buildMetadata(existingRecord, device) {
+    const now = window.RecycleUtils.nowIso();
+    return {
+      record_id: existingRecord?.record_id || window.RecycleUtils.generateId('record'),
+      created_at: existingRecord?.created_at || now,
+      updated_at: now,
+      created_by_device_id: existingRecord?.created_by_device_id || device.device_id,
+      created_by_device_name: existingRecord?.created_by_device_name || device.device_name,
+      created_by_device_type: existingRecord?.created_by_device_type || device.device_type,
+      created_by_user_id: existingRecord?.created_by_user_id || 'local_user',
+      created_by_user_name: existingRecord?.created_by_user_name || 'Local User',
+      sync_status: normalizeSyncStatus(existingRecord?.sync_status),
+      last_synced_at: existingRecord?.last_synced_at || null
+    };
+  }
+
+  function normalizeTransactionRecord(record, device) {
+    const metadata = buildMetadata(record, device);
     return {
       ...record,
       _id: record._id || metadata.record_id,
@@ -10,7 +32,7 @@
     };
   }
 
-  function saveTransaction({ data, type, editingId, ctx }) {
+  function saveTransaction({ data, type, editingId, device }) {
     const key = window.RecycleStorage.KEYS.transactions;
     const transactions = window.RecycleStorage.readJson(key, []);
     const idx = editingId ? transactions.findIndex((row) => row._id === editingId) : -1;
@@ -24,41 +46,23 @@
       unitPrice: Number(data.unitPrice || 0),
       quantity: Number(data.quantity || 0),
       sync_status: 'pending'
-    }, ctx);
+    }, device);
 
     if (idx >= 0) transactions[idx] = normalized;
     else transactions.push(normalized);
 
     window.RecycleStorage.writeJson(key, transactions);
-    window.RecycleSync.enqueueOperation({ entity: 'transaction', operation: idx >= 0 ? 'update' : 'create', record: normalized });
-    window.RecycleAudit.appendAuditLog(idx >= 0 ? 'update' : 'create', 'transaction', normalized, ctx);
-
-    const historyKey = window.RecycleStorage.KEYS.kobutsuHistory;
-    const history = window.RecycleStorage.readJson(historyKey, []);
-    history.push({
-      history_id: window.RecycleUtils.generateId('kobutsu'),
-      transaction_record_id: normalized.record_id,
-      transaction_code: normalized.transactionCode,
-      transaction_type: normalized.type,
-      amount: normalized.total,
-      ...window.RecycleAudit.buildRecordMetadata({ existingRecord: null, device: ctx.device, user: ctx.user })
-    });
-    window.RecycleStorage.writeJson(historyKey, history);
-
-    window.RecycleClients.upsertClientProfile(normalized, ctx);
-    window.RecycleInventory.appendInventoryMovements(normalized, ctx);
-
     return { transaction: normalized, transactions };
   }
 
-  function migrateTransactions(ctx) {
+  function migrateTransactions(device) {
     const key = window.RecycleStorage.KEYS.transactions;
     const rows = window.RecycleStorage.readJson(key, []);
     let changed = false;
     const normalized = rows.map((row) => {
-      if (row.record_id && row.created_by_device_id && row.sync_status) return row;
+      if (row.record_id && row.created_by_device_id && VALID_SYNC_STATUS.includes(row.sync_status)) return row;
       changed = true;
-      return normalizeTransactionRecord({ ...row, sync_status: row.sync_status || 'pending' }, ctx);
+      return normalizeTransactionRecord({ ...row, sync_status: normalizeSyncStatus(row.sync_status) }, device);
     });
     if (changed) window.RecycleStorage.writeJson(key, normalized);
     return normalized;
@@ -66,6 +70,7 @@
 
   window.RecycleTransactions = {
     saveTransaction,
-    migrateTransactions
+    migrateTransactions,
+    normalizeSyncStatus
   };
 })();

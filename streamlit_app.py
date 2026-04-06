@@ -12,10 +12,7 @@ SCRIPT_FILE = ROOT / "app.js"
 UTILS_SCRIPT_FILE = ROOT / "js/utils.js"
 STORAGE_SCRIPT_FILE = ROOT / "js/storage.js"
 DEVICES_SCRIPT_FILE = ROOT / "js/devices.js"
-USERS_SCRIPT_FILE = ROOT / "js/users.js"
-AUDIT_SCRIPT_FILE = ROOT / "js/audit.js"
 SYNC_SCRIPT_FILE = ROOT / "js/sync.js"
-INVENTORY_SCRIPT_FILE = ROOT / "js/inventory.js"
 TRANSACTIONS_SCRIPT_FILE = ROOT / "js/transactions.js"
 MODAL_SCRIPT_FILE = ROOT / "js/modals.js"
 PRINT_SCRIPT_FILE = ROOT / "js/print.js"
@@ -29,10 +26,7 @@ def load_frontend() -> str:
     utils_js = UTILS_SCRIPT_FILE.read_text(encoding="utf-8")
     storage_js = STORAGE_SCRIPT_FILE.read_text(encoding="utf-8")
     devices_js = DEVICES_SCRIPT_FILE.read_text(encoding="utf-8")
-    users_js = USERS_SCRIPT_FILE.read_text(encoding="utf-8")
-    audit_js = AUDIT_SCRIPT_FILE.read_text(encoding="utf-8")
     sync_js = SYNC_SCRIPT_FILE.read_text(encoding="utf-8")
-    inventory_js = INVENTORY_SCRIPT_FILE.read_text(encoding="utf-8")
     transactions_js = TRANSACTIONS_SCRIPT_FILE.read_text(encoding="utf-8")
     modal_js = MODAL_SCRIPT_FILE.read_text(encoding="utf-8")
     print_js = PRINT_SCRIPT_FILE.read_text(encoding="utf-8")
@@ -43,10 +37,7 @@ def load_frontend() -> str:
     html = html.replace('<script src="js/utils.js"></script>', f"<script>{utils_js}</script>")
     html = html.replace('<script src="js/storage.js"></script>', f"<script>{storage_js}</script>")
     html = html.replace('<script src="js/devices.js"></script>', f"<script>{devices_js}</script>")
-    html = html.replace('<script src="js/users.js"></script>', f"<script>{users_js}</script>")
-    html = html.replace('<script src="js/audit.js"></script>', f"<script>{audit_js}</script>")
     html = html.replace('<script src="js/sync.js"></script>', f"<script>{sync_js}</script>")
-    html = html.replace('<script src="js/inventory.js"></script>', f"<script>{inventory_js}</script>")
     html = html.replace('<script src="js/transactions.js"></script>', f"<script>{transactions_js}</script>")
     html = html.replace('<script src="js/modals.js"></script>', f"<script>{modal_js}</script>")
     html = html.replace('<script src="js/print.js"></script>', f"<script>{print_js}</script>")
