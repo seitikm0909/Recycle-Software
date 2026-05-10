@@ -9,7 +9,7 @@
 
   function renderMobileClientRow(record, t) {
     return `
-      <td colspan="8" class="mobile-client-row-cell">
+      <td colspan="9" class="mobile-client-row-cell">
         <div class="mobile-client-row line1">
           <strong>${record.clientName || '-'}</strong> · ${record.clientId || '-'} · ${record.phone || '-'}<br/>
           ${record.entryDate || ''} · ${record.transactionCode || ''} · ${transactionTypeLabel(record.type, t)} · ${record.total || ''}
@@ -17,7 +17,8 @@
         <div class="mobile-client-row line2">
           <strong>${t('category')}:</strong> ${record.category || '-'} |
           <strong>${t('description')}:</strong> ${record.description || '-'} |
-          <strong>${t('status')}:</strong> ${transactionStatusLabel(record.type, t)}
+          <strong>${t('status')}:</strong> ${transactionStatusLabel(record.type, t)} |
+          <strong>${t('recordDevice')}:</strong> ${(record.created_by_device_name || record.created_by_device_id || '-')}
         </div>
         <div class="mobile-client-row line3">
           <button class="printRow">${t('printLabel')}</button>
