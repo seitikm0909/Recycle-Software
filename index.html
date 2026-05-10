@@ -79,6 +79,7 @@
                 <th data-i18n="transactionCode">Código de Transação</th>
                 <th data-i18n="total">Total</th>
                 <th data-i18n="type">Tipo</th>
+                <th data-i18n="recordDevice">Dispositivo</th>
                 <th data-i18n="actions">Ações</th>
               </tr>
             </thead>
@@ -199,10 +200,12 @@
           <div class="system-info-item"><span data-i18n="currentDeviceName">Current device name</span><strong id="systemDeviceName">-</strong></div>
           <div class="system-info-item"><span data-i18n="currentDeviceType">Current device type</span><strong id="systemDeviceType">-</strong></div>
           <div class="system-info-item"><span data-i18n="lastSyncTime">Last sync time</span><strong id="systemLastSyncTime">-</strong></div>
+          <div class="system-info-item"><span data-i18n="mockForwardLast">Último encaminhamento mock</span><strong id="systemMockForwardTime">-</strong></div>
           <div class="system-info-item"><span data-i18n="syncStatusSummary">Sync status summary</span><strong id="systemSyncSummary">-</strong></div>
         </div>
         <div class="button-row">
           <button id="mockForwardSyncBtn" type="button" data-i18n="mockForwardButton">Encaminhar pendentes (mock)</button>
+          <span id="mockForwardStatusBadge" class="sync-status-badge">-</span>
         </div>
         <hr class="section-divider" />
         <h3 data-i18n="memoryManagerTitle">Gerenciar memórias de preenchimento</h3>
